@@ -17,6 +17,7 @@ extension WildCatView {
         var repository: WildCatDataSource
 
         var meowFact: String?
+        var catImage: CatImage?
         var error: Error?
 
         init(repository: WildCatDataSource =  WildCatRepository()) {
@@ -28,6 +29,16 @@ extension WildCatView {
 
             if case .success(let meowFact) = response {
                 self.meowFact = meowFact
+            } else if case .failure(let error) = response {
+                self.error = error
+            }
+        }
+
+        func getCatImage() async {
+            let response = await repository.getCatImage()
+            
+            if case .success(let catImage) = response {
+                self.catImage = catImage
             } else if case .failure(let error) = response {
                 self.error = error
             }
