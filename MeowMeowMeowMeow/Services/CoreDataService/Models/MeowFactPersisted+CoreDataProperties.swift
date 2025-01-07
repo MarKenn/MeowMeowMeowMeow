@@ -18,6 +18,7 @@ extension MeowFactPersisted {
 
     @NSManaged public var fact: String?
     @NSManaged public var id: String?
+    @NSManaged public var dateCreated: Int64
 
 }
 

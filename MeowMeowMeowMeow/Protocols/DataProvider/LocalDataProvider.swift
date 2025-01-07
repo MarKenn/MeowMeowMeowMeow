@@ -25,7 +25,7 @@ extension LocalDataProvider {
     func loadObjects() {
         if fetchedResultsController == nil {
             let localRequest = fetchRequest()
-            let sort = NSSortDescriptor(key: "fact", ascending: true)
+            let sort = NSSortDescriptor(key: "dateCreated", ascending: true)
             localRequest.sortDescriptors = [sort]
 
             fetchedResultsController = NSFetchedResultsController(
@@ -51,6 +51,13 @@ extension LocalDataProvider {
             let leadPersistable = model.toPersistable(in: data.pendingChangesContext)
             print(leadPersistable)
         }
+
+        data.saveContext()
+        loadObjects()
+    }
+
+    func delete(_ item: NSManagedObject) {
+        data.container.viewContext.delete(item)
 
         data.saveContext()
         loadObjects()

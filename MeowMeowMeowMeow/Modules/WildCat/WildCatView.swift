@@ -11,8 +11,8 @@ struct WildCatView: View {
     @State private var viewModel = Model()
     @State private var didTapDomesticate = false
 
-    var screenSize: CGRect {
-        UIScreen.main.bounds
+    var referenceWidth: CGFloat {
+        UIScreen.main.bounds.width - 32
     }
 
     var body: some View {
@@ -30,18 +30,23 @@ struct WildCatView: View {
                         if let catUIImage = viewModel.catUIImage {
                             Image(uiImage: catUIImage)
                                 .resizable()
+                                .aspectRatio(contentMode: .fit)
                         } else {
                             ProgressView()
                         }
                     }
                     .frame(
-                        width: screenSize.width - 32,
-                        height: screenSize.width - 32)
-                    .aspectRatio(contentMode: .fit)
+                        minWidth: referenceWidth,
+                        maxWidth: referenceWidth,
+                        minHeight: referenceWidth,
+                        alignment: .center)
                     .background(Color.black.opacity(0.4))
                     .clipShape(.rect(cornerRadius: 25))
+                    .aspectRatio(contentMode: .fit)
 
-                    Text(viewModel.meowFact ?? "There was an unexpected error.")
+                    if let fact = viewModel.meowFact {
+                        Text(fact)
+                    }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .contentShape(Rectangle())
@@ -60,6 +65,7 @@ struct WildCatView: View {
         }
         .onTapGesture {
             getWildCat()
+
         }
     }
 }
@@ -67,15 +73,18 @@ struct WildCatView: View {
 extension WildCatView {
     func domesticate() {
         viewModel.domesticate()
+        getWildCat()
     }
 
     func getWildCat() {
-        viewModel.catUIImage = nil
-        Task {
-            async let getCatImage: () = viewModel.getCatImage()
-            async let getMeowFact: () = viewModel.getMeowFact()
+        withAnimation {
+            viewModel.catUIImage = nil
+            Task {
+                async let getCatImage: () = viewModel.getCatImage()
+                async let getMeowFact: () = viewModel.getMeowFact()
 
-            let (catImage: (), meowFact: ()) = await (getCatImage, getMeowFact)
+                let (catImage: (), meowFact: ()) = await (getCatImage, getMeowFact)
+            }
         }
     }
 }

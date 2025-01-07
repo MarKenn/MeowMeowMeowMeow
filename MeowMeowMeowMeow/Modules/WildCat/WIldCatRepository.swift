@@ -6,19 +6,19 @@
 //
 
 import Foundation
-import CoreData
 import Nuke
 
 protocol WildCatDataSource {
     func getMeowFact() async -> Result<String?, Error>
     func getCatImage() async -> Result<CatImage?, Error>
     func downloadCatUIImage(from urlString: String) async -> PlatformImage?
-    func domesticate(meowFact: String)
+    func domesticate(meowFact: String?, catImage: CatImage?)
 }
 
 class WildCatRepository: WildCatDataSource {
     var remoteDataProvider = RemoteMeowProvider()
-    var localDataProvider = LocalMeowProvider()
+    var localFactProvider = LocalMeowFactProvider()
+    var localImageProvider = LocalCatImageProvider()
 
     func getMeowFact() async -> Result<String?, Error>  {
         let result: Result<MeowFactData, Error> = await remoteDataProvider.getRandomMeowFact()
@@ -46,8 +46,14 @@ class WildCatRepository: WildCatDataSource {
         return await remoteDataProvider.downloadCatUIImage(from: urlString)
     }
 
-    func domesticate(meowFact: String) {
-        self.localDataProvider.save([meowFact])
+    func domesticate(meowFact: String?, catImage: CatImage?) {
+        if let fact = meowFact {
+            self.localFactProvider.save([fact])
+        }
+
+        if let image = catImage {
+            self.localImageProvider.save([image])
+        }
     }
 }
 
@@ -65,16 +71,5 @@ class RemoteMeowProvider: RemoteDataProvider {
         let imageTask = ImagePipeline.shared.imageTask(with: url)
 
         return try? await imageTask.image
-    }
-}
-
-class LocalMeowProvider: NSObject, LocalDataProvider {
-    @Published
-    var objectsPublisher = [MeowFactPersisted]()
-
-    var fetchedResultsController: NSFetchedResultsController<MeowFactPersisted>!
-
-    func fetchRequest() -> NSFetchRequest<MeowFactPersisted> {
-        MeowFactPersisted.fetchRequest()
     }
 }

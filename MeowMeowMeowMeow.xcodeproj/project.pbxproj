@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		EF93ECB92D2C238500910834 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EF93ECB82D2C238500910834 /* Alamofire */; };
 		EFB779A92D2CB7E0003627B2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB779A82D2CB7E0003627B2 /* CoreData.framework */; };
-		EFB77A122D2D26C5003627B2 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = EFB77A112D2D26C5003627B2 /* Nuke */; };
+		EFB77A2D2D2D4D69003627B2 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = EFB77A2C2D2D4D69003627B2 /* Nuke */; };
+		EFB77A2F2D2D4D69003627B2 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = EFB77A2E2D2D4D69003627B2 /* NukeUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,9 +47,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFB77A122D2D26C5003627B2 /* Nuke in Frameworks */,
+				EFB77A2D2D2D4D69003627B2 /* Nuke in Frameworks */,
 				EF93ECB92D2C238500910834 /* Alamofire in Frameworks */,
 				EFB779A92D2CB7E0003627B2 /* CoreData.framework in Frameworks */,
+				EFB77A2F2D2D4D69003627B2 /* NukeUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +112,8 @@
 			name = MeowMeowMeowMeow;
 			packageProductDependencies = (
 				EF93ECB82D2C238500910834 /* Alamofire */,
-				EFB77A112D2D26C5003627B2 /* Nuke */,
+				EFB77A2C2D2D4D69003627B2 /* Nuke */,
+				EFB77A2E2D2D4D69003627B2 /* NukeUI */,
 			);
 			productName = MeowMeowMeowMeow;
 			productReference = EF93EC8A2D2C22B800910834 /* MeowMeowMeowMeow.app */;
@@ -169,7 +172,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				EF93ECB72D2C238500910834 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				EFB77A102D2D26C5003627B2 /* XCRemoteSwiftPackageReference "Nuke" */,
+				EFB77A2B2D2D4D69003627B2 /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = EF93EC8B2D2C22B800910834 /* Products */;
@@ -481,7 +484,7 @@
 				minimumVersion = 5.10.2;
 			};
 		};
-		EFB77A102D2D26C5003627B2 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+		EFB77A2B2D2D4D69003627B2 /* XCRemoteSwiftPackageReference "Nuke" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kean/Nuke.git";
 			requirement = {
@@ -497,10 +500,15 @@
 			package = EF93ECB72D2C238500910834 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		EFB77A112D2D26C5003627B2 /* Nuke */ = {
+		EFB77A2C2D2D4D69003627B2 /* Nuke */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EFB77A102D2D26C5003627B2 /* XCRemoteSwiftPackageReference "Nuke" */;
+			package = EFB77A2B2D2D4D69003627B2 /* XCRemoteSwiftPackageReference "Nuke" */;
 			productName = Nuke;
+		};
+		EFB77A2E2D2D4D69003627B2 /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFB77A2B2D2D4D69003627B2 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

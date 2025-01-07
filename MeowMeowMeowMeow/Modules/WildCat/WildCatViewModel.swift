@@ -51,8 +51,7 @@ extension WildCatView {
         }
 
         func domesticate() {
-            guard let meowFact else { return }
-            repository.domesticate(meowFact: meowFact)
+            repository.domesticate(meowFact: meowFact, catImage: catImage)
         }
     }
 }

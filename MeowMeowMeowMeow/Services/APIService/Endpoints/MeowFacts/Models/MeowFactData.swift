@@ -18,6 +18,7 @@ extension MeowFactData {
         for fact in data {
             let object = MeowFactPersisted(entity: MeowFactPersisted.entity(), insertInto: context)
             object.fact = fact
+            object.dateCreated = Int64(Date().timeIntervalSince1970)
 
             result.append(object)
         }

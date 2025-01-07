@@ -11,6 +11,7 @@ extension String: Persistable {
     func toPersistable(in context: NSManagedObjectContext) -> MeowFactPersisted {
         let object = MeowFactPersisted(entity: MeowFactPersisted.entity(), insertInto: context)
         object.fact = self
+        object.dateCreated = Int64(Date().timeIntervalSince1970)
 
         return object
     }

@@ -14,9 +14,11 @@ extension DomesticatedCatView {
         var repository: DomesticatedCatDataSource
 
         var meowFactsSubscriber: AnyCancellable?
-        var meowFacts: [String] = []
-        var selectedMeowFact: String?
-        var catImage: CatImage?
+        var meowImageSubscriber: AnyCancellable?
+        var meowFacts: [MeowFactPersisted] = []
+        var catImages: [CatImagePersisted] = []
+        var selectedMeowFact: MeowFactPersisted?
+        var selectedCatImage: CatImagePersisted?
         var error: Error?
 
         init(repository: DomesticatedCatDataSource =  DomesticatedCatRepository()) {
@@ -25,7 +27,12 @@ extension DomesticatedCatView {
             if let repository = repository as? DomesticatedCatRepository {
                 meowFactsSubscriber = repository.$domesticatedCatFacts.sink { facts in
                     self.meowFacts = facts
-                    self.randomizeMeowFact()
+                    self.randomizeDomesticatedCat()
+                }
+
+                meowImageSubscriber = repository.$domesticatedCatImageURLs.sink { images in
+                    self.catImages = images
+                    self.randomizeDomesticatedCat()
                 }
             }
         }
@@ -34,8 +41,13 @@ extension DomesticatedCatView {
             repository.fetchDomesticatedCats()
         }
 
-        func randomizeMeowFact() {
+        func randomizeDomesticatedCat() {
             selectedMeowFact = meowFacts.randomElement()
+            selectedCatImage = catImages.randomElement()
+        }
+
+        func setFree() {
+            repository.setFree(fact: selectedMeowFact, catImage: selectedCatImage)
         }
     }
 }
