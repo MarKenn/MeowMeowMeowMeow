@@ -37,7 +37,7 @@ final class WildCatViewModelTests: XCTestCase {
             : .success(CatImage(id: "testId", url: "testString", width: 50, height: 50))
         }
 
-        func domesticate(meowFact: String) {
+        func domesticate(meowFact: String?, catImage: MeowMeowMeowMeow.CatImage?) {
             domesticateHasBeenCalled = true
         }
 
@@ -96,19 +96,8 @@ final class WildCatViewModelTests: XCTestCase {
             viewModel.error as? RepositoryError, RepositoryError.imageError)
     }
 
-    func testDomesticateMeowFactIsNil() async {
+    func testDomesticate() {
         XCTAssertFalse(testRepository.domesticateHasBeenCalled)
-        XCTAssertNil(viewModel.meowFact)
-
-        viewModel.domesticate()
-
-        XCTAssertFalse(testRepository.domesticateHasBeenCalled)
-    }
-
-    func testDomesticate() async {
-        viewModel.meowFact = "Test fact"
-        XCTAssertFalse(testRepository.domesticateHasBeenCalled)
-        XCTAssertNotNil(viewModel.meowFact)
 
         viewModel.domesticate()
 
