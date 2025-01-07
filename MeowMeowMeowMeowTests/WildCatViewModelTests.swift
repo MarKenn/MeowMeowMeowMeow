@@ -22,6 +22,8 @@ final class WildCatViewModelTests: XCTestCase {
         var shouldFail: Bool = false
         var getMeowFactHasBeenCalled = false
         var getCatImageHasBeenCalled = false
+        var domesticateHasBeenCalled = false
+        var downloadCatUIImageHasBeenCalled = false
 
         func getMeowFact() async -> Result<String?, any Error> {
             getMeowFactHasBeenCalled = true
@@ -33,6 +35,15 @@ final class WildCatViewModelTests: XCTestCase {
             return shouldFail
             ? .failure(RepositoryError.imageError)
             : .success(CatImage(id: "testId", url: "testString", width: 50, height: 50))
+        }
+
+        func domesticate(meowFact: String) {
+            domesticateHasBeenCalled = true
+        }
+
+        func downloadCatUIImage(from urlString: String) async -> UIImage? {
+            downloadCatUIImageHasBeenCalled = true
+            return UIImage()
         }
     }
 
@@ -83,5 +94,43 @@ final class WildCatViewModelTests: XCTestCase {
         XCTAssert(testRepository.getCatImageHasBeenCalled)
         XCTAssertEqual(
             viewModel.error as? RepositoryError, RepositoryError.imageError)
+    }
+
+    func testDomesticateMeowFactIsNil() async {
+        XCTAssertFalse(testRepository.domesticateHasBeenCalled)
+        XCTAssertNil(viewModel.meowFact)
+
+        viewModel.domesticate()
+
+        XCTAssertFalse(testRepository.domesticateHasBeenCalled)
+    }
+
+    func testDomesticate() async {
+        viewModel.meowFact = "Test fact"
+        XCTAssertFalse(testRepository.domesticateHasBeenCalled)
+        XCTAssertNotNil(viewModel.meowFact)
+
+        viewModel.domesticate()
+
+        XCTAssert(testRepository.domesticateHasBeenCalled)
+    }
+
+    func testDownloadCatUIImageCatImageURLIsNil() async {
+        XCTAssertFalse(testRepository.downloadCatUIImageHasBeenCalled)
+        XCTAssertNil(viewModel.catImage?.url)
+
+        await viewModel.downloadCatUIImage()
+
+        XCTAssertFalse(testRepository.downloadCatUIImageHasBeenCalled)
+    }
+
+    func testdownloadCatUIImage() async {
+        viewModel.catImage = CatImage(id: "testId", url: "testURL", width: 1, height: 1)
+        XCTAssertFalse(testRepository.downloadCatUIImageHasBeenCalled)
+        XCTAssertNotNil(viewModel.catImage?.url)
+
+        await viewModel.downloadCatUIImage()
+
+        XCTAssert(testRepository.downloadCatUIImageHasBeenCalled)
     }
 }
