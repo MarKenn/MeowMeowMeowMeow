@@ -24,6 +24,7 @@ extension DomesticatedCatView {
         init(repository: DomesticatedCatDataSource =  DomesticatedCatRepository()) {
             self.repository = repository
 
+            /// Subscribe to the repository facts and images
             if let repository = repository as? DomesticatedCatRepository {
                 meowFactsSubscriber = repository.$domesticatedCatFacts.sink { facts in
                     self.meowFacts = facts

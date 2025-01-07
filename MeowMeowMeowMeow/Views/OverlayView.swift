@@ -16,7 +16,6 @@ struct OverlayView: View {
             Color.black.opacity(0.4)
                 .edgesIgnoringSafeArea(.all)
 
-
             VStack {
                 if isLoading {
                     ProgressView()

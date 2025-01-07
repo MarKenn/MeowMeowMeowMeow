@@ -12,6 +12,9 @@ struct MeowFactData: Decodable {
 }
 
 extension MeowFactData {
+    /// Converts the data (array of string) to an array of CoreData entity `MeowFactPersisted`
+    /// - Parameter context: CoreData context
+    /// - Returns: array of `MeowFactPersisted`
     func toPersistables(in context: NSManagedObjectContext) -> [MeowFactPersisted] {
         var result: [MeowFactPersisted] = []
 

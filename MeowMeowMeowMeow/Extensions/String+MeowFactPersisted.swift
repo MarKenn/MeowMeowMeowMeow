@@ -8,6 +8,10 @@
 import CoreData
 
 extension String: Persistable {
+    
+    /// Converts a string to MeowFactPersisted
+    /// - Parameter context: CoreData context to use
+    /// - Returns: MeowFactPersisted
     func toPersistable(in context: NSManagedObjectContext) -> MeowFactPersisted {
         let object = MeowFactPersisted(entity: MeowFactPersisted.entity(), insertInto: context)
         object.fact = self

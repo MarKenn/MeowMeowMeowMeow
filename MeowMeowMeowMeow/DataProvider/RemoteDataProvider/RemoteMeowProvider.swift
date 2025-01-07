@@ -9,6 +9,7 @@ import Foundation
 import Nuke
 
 class RemoteMeowProvider: RemoteDataProvider {
+
     func getRandomMeowFact() async -> Result<MeowFactData, Error> {
         await api.load(MeowFactsEndpoint.getRandomCatFact)
     }
@@ -16,7 +17,10 @@ class RemoteMeowProvider: RemoteDataProvider {
     func getRandomCatImage() async -> Result<[CatImage], Error> {
         await api.load(TheCatAPIEndpoint.getRandomCatImage)
     }
-
+    
+    /// Downloads an image using Nuke
+    /// - Parameter urlString: url string of the image
+    /// - Returns: UIImage
     func downloadCatUIImage(from urlString: String) async -> PlatformImage? {
         guard let url = URL(string: urlString) else { return nil }
         let imageTask = ImagePipeline.shared.imageTask(with: url)

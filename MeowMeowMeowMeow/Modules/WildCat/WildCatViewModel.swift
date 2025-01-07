@@ -22,7 +22,6 @@ extension WildCatView {
         }
 
         func getMeowFact() async {
-            
             let response = await repository.getMeowFact()
 
             if case .success(let meowFact) = response {

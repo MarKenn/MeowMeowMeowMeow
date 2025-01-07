@@ -21,7 +21,6 @@ class CoreDataService {
         }
 
 #if DEBUG
-        // If you have multiple stores saved in different directories, you need to print them out one by one
         if let url = container.persistentStoreCoordinator.persistentStores.first?.url {
             print("CoreData - db path: \(url)")
         }

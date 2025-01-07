@@ -16,6 +16,9 @@ struct CatImage: Codable {
 }
 
 extension CatImage: Persistable {
+    /// Converts current instance of CatImage to CatImagePersisted
+    /// - Parameter context: CoreData context
+    /// - Returns: CatImagePersisted
     func toPersistable(in context: NSManagedObjectContext) -> CatImagePersisted {
         let object = CatImagePersisted(entity: CatImagePersisted.entity(), insertInto: context)
         object.id = id
