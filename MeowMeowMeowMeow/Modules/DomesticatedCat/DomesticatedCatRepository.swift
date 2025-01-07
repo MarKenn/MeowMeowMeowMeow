@@ -7,33 +7,38 @@
 
 import Foundation
 import Combine
-import CoreData
 
 protocol DomesticatedCatDataSource {
     func fetchDomesticatedCats()
-    func setFree(fact: MeowFactPersisted?, catImage: CatImagePersisted?)
+    func setFree(fact: String?, catImage: CatImage?)
 }
 
 class DomesticatedCatRepository: DomesticatedCatDataSource {
-    var localFactProvider = LocalMeowFactProvider()
-    var localImageProvider = LocalCatImageProvider()
+    var localFactProvider: LocalMeowFactProvider
+    var localImageProvider: LocalCatImageProvider
 
     @Published
-    var domesticatedCatFacts = [MeowFactPersisted]()
+    var domesticatedCatFacts = [String]()
 
     @Published
-    var domesticatedCatImageURLs = [CatImagePersisted]()
+    var domesticatedCatImages = [CatImage]()
 
     var localFactSubscriber: AnyCancellable?
     var localImageSubscriber: AnyCancellable?
 
-    init() {
+    init(
+        factProvider: LocalMeowFactProvider =  LocalMeowFactProvider(),
+        imageProvider: LocalCatImageProvider = LocalCatImageProvider()
+    ) {
+        self.localFactProvider = factProvider
+        self.localImageProvider = imageProvider
+
         localFactSubscriber = localFactProvider.$objectsPublisher.sink { items in
-            self.domesticatedCatFacts = items.filter { $0.fact != nil }
+            self.domesticatedCatFacts = items
         }
 
         localImageSubscriber = localImageProvider.$objectsPublisher.sink { items in
-            self.domesticatedCatImageURLs = items.filter { $0.url != nil }
+            self.domesticatedCatImages = items
         }
     }
 
@@ -42,35 +47,13 @@ class DomesticatedCatRepository: DomesticatedCatDataSource {
         localImageProvider.loadObjects()
     }
 
-    func setFree(fact: MeowFactPersisted?, catImage: CatImagePersisted?) {
-        if let fact {
-            localFactProvider.delete(fact)
+    func setFree(fact: String?, catImage: CatImage?) {
+        if let fact, let item = localFactProvider.findObject(using: fact) {
+            localFactProvider.delete(item)
         }
 
-        if let catImage {
-            localImageProvider.delete(catImage)
+        if let catImage, let item = localImageProvider.findObject(using: catImage) {
+            localImageProvider.delete(item)
         }
-    }
-}
-
-class LocalMeowFactProvider: NSObject, LocalDataProvider {
-    @Published
-    var objectsPublisher = [MeowFactPersisted]()
-
-    var fetchedResultsController: NSFetchedResultsController<MeowFactPersisted>!
-
-    func fetchRequest() -> NSFetchRequest<MeowFactPersisted> {
-        MeowFactPersisted.fetchRequest()
-    }
-}
-
-class LocalCatImageProvider: NSObject, LocalDataProvider {
-    @Published
-    var objectsPublisher = [CatImagePersisted]()
-
-    var fetchedResultsController: NSFetchedResultsController<CatImagePersisted>!
-
-    func fetchRequest() -> NSFetchRequest<CatImagePersisted> {
-        CatImagePersisted.fetchRequest()
     }
 }

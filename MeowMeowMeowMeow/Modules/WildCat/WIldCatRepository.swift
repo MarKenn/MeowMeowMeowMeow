@@ -5,13 +5,12 @@
 //  Created by Mark Kenneth Bayona on 1/6/25.
 //
 
-import Foundation
-import Nuke
+import UIKit
 
 protocol WildCatDataSource {
     func getMeowFact() async -> Result<String?, Error>
     func getCatImage() async -> Result<CatImage?, Error>
-    func downloadCatUIImage(from urlString: String) async -> PlatformImage?
+    func downloadCatUIImage(from urlString: String) async -> UIImage?
     func domesticate(meowFact: String?, catImage: CatImage?)
 }
 
@@ -19,6 +18,16 @@ class WildCatRepository: WildCatDataSource {
     var remoteDataProvider = RemoteMeowProvider()
     var localFactProvider = LocalMeowFactProvider()
     var localImageProvider = LocalCatImageProvider()
+
+    init(
+        remoteProvider: RemoteMeowProvider = RemoteMeowProvider(),
+        factProvider: LocalMeowFactProvider =  LocalMeowFactProvider(),
+        imageProvider: LocalCatImageProvider = LocalCatImageProvider()
+    ) {
+        self.remoteDataProvider = remoteProvider
+        self.localFactProvider = factProvider
+        self.localImageProvider = imageProvider
+    }
 
     func getMeowFact() async -> Result<String?, Error>  {
         let result: Result<MeowFactData, Error> = await remoteDataProvider.getRandomMeowFact()
@@ -42,7 +51,7 @@ class WildCatRepository: WildCatDataSource {
         }
     }
 
-    func downloadCatUIImage(from urlString: String) async -> PlatformImage? {
+    func downloadCatUIImage(from urlString: String) async -> UIImage? {
         return await remoteDataProvider.downloadCatUIImage(from: urlString)
     }
 
@@ -54,22 +63,5 @@ class WildCatRepository: WildCatDataSource {
         if let image = catImage {
             self.localImageProvider.save([image])
         }
-    }
-}
-
-class RemoteMeowProvider: RemoteDataProvider {
-    func getRandomMeowFact() async -> Result<MeowFactData, Error> {
-        await api.load(MeowFactsEndpoint.getRandomCatFact)
-    }
-
-    func getRandomCatImage() async -> Result<[CatImage], Error> {
-        await api.load(TheCatAPIEndpoint.getRandomCatImage)
-    }
-
-    func downloadCatUIImage(from urlString: String) async -> PlatformImage? {
-        guard let url = URL(string: urlString) else { return nil }
-        let imageTask = ImagePipeline.shared.imageTask(with: url)
-
-        return try? await imageTask.image
     }
 }

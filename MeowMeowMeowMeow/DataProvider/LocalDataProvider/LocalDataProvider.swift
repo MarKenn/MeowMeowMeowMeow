@@ -9,12 +9,19 @@ import CoreData
 
 protocol LocalDataProvider: NSObject {
     associatedtype Object: NSManagedObject
+    associatedtype ModelType: Codable
 
     var data: CoreDataService { get }
-    var objectsPublisher: [Object] { get set }
+    var objectsPublisher: [ModelType] { get set }
+    var fetchedObjects: [Object] { get set }
 
     var fetchedResultsController: NSFetchedResultsController<Object>! { get set }
     func fetchRequest() -> NSFetchRequest<Object>
+
+    func loadObjects()
+    func save(_ models: [any Persistable])
+    func delete(_ item: NSManagedObject)
+    func findObject(using: ModelType) -> Object?
 }
 
 extension LocalDataProvider {
@@ -22,7 +29,7 @@ extension LocalDataProvider {
         CoreDataService.shared
     }
 
-    func loadObjects() {
+    func defaultLoadObjects() {
         if fetchedResultsController == nil {
             let localRequest = fetchRequest()
             let sort = NSSortDescriptor(key: "dateCreated", ascending: true)
@@ -37,16 +44,16 @@ extension LocalDataProvider {
 
         do {
             try fetchedResultsController.performFetch()
-            
+
             if let fetchedObjects = fetchedResultsController.fetchedObjects {
-                objectsPublisher = fetchedObjects
+                self.fetchedObjects = fetchedObjects
             }
         } catch {
             assert(false, "Fetch for objects failed \(error)")
         }
     }
 
-    func save(_ models: [any Persistable]) {
+    func defaultSave(_ models: [any Persistable]) {
         for model in models {
             let leadPersistable = model.toPersistable(in: data.pendingChangesContext)
             print(leadPersistable)
@@ -56,7 +63,8 @@ extension LocalDataProvider {
         loadObjects()
     }
 
-    func delete(_ item: NSManagedObject) {
+    func defaultDelete(_ item: NSManagedObject) {
+
         data.container.viewContext.delete(item)
 
         data.saveContext()

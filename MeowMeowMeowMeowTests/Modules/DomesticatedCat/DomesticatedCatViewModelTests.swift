@@ -22,7 +22,7 @@ final class DomesticatedCatViewModelTests: XCTestCase {
             domesticatedCatsHasBeenCalled = true
         }
 
-        func setFree(fact: MeowMeowMeowMeow.MeowFactPersisted?, catImage: MeowMeowMeowMeow.CatImagePersisted?) {
+        func setFree(fact: String?, catImage: CatImage?) {
             setFreeHasBeenCalled = true
         }
     }
@@ -59,8 +59,8 @@ final class DomesticatedCatViewModelTests: XCTestCase {
     }
 
     func testRandomizeDomesticatedCatWithValues() {
-        viewModel.catImages = [CatImagePersisted()]
-        viewModel.meowFacts = [MeowFactPersisted()]
+        viewModel.catImages = [CatImage(id: "testId", url: "testURL", width: 1, height: 1)]
+        viewModel.meowFacts = ["testMeowFact"]
 
         XCTAssertNil(viewModel.selectedMeowFact)
         XCTAssertNil(viewModel.selectedCatImage)

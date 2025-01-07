@@ -7,7 +7,7 @@
 
 import CoreData
 
-struct CatImage: Decodable {
+struct CatImage: Codable {
     let id: String
     let url: String
     let width: Int
@@ -25,5 +25,11 @@ extension CatImage: Persistable {
         object.dateCreated = Int64(Date().timeIntervalSince1970)
 
         return object
+    }
+}
+
+extension CatImage: Equatable {
+    static func == (lhs: CatImage, rhs: CatImage) -> Bool {
+        lhs.id == rhs.id && lhs.url == rhs.url
     }
 }

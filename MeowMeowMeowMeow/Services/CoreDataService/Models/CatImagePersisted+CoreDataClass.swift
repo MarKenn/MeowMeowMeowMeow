@@ -13,3 +13,9 @@ import CoreData
 public class CatImagePersisted: NSManagedObject {
 
 }
+
+extension CatImagePersisted: Modelable {
+    func toModel() -> CatImage {
+        CatImage(id: id, url: url, width: Int(width), height: Int(height), dateCreated: nil)
+    }
+}

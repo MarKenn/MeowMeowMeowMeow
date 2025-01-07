@@ -16,8 +16,8 @@ extension MeowFactPersisted {
         return NSFetchRequest<MeowFactPersisted>(entityName: "MeowFactPersisted")
     }
 
-    @NSManaged public var fact: String?
-    @NSManaged public var id: String?
+    @NSManaged public var fact: String
+    @NSManaged public var id: String
     @NSManaged public var dateCreated: Int64
 
 }

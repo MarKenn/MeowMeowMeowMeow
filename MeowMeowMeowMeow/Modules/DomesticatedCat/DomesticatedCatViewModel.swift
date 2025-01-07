@@ -15,10 +15,10 @@ extension DomesticatedCatView {
 
         var meowFactsSubscriber: AnyCancellable?
         var meowImageSubscriber: AnyCancellable?
-        var meowFacts: [MeowFactPersisted] = []
-        var catImages: [CatImagePersisted] = []
-        var selectedMeowFact: MeowFactPersisted?
-        var selectedCatImage: CatImagePersisted?
+        var meowFacts: [String] = []
+        var catImages: [CatImage] = []
+        var selectedMeowFact: String?
+        var selectedCatImage: CatImage?
         var error: Error?
 
         init(repository: DomesticatedCatDataSource =  DomesticatedCatRepository()) {
@@ -30,7 +30,7 @@ extension DomesticatedCatView {
                     self.randomizeDomesticatedCat()
                 }
 
-                meowImageSubscriber = repository.$domesticatedCatImageURLs.sink { images in
+                meowImageSubscriber = repository.$domesticatedCatImages.sink { images in
                     self.catImages = images
                     self.randomizeDomesticatedCat()
                 }

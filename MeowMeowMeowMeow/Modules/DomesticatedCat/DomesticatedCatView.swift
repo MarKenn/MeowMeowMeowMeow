@@ -18,7 +18,7 @@ struct DomesticatedCatView: View {
 
     var body: some View {
         ZStack {
-            if let selectedMeowFact = viewModel.selectedMeowFact?.fact {
+            if let selectedMeowFact = viewModel.selectedMeowFact {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 20) {
                         Button("Set free", systemImage: "pawprint.fill") {
