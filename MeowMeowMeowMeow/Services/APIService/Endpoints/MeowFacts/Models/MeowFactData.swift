@@ -5,6 +5,23 @@
 //  Created by Mark Kenneth Bayona on 1/6/25.
 //
 
+import CoreData
+
 struct MeowFactData: Decodable {
     var data: [String]
+}
+
+extension MeowFactData {
+    func toPersistables(in context: NSManagedObjectContext) -> [MeowFactPersisted] {
+        var result: [MeowFactPersisted] = []
+
+        for fact in data {
+            let object = MeowFactPersisted(entity: MeowFactPersisted.entity(), insertInto: context)
+            object.fact = fact
+
+            result.append(object)
+        }
+
+        return result
+    }
 }

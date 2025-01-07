@@ -5,19 +5,16 @@
 //  Created by Mark Kenneth Bayona on 1/6/25.
 //
 
-import Foundation
-
-protocol WildCatViewModel {
-    var meowFact: String? { get set }
-}
+import UIKit
 
 extension WildCatView {
     @Observable
-    class Model: WildCatViewModel {
+    class Model {
         var repository: WildCatDataSource
 
         var meowFact: String?
         var catImage: CatImage?
+        var catUIImage: UIImage?
         var error: Error?
 
         init(repository: WildCatDataSource =  WildCatRepository()) {
@@ -25,6 +22,7 @@ extension WildCatView {
         }
 
         func getMeowFact() async {
+            
             let response = await repository.getMeowFact()
 
             if case .success(let meowFact) = response {
@@ -39,9 +37,22 @@ extension WildCatView {
             
             if case .success(let catImage) = response {
                 self.catImage = catImage
+                await downloadCatUIImage()
             } else if case .failure(let error) = response {
                 self.error = error
             }
+        }
+
+        func downloadCatUIImage() async {
+            guard let catImageURL = catImage?.url else { return }
+
+            let response = await repository.downloadCatUIImage(from: catImageURL)
+            self.catUIImage = response
+        }
+
+        func domesticate() {
+            guard let meowFact else { return }
+            repository.domesticate(meowFact: meowFact)
         }
     }
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		EF93ECB92D2C238500910834 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EF93ECB82D2C238500910834 /* Alamofire */; };
+		EFB779A92D2CB7E0003627B2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB779A82D2CB7E0003627B2 /* CoreData.framework */; };
+		EFB77A122D2D26C5003627B2 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = EFB77A112D2D26C5003627B2 /* Nuke */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +25,7 @@
 /* Begin PBXFileReference section */
 		EF93EC8A2D2C22B800910834 /* MeowMeowMeowMeow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeowMeowMeowMeow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF93EC9A2D2C22BA00910834 /* MeowMeowMeowMeowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeowMeowMeowMeowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFB779A82D2CB7E0003627B2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -43,7 +46,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFB77A122D2D26C5003627B2 /* Nuke in Frameworks */,
 				EF93ECB92D2C238500910834 /* Alamofire in Frameworks */,
+				EFB779A92D2CB7E0003627B2 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +67,7 @@
 			children = (
 				EF93EC8C2D2C22B800910834 /* MeowMeowMeowMeow */,
 				EF93EC9D2D2C22BA00910834 /* MeowMeowMeowMeowTests */,
+				EFB779A72D2CB7DF003627B2 /* Frameworks */,
 				EF93EC8B2D2C22B800910834 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,6 +79,14 @@
 				EF93EC9A2D2C22BA00910834 /* MeowMeowMeowMeowTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		EFB779A72D2CB7DF003627B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFB779A82D2CB7E0003627B2 /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +110,7 @@
 			name = MeowMeowMeowMeow;
 			packageProductDependencies = (
 				EF93ECB82D2C238500910834 /* Alamofire */,
+				EFB77A112D2D26C5003627B2 /* Nuke */,
 			);
 			productName = MeowMeowMeowMeow;
 			productReference = EF93EC8A2D2C22B800910834 /* MeowMeowMeowMeow.app */;
@@ -154,6 +169,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				EF93ECB72D2C238500910834 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				EFB77A102D2D26C5003627B2 /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = EF93EC8B2D2C22B800910834 /* Products */;
@@ -336,6 +352,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MeowMeowMeowMeow/Preview Content\"";
+				DEVELOPMENT_TEAM = 64WRQPRMA9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -343,6 +360,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -364,6 +382,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MeowMeowMeowMeow/Preview Content\"";
+				DEVELOPMENT_TEAM = 64WRQPRMA9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -371,6 +390,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -461,6 +481,14 @@
 				minimumVersion = 5.10.2;
 			};
 		};
+		EFB77A102D2D26C5003627B2 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.8.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -468,6 +496,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EF93ECB72D2C238500910834 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		EFB77A112D2D26C5003627B2 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFB77A102D2D26C5003627B2 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

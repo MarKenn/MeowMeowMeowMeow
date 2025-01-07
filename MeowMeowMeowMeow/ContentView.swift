@@ -8,8 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedTab: Tab = .wild
+
+    enum Tab {
+        case wild
+        case domesticated
+    }
+
     var body: some View {
-        WildCatView()
+        TabView(selection: $selectedTab) {
+            WildCatView()
+                .tabItem {
+                    Label("Wild", systemImage: "star")
+                }
+                .tag(Tab.wild)
+
+            DomesticatedCatView()
+                .tabItem {
+                    Label("Domesticated", systemImage: "list.bullet")
+                }
+                .tag(Tab.domesticated)
+        }
     }
 }
 
