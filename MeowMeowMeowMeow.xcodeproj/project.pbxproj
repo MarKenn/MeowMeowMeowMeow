@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -444,6 +444,7 @@
 				};
 			};
 			buildConfigurationList = EF93EC852D2C22B800910834 /* Build configuration list for PBXProject "MeowMeowMeowMeow" */;
+			compatibilityVersion = "Xcode 15.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -456,7 +457,6 @@
 				EF93ECB72D2C238500910834 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				EFB77A2B2D2D4D69003627B2 /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
-			preferredProjectObjectVersion = 77;
 			productRefGroup = EF93EC8B2D2C22B800910834 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
