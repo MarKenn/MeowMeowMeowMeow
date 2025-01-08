@@ -7,6 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF2FB06E2D2E64970015CCC1 /* LocalCatImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB03B2D2E64970015CCC1 /* LocalCatImageProvider.swift */; };
+		EF2FB06F2D2E64970015CCC1 /* LocalDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB03C2D2E64970015CCC1 /* LocalDataProvider.swift */; };
+		EF2FB0702D2E64970015CCC1 /* LocalMeowFactProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB03D2D2E64970015CCC1 /* LocalMeowFactProvider.swift */; };
+		EF2FB0712D2E64970015CCC1 /* RemoteDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB03F2D2E64970015CCC1 /* RemoteDataProvider.swift */; };
+		EF2FB0722D2E64970015CCC1 /* RemoteMeowProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0402D2E64970015CCC1 /* RemoteMeowProvider.swift */; };
+		EF2FB0732D2E64970015CCC1 /* String+MeowFactPersisted.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0432D2E64970015CCC1 /* String+MeowFactPersisted.swift */; };
+		EF2FB0742D2E64970015CCC1 /* DomesticatedCatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0452D2E64970015CCC1 /* DomesticatedCatRepository.swift */; };
+		EF2FB0752D2E64970015CCC1 /* DomesticatedCatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0462D2E64970015CCC1 /* DomesticatedCatView.swift */; };
+		EF2FB0762D2E64970015CCC1 /* DomesticatedCatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0472D2E64970015CCC1 /* DomesticatedCatViewModel.swift */; };
+		EF2FB0772D2E64970015CCC1 /* WIldCatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0492D2E64970015CCC1 /* WIldCatRepository.swift */; };
+		EF2FB0782D2E64970015CCC1 /* WildCatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB04A2D2E64970015CCC1 /* WildCatView.swift */; };
+		EF2FB0792D2E64970015CCC1 /* WildCatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB04B2D2E64970015CCC1 /* WildCatViewModel.swift */; };
+		EF2FB07A2D2E64970015CCC1 /* MeowFactData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0502D2E64970015CCC1 /* MeowFactData.swift */; };
+		EF2FB07B2D2E64970015CCC1 /* MeowFactsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0522D2E64970015CCC1 /* MeowFactsEndpoint.swift */; };
+		EF2FB07C2D2E64970015CCC1 /* CatImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0542D2E64970015CCC1 /* CatImage.swift */; };
+		EF2FB07D2D2E64970015CCC1 /* TheCatAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0562D2E64970015CCC1 /* TheCatAPIEndpoint.swift */; };
+		EF2FB07E2D2E64970015CCC1 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0592D2E64970015CCC1 /* APIEndpoint.swift */; };
+		EF2FB07F2D2E64970015CCC1 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB05A2D2E64970015CCC1 /* APIService.swift */; };
+		EF2FB0802D2E64970015CCC1 /* CatImagePersisted+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB05C2D2E64970015CCC1 /* CatImagePersisted+CoreDataClass.swift */; };
+		EF2FB0812D2E64970015CCC1 /* CatImagePersisted+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB05D2D2E64970015CCC1 /* CatImagePersisted+CoreDataProperties.swift */; };
+		EF2FB0822D2E64970015CCC1 /* MeowFactPersisted+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB05E2D2E64970015CCC1 /* MeowFactPersisted+CoreDataClass.swift */; };
+		EF2FB0832D2E64970015CCC1 /* MeowFactPersisted+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB05F2D2E64970015CCC1 /* MeowFactPersisted+CoreDataProperties.swift */; };
+		EF2FB0842D2E64970015CCC1 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0612D2E64970015CCC1 /* CoreDataService.swift */; };
+		EF2FB0852D2E64970015CCC1 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0622D2E64970015CCC1 /* Model.xcdatamodeld */; };
+		EF2FB0862D2E64970015CCC1 /* Modelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0632D2E64970015CCC1 /* Modelable.swift */; };
+		EF2FB0872D2E64970015CCC1 /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0642D2E64970015CCC1 /* Persistable.swift */; };
+		EF2FB0882D2E64970015CCC1 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0672D2E64970015CCC1 /* OverlayView.swift */; };
+		EF2FB0892D2E64970015CCC1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB06A2D2E64970015CCC1 /* ContentView.swift */; };
+		EF2FB08A2D2E64970015CCC1 /* MeowMeowMeowMeowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB06B2D2E64970015CCC1 /* MeowMeowMeowMeowApp.swift */; };
+		EF2FB08B2D2E64970015CCC1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2FB04E2D2E64970015CCC1 /* Preview Assets.xcassets */; };
+		EF2FB08C2D2E64970015CCC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2FB0692D2E64970015CCC1 /* Assets.xcassets */; };
+		EF2FB0982D2E649E0015CCC1 /* MockFactProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB08D2D2E649E0015CCC1 /* MockFactProvider.swift */; };
+		EF2FB0992D2E649E0015CCC1 /* MockImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB08E2D2E649E0015CCC1 /* MockImageProvider.swift */; };
+		EF2FB09A2D2E649E0015CCC1 /* DomesticatedCatRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0902D2E649E0015CCC1 /* DomesticatedCatRepositoryTests.swift */; };
+		EF2FB09B2D2E649E0015CCC1 /* DomesticatedCatViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0912D2E649E0015CCC1 /* DomesticatedCatViewModelTests.swift */; };
+		EF2FB09C2D2E649E0015CCC1 /* WildCatRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0932D2E649E0015CCC1 /* WildCatRepositoryTests.swift */; };
+		EF2FB09D2D2E649E0015CCC1 /* WildCatViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0942D2E649E0015CCC1 /* WildCatViewModelTests.swift */; };
 		EF93ECB92D2C238500910834 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EF93ECB82D2C238500910834 /* Alamofire */; };
 		EFB779A92D2CB7E0003627B2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB779A82D2CB7E0003627B2 /* CoreData.framework */; };
 		EFB77A2D2D2D4D69003627B2 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = EFB77A2C2D2D4D69003627B2 /* Nuke */; };
@@ -24,23 +61,47 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EF2FB03B2D2E64970015CCC1 /* LocalCatImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCatImageProvider.swift; sourceTree = "<group>"; };
+		EF2FB03C2D2E64970015CCC1 /* LocalDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataProvider.swift; sourceTree = "<group>"; };
+		EF2FB03D2D2E64970015CCC1 /* LocalMeowFactProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMeowFactProvider.swift; sourceTree = "<group>"; };
+		EF2FB03F2D2E64970015CCC1 /* RemoteDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataProvider.swift; sourceTree = "<group>"; };
+		EF2FB0402D2E64970015CCC1 /* RemoteMeowProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteMeowProvider.swift; sourceTree = "<group>"; };
+		EF2FB0432D2E64970015CCC1 /* String+MeowFactPersisted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+MeowFactPersisted.swift"; sourceTree = "<group>"; };
+		EF2FB0452D2E64970015CCC1 /* DomesticatedCatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomesticatedCatRepository.swift; sourceTree = "<group>"; };
+		EF2FB0462D2E64970015CCC1 /* DomesticatedCatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomesticatedCatView.swift; sourceTree = "<group>"; };
+		EF2FB0472D2E64970015CCC1 /* DomesticatedCatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomesticatedCatViewModel.swift; sourceTree = "<group>"; };
+		EF2FB0492D2E64970015CCC1 /* WIldCatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIldCatRepository.swift; sourceTree = "<group>"; };
+		EF2FB04A2D2E64970015CCC1 /* WildCatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WildCatView.swift; sourceTree = "<group>"; };
+		EF2FB04B2D2E64970015CCC1 /* WildCatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WildCatViewModel.swift; sourceTree = "<group>"; };
+		EF2FB04E2D2E64970015CCC1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EF2FB0502D2E64970015CCC1 /* MeowFactData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeowFactData.swift; sourceTree = "<group>"; };
+		EF2FB0522D2E64970015CCC1 /* MeowFactsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeowFactsEndpoint.swift; sourceTree = "<group>"; };
+		EF2FB0542D2E64970015CCC1 /* CatImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatImage.swift; sourceTree = "<group>"; };
+		EF2FB0562D2E64970015CCC1 /* TheCatAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheCatAPIEndpoint.swift; sourceTree = "<group>"; };
+		EF2FB0592D2E64970015CCC1 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		EF2FB05A2D2E64970015CCC1 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		EF2FB05C2D2E64970015CCC1 /* CatImagePersisted+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatImagePersisted+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EF2FB05D2D2E64970015CCC1 /* CatImagePersisted+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatImagePersisted+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EF2FB05E2D2E64970015CCC1 /* MeowFactPersisted+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MeowFactPersisted+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EF2FB05F2D2E64970015CCC1 /* MeowFactPersisted+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MeowFactPersisted+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EF2FB0612D2E64970015CCC1 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		EF2FB0632D2E64970015CCC1 /* Modelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modelable.swift; sourceTree = "<group>"; };
+		EF2FB0642D2E64970015CCC1 /* Persistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
+		EF2FB0672D2E64970015CCC1 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		EF2FB0692D2E64970015CCC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF2FB06A2D2E64970015CCC1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EF2FB06B2D2E64970015CCC1 /* MeowMeowMeowMeowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeowMeowMeowMeowApp.swift; sourceTree = "<group>"; };
+		EF2FB06D2D2E64970015CCC1 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		EF2FB08D2D2E649E0015CCC1 /* MockFactProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFactProvider.swift; sourceTree = "<group>"; };
+		EF2FB08E2D2E649E0015CCC1 /* MockImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageProvider.swift; sourceTree = "<group>"; };
+		EF2FB0902D2E649E0015CCC1 /* DomesticatedCatRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomesticatedCatRepositoryTests.swift; sourceTree = "<group>"; };
+		EF2FB0912D2E649E0015CCC1 /* DomesticatedCatViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomesticatedCatViewModelTests.swift; sourceTree = "<group>"; };
+		EF2FB0932D2E649E0015CCC1 /* WildCatRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WildCatRepositoryTests.swift; sourceTree = "<group>"; };
+		EF2FB0942D2E649E0015CCC1 /* WildCatViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WildCatViewModelTests.swift; sourceTree = "<group>"; };
 		EF93EC8A2D2C22B800910834 /* MeowMeowMeowMeow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeowMeowMeowMeow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF93EC9A2D2C22BA00910834 /* MeowMeowMeowMeowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeowMeowMeowMeowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB779A82D2CB7E0003627B2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		EF93EC8C2D2C22B800910834 /* MeowMeowMeowMeow */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MeowMeowMeowMeow;
-			sourceTree = "<group>";
-		};
-		EF93EC9D2D2C22BA00910834 /* MeowMeowMeowMeowTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MeowMeowMeowMeowTests;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		EF93EC872D2C22B800910834 /* Frameworks */ = {
@@ -64,11 +125,238 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EF2FB03E2D2E64970015CCC1 /* LocalDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB03B2D2E64970015CCC1 /* LocalCatImageProvider.swift */,
+				EF2FB03C2D2E64970015CCC1 /* LocalDataProvider.swift */,
+				EF2FB03D2D2E64970015CCC1 /* LocalMeowFactProvider.swift */,
+			);
+			path = LocalDataProvider;
+			sourceTree = "<group>";
+		};
+		EF2FB0412D2E64970015CCC1 /* RemoteDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB03F2D2E64970015CCC1 /* RemoteDataProvider.swift */,
+				EF2FB0402D2E64970015CCC1 /* RemoteMeowProvider.swift */,
+			);
+			path = RemoteDataProvider;
+			sourceTree = "<group>";
+		};
+		EF2FB0422D2E64970015CCC1 /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB03E2D2E64970015CCC1 /* LocalDataProvider */,
+				EF2FB0412D2E64970015CCC1 /* RemoteDataProvider */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		EF2FB0442D2E64970015CCC1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0432D2E64970015CCC1 /* String+MeowFactPersisted.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EF2FB0482D2E64970015CCC1 /* DomesticatedCat */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0452D2E64970015CCC1 /* DomesticatedCatRepository.swift */,
+				EF2FB0462D2E64970015CCC1 /* DomesticatedCatView.swift */,
+				EF2FB0472D2E64970015CCC1 /* DomesticatedCatViewModel.swift */,
+			);
+			path = DomesticatedCat;
+			sourceTree = "<group>";
+		};
+		EF2FB04C2D2E64970015CCC1 /* WildCat */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0492D2E64970015CCC1 /* WIldCatRepository.swift */,
+				EF2FB04A2D2E64970015CCC1 /* WildCatView.swift */,
+				EF2FB04B2D2E64970015CCC1 /* WildCatViewModel.swift */,
+			);
+			path = WildCat;
+			sourceTree = "<group>";
+		};
+		EF2FB04D2D2E64970015CCC1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0482D2E64970015CCC1 /* DomesticatedCat */,
+				EF2FB04C2D2E64970015CCC1 /* WildCat */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		EF2FB04F2D2E64970015CCC1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB04E2D2E64970015CCC1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EF2FB0512D2E64970015CCC1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0502D2E64970015CCC1 /* MeowFactData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EF2FB0532D2E64970015CCC1 /* MeowFacts */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0512D2E64970015CCC1 /* Models */,
+				EF2FB0522D2E64970015CCC1 /* MeowFactsEndpoint.swift */,
+			);
+			path = MeowFacts;
+			sourceTree = "<group>";
+		};
+		EF2FB0552D2E64970015CCC1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0542D2E64970015CCC1 /* CatImage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EF2FB0572D2E64970015CCC1 /* TheCatAPIEndpoint */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0552D2E64970015CCC1 /* Models */,
+				EF2FB0562D2E64970015CCC1 /* TheCatAPIEndpoint.swift */,
+			);
+			path = TheCatAPIEndpoint;
+			sourceTree = "<group>";
+		};
+		EF2FB0582D2E64970015CCC1 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0532D2E64970015CCC1 /* MeowFacts */,
+				EF2FB0572D2E64970015CCC1 /* TheCatAPIEndpoint */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		EF2FB05B2D2E64970015CCC1 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0582D2E64970015CCC1 /* Endpoints */,
+				EF2FB0592D2E64970015CCC1 /* APIEndpoint.swift */,
+				EF2FB05A2D2E64970015CCC1 /* APIService.swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		EF2FB0602D2E64970015CCC1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB05C2D2E64970015CCC1 /* CatImagePersisted+CoreDataClass.swift */,
+				EF2FB05D2D2E64970015CCC1 /* CatImagePersisted+CoreDataProperties.swift */,
+				EF2FB05E2D2E64970015CCC1 /* MeowFactPersisted+CoreDataClass.swift */,
+				EF2FB05F2D2E64970015CCC1 /* MeowFactPersisted+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EF2FB0652D2E64970015CCC1 /* CoreDataService */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0602D2E64970015CCC1 /* Models */,
+				EF2FB0612D2E64970015CCC1 /* CoreDataService.swift */,
+				EF2FB0622D2E64970015CCC1 /* Model.xcdatamodeld */,
+				EF2FB0632D2E64970015CCC1 /* Modelable.swift */,
+				EF2FB0642D2E64970015CCC1 /* Persistable.swift */,
+			);
+			path = CoreDataService;
+			sourceTree = "<group>";
+		};
+		EF2FB0662D2E64970015CCC1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB05B2D2E64970015CCC1 /* APIService */,
+				EF2FB0652D2E64970015CCC1 /* CoreDataService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EF2FB0682D2E64970015CCC1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0672D2E64970015CCC1 /* OverlayView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EF2FB06C2D2E64970015CCC1 /* MeowMeowMeowMeow */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0422D2E64970015CCC1 /* DataProvider */,
+				EF2FB0442D2E64970015CCC1 /* Extensions */,
+				EF2FB04D2D2E64970015CCC1 /* Modules */,
+				EF2FB04F2D2E64970015CCC1 /* Preview Content */,
+				EF2FB0662D2E64970015CCC1 /* Services */,
+				EF2FB0682D2E64970015CCC1 /* Views */,
+				EF2FB0692D2E64970015CCC1 /* Assets.xcassets */,
+				EF2FB06A2D2E64970015CCC1 /* ContentView.swift */,
+				EF2FB06B2D2E64970015CCC1 /* MeowMeowMeowMeowApp.swift */,
+			);
+			path = MeowMeowMeowMeow;
+			sourceTree = "<group>";
+		};
+		EF2FB08F2D2E649E0015CCC1 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB08D2D2E649E0015CCC1 /* MockFactProvider.swift */,
+				EF2FB08E2D2E649E0015CCC1 /* MockImageProvider.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		EF2FB0922D2E649E0015CCC1 /* DomesticatedCat */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0902D2E649E0015CCC1 /* DomesticatedCatRepositoryTests.swift */,
+				EF2FB0912D2E649E0015CCC1 /* DomesticatedCatViewModelTests.swift */,
+			);
+			path = DomesticatedCat;
+			sourceTree = "<group>";
+		};
+		EF2FB0952D2E649E0015CCC1 /* WildCat */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0932D2E649E0015CCC1 /* WildCatRepositoryTests.swift */,
+				EF2FB0942D2E649E0015CCC1 /* WildCatViewModelTests.swift */,
+			);
+			path = WildCat;
+			sourceTree = "<group>";
+		};
+		EF2FB0962D2E649E0015CCC1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0922D2E649E0015CCC1 /* DomesticatedCat */,
+				EF2FB0952D2E649E0015CCC1 /* WildCat */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		EF2FB0972D2E649E0015CCC1 /* MeowMeowMeowMeowTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB08F2D2E649E0015CCC1 /* Mocks */,
+				EF2FB0962D2E649E0015CCC1 /* Modules */,
+			);
+			path = MeowMeowMeowMeowTests;
+			sourceTree = "<group>";
+		};
 		EF93EC812D2C22B800910834 = {
 			isa = PBXGroup;
 			children = (
-				EF93EC8C2D2C22B800910834 /* MeowMeowMeowMeow */,
-				EF93EC9D2D2C22BA00910834 /* MeowMeowMeowMeowTests */,
+				EF2FB06C2D2E64970015CCC1 /* MeowMeowMeowMeow */,
+				EF2FB0972D2E649E0015CCC1 /* MeowMeowMeowMeowTests */,
 				EFB779A72D2CB7DF003627B2 /* Frameworks */,
 				EF93EC8B2D2C22B800910834 /* Products */,
 			);
@@ -106,9 +394,6 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				EF93EC8C2D2C22B800910834 /* MeowMeowMeowMeow */,
-			);
 			name = MeowMeowMeowMeow;
 			packageProductDependencies = (
 				EF93ECB82D2C238500910834 /* Alamofire */,
@@ -131,9 +416,6 @@
 			);
 			dependencies = (
 				EF93EC9C2D2C22BA00910834 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				EF93EC9D2D2C22BA00910834 /* MeowMeowMeowMeowTests */,
 			);
 			name = MeowMeowMeowMeowTests;
 			packageProductDependencies = (
@@ -190,6 +472,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF2FB08B2D2E64970015CCC1 /* Preview Assets.xcassets in Resources */,
+				EF2FB08C2D2E64970015CCC1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +491,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF2FB06E2D2E64970015CCC1 /* LocalCatImageProvider.swift in Sources */,
+				EF2FB06F2D2E64970015CCC1 /* LocalDataProvider.swift in Sources */,
+				EF2FB0702D2E64970015CCC1 /* LocalMeowFactProvider.swift in Sources */,
+				EF2FB0712D2E64970015CCC1 /* RemoteDataProvider.swift in Sources */,
+				EF2FB0722D2E64970015CCC1 /* RemoteMeowProvider.swift in Sources */,
+				EF2FB0732D2E64970015CCC1 /* String+MeowFactPersisted.swift in Sources */,
+				EF2FB0742D2E64970015CCC1 /* DomesticatedCatRepository.swift in Sources */,
+				EF2FB0752D2E64970015CCC1 /* DomesticatedCatView.swift in Sources */,
+				EF2FB0762D2E64970015CCC1 /* DomesticatedCatViewModel.swift in Sources */,
+				EF2FB0772D2E64970015CCC1 /* WIldCatRepository.swift in Sources */,
+				EF2FB0782D2E64970015CCC1 /* WildCatView.swift in Sources */,
+				EF2FB0792D2E64970015CCC1 /* WildCatViewModel.swift in Sources */,
+				EF2FB07A2D2E64970015CCC1 /* MeowFactData.swift in Sources */,
+				EF2FB07B2D2E64970015CCC1 /* MeowFactsEndpoint.swift in Sources */,
+				EF2FB07C2D2E64970015CCC1 /* CatImage.swift in Sources */,
+				EF2FB07D2D2E64970015CCC1 /* TheCatAPIEndpoint.swift in Sources */,
+				EF2FB07E2D2E64970015CCC1 /* APIEndpoint.swift in Sources */,
+				EF2FB07F2D2E64970015CCC1 /* APIService.swift in Sources */,
+				EF2FB0802D2E64970015CCC1 /* CatImagePersisted+CoreDataClass.swift in Sources */,
+				EF2FB0812D2E64970015CCC1 /* CatImagePersisted+CoreDataProperties.swift in Sources */,
+				EF2FB0822D2E64970015CCC1 /* MeowFactPersisted+CoreDataClass.swift in Sources */,
+				EF2FB0832D2E64970015CCC1 /* MeowFactPersisted+CoreDataProperties.swift in Sources */,
+				EF2FB0842D2E64970015CCC1 /* CoreDataService.swift in Sources */,
+				EF2FB0852D2E64970015CCC1 /* Model.xcdatamodeld in Sources */,
+				EF2FB0862D2E64970015CCC1 /* Modelable.swift in Sources */,
+				EF2FB0872D2E64970015CCC1 /* Persistable.swift in Sources */,
+				EF2FB0882D2E64970015CCC1 /* OverlayView.swift in Sources */,
+				EF2FB0892D2E64970015CCC1 /* ContentView.swift in Sources */,
+				EF2FB08A2D2E64970015CCC1 /* MeowMeowMeowMeowApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +527,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF2FB0982D2E649E0015CCC1 /* MockFactProvider.swift in Sources */,
+				EF2FB0992D2E649E0015CCC1 /* MockImageProvider.swift in Sources */,
+				EF2FB09A2D2E649E0015CCC1 /* DomesticatedCatRepositoryTests.swift in Sources */,
+				EF2FB09B2D2E649E0015CCC1 /* DomesticatedCatViewModelTests.swift in Sources */,
+				EF2FB09C2D2E649E0015CCC1 /* WildCatRepositoryTests.swift in Sources */,
+				EF2FB09D2D2E649E0015CCC1 /* WildCatViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +830,19 @@
 			productName = NukeUI;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		EF2FB0622D2E64970015CCC1 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EF2FB06D2D2E64970015CCC1 /* Model.xcdatamodel */,
+			);
+			currentVersion = EF2FB06D2D2E64970015CCC1 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EF93EC822D2C22B800910834 /* Project object */;
 }
