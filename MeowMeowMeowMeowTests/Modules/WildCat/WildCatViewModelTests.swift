@@ -25,7 +25,7 @@ final class WildCatViewModelTests: XCTestCase {
         var domesticateHasBeenCalled = false
         var downloadCatUIImageHasBeenCalled = false
 
-        func getMeowFact() async -> Result<String?, any Error> {
+        func getCatFact() async -> Result<String, any Error> {
             getMeowFactHasBeenCalled = true
             return shouldFail ? .failure(RepositoryError.factError) : .success("Meow!")
         }

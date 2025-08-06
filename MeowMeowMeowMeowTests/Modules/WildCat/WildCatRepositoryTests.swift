@@ -68,7 +68,7 @@ final class WildCatRepositoryTests: XCTestCase {
     func testGetMeowFact() async {
         XCTAssertFalse(mockRemoteProvider.getRandomMeowFactHasBeenCalled)
 
-        let result = await repository.getMeowFact()
+        let result = await repository.getCatFact()
 
         XCTAssert(mockRemoteProvider.getRandomMeowFactHasBeenCalled)
 
@@ -84,7 +84,7 @@ final class WildCatRepositoryTests: XCTestCase {
         XCTAssertFalse(mockRemoteProvider.getRandomMeowFactHasBeenCalled)
 
         mockRemoteProvider.shouldFail = true
-        let result = await repository.getMeowFact()
+        let result = await repository.getCatFact()
 
         XCTAssert(mockRemoteProvider.getRandomMeowFactHasBeenCalled)
 

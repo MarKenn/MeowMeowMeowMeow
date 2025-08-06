@@ -7,8 +7,7 @@
 
 import UIKit
 
-protocol WildCatDataSource {
-    func getMeowFact() async -> Result<String?, Error>
+protocol WildCatDataSource: CatFactLoader {
     func getCatImage() async -> Result<CatImage?, Error>
     func downloadCatUIImage(from urlString: String) async -> UIImage?
     func domesticate(meowFact: String?, catImage: CatImage?)
@@ -29,12 +28,12 @@ class WildCatRepository: WildCatDataSource {
         self.localImageProvider = imageProvider
     }
 
-    func getMeowFact() async -> Result<String?, Error>  {
+    func getCatFact() async -> Result<String, Error> {
         let result: Result<MeowFactData, Error> = await remoteDataProvider.getRandomMeowFact()
 
         switch result {
         case .success(let meowFacts):
-            return .success(meowFacts.data.first)
+            return .success(meowFacts.data.first ?? "")
         case .failure(let error):
             return .failure(error)
         }
