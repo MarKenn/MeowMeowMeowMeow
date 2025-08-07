@@ -45,6 +45,7 @@
 		EF2FB09C2D2E649E0015CCC1 /* WildCatRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0932D2E649E0015CCC1 /* WildCatRepositoryTests.swift */; };
 		EF2FB09D2D2E649E0015CCC1 /* WildCatViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0942D2E649E0015CCC1 /* WildCatViewModelTests.swift */; };
 		EF8E2F632E438F8000ED7F0C /* CatFactLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E2F622E438F7400ED7F0C /* CatFactLoader.swift */; };
+		EF8E2F772E44EF2A00ED7F0C /* RemoteCatFactLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E2F672E44D0DE00ED7F0C /* RemoteCatFactLoaderTests.swift */; };
 		EF93ECB92D2C238500910834 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EF93ECB82D2C238500910834 /* Alamofire */; };
 		EFB779A92D2CB7E0003627B2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB779A82D2CB7E0003627B2 /* CoreData.framework */; };
 		EFB77A2D2D2D4D69003627B2 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = EFB77A2C2D2D4D69003627B2 /* Nuke */; };
@@ -100,6 +101,8 @@
 		EF2FB0932D2E649E0015CCC1 /* WildCatRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WildCatRepositoryTests.swift; sourceTree = "<group>"; };
 		EF2FB0942D2E649E0015CCC1 /* WildCatViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WildCatViewModelTests.swift; sourceTree = "<group>"; };
 		EF8E2F622E438F7400ED7F0C /* CatFactLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFactLoader.swift; sourceTree = "<group>"; };
+		EF8E2F642E4496B700ED7F0C /* MeowMeowMeowMeow.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = MeowMeowMeowMeow.xctestplan; sourceTree = "<group>"; };
+		EF8E2F672E44D0DE00ED7F0C /* RemoteCatFactLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCatFactLoaderTests.swift; sourceTree = "<group>"; };
 		EF93EC8A2D2C22B800910834 /* MeowMeowMeowMeow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeowMeowMeowMeow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF93EC9A2D2C22BA00910834 /* MeowMeowMeowMeowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeowMeowMeowMeowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB779A82D2CB7E0003627B2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -349,6 +352,7 @@
 		EF2FB0972D2E649E0015CCC1 /* MeowMeowMeowMeowTests */ = {
 			isa = PBXGroup;
 			children = (
+				EF8E2F672E44D0DE00ED7F0C /* RemoteCatFactLoaderTests.swift */,
 				EF2FB08F2D2E649E0015CCC1 /* Mocks */,
 				EF2FB0962D2E649E0015CCC1 /* Modules */,
 			);
@@ -366,6 +370,7 @@
 		EF93EC812D2C22B800910834 = {
 			isa = PBXGroup;
 			children = (
+				EF8E2F642E4496B700ED7F0C /* MeowMeowMeowMeow.xctestplan */,
 				EF2FB06C2D2E64970015CCC1 /* MeowMeowMeowMeow */,
 				EF2FB0972D2E649E0015CCC1 /* MeowMeowMeowMeowTests */,
 				EFB779A72D2CB7DF003627B2 /* Frameworks */,
@@ -442,7 +447,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1620;
+				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					EF93EC892D2C22B800910834 = {
@@ -545,6 +550,7 @@
 				EF2FB09B2D2E649E0015CCC1 /* DomesticatedCatViewModelTests.swift in Sources */,
 				EF2FB09C2D2E649E0015CCC1 /* WildCatRepositoryTests.swift in Sources */,
 				EF2FB09D2D2E649E0015CCC1 /* WildCatViewModelTests.swift in Sources */,
+				EF8E2F772E44EF2A00ED7F0C /* RemoteCatFactLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
