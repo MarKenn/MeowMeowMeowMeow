@@ -6,5 +6,5 @@
 //
 
 protocol CatFactLoader {
-    func getCatFact() async -> Result<String, Error>
+    func getCatFact() async throws -> String
 }

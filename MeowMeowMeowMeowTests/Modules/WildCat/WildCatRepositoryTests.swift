@@ -68,14 +68,11 @@ final class WildCatRepositoryTests: XCTestCase {
     func testGetMeowFact() async {
         XCTAssertFalse(mockRemoteProvider.getRandomMeowFactHasBeenCalled)
 
-        let result = await repository.getCatFact()
-
-        XCTAssert(mockRemoteProvider.getRandomMeowFactHasBeenCalled)
-
-        switch result {
-        case .success(let data):
-            XCTAssertEqual(data, mockRemoteProvider.testMeowFactData.data.first)
-        case .failure:
+        do {
+            let result = try await repository.getCatFact()
+            XCTAssert(mockRemoteProvider.getRandomMeowFactHasBeenCalled)
+            XCTAssertEqual(result, mockRemoteProvider.testMeowFactData.data.first)
+        } catch {
             XCTFail("Expected success, but got failure")
         }
     }
@@ -84,14 +81,12 @@ final class WildCatRepositoryTests: XCTestCase {
         XCTAssertFalse(mockRemoteProvider.getRandomMeowFactHasBeenCalled)
 
         mockRemoteProvider.shouldFail = true
-        let result = await repository.getCatFact()
 
-        XCTAssert(mockRemoteProvider.getRandomMeowFactHasBeenCalled)
-
-        switch result {
-        case .success:
+        do {
+            let result = try await repository.getCatFact()
             XCTFail("Expected failure, but got success")
-        case .failure(let error):
+        } catch {
+            XCTAssert(mockRemoteProvider.getRandomMeowFactHasBeenCalled)
             XCTAssertEqual(error as! MockRemoteError, MockRemoteError.cancelled)
         }
     }

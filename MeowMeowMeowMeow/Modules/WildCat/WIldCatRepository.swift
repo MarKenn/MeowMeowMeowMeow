@@ -28,14 +28,14 @@ class WildCatRepository: WildCatDataSource {
         self.localImageProvider = imageProvider
     }
 
-    func getCatFact() async -> Result<String, Error> {
+    func getCatFact() async throws -> String {
         let result: Result<MeowFactData, Error> = await remoteDataProvider.getRandomMeowFact()
 
         switch result {
         case .success(let meowFacts):
-            return .success(meowFacts.data.first ?? "")
+            return meowFacts.data.first ?? ""
         case .failure(let error):
-            return .failure(error)
+            throw error
         }
     }
 
