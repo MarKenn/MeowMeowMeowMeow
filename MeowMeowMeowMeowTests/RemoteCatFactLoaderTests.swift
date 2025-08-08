@@ -6,31 +6,14 @@
 //
 
 import XCTest
-
-class RemoteCatFactLoader {
-    let url: URL
-    let client: HTTPClient
-
-    init(url: URL, client: HTTPClient) {
-        self.url = url
-        self.client = client
-    }
-
-    func load() {
-        client.get(from: url)
-    }
-}
-
-protocol HTTPClient {
-    func get(from url: URL)
-}
+import MeowMeowMeowMeow
 
 final class RemoteCatFactLoaderTests: XCTestCase {
 
     func test_init_doesNotRequestDataFromURL() {
         let (_, client) = makeSUT()
 
-        XCTAssertNil(client.requestedURL)
+        XCTAssert(client.requestedURLs.isEmpty)
     }
 
     func test_load_requestDataFromURL() {
@@ -39,14 +22,23 @@ final class RemoteCatFactLoaderTests: XCTestCase {
 
         sut.load()
 
-        XCTAssertEqual(client.requestedURL, url)
+        XCTAssertEqual(client.requestedURLs, [url])
+    }
+
+    func test_loadTwice_requestDataFromURLTwice() {
+        let url = URL(string: "https://a-given-url.com")!
+        let (sut, client) = makeSUT(url: url)
+
+        sut.load()
+        sut.load()
+
+        XCTAssertEqual(client.requestedURLs, [url, url])
     }
 
     private class HTTPClientSpy: HTTPClient {
-        var requestedURL: URL?
-
+        var requestedURLs = [URL]()
         func get(from url: URL) {
-            requestedURL = url
+            requestedURLs.append(url)
         }
     }
 
