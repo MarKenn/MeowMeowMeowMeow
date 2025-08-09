@@ -20,7 +20,7 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         let url = URL(string: "https://a-given-url.com")!
         let (sut, client) = makeSUT(url: url)
 
-        sut.load()
+        sut.load() { _ in }
 
         XCTAssertEqual(client.requestedURLs, [url])
     }
@@ -29,16 +29,30 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         let url = URL(string: "https://a-given-url.com")!
         let (sut, client) = makeSUT(url: url)
 
-        sut.load()
-        sut.load()
+        sut.load() { _ in }
+        sut.load() { _ in }
 
         XCTAssertEqual(client.requestedURLs, [url, url])
     }
 
+    func test_load_deliversErrorOnClientError() {
+        let (sut, client) = makeSUT()
+
+        var capturedErrors = [RemoteCatFactLoader.Error]()
+        sut.load { capturedErrors.append($0) }
+
+        client.completions[0](NSError())
+
+        XCTAssertEqual(capturedErrors, [.connectivity])
+    }
+
     private class HTTPClientSpy: HTTPClient {
         var requestedURLs = [URL]()
-        func get(from url: URL) {
+        var completions = [(Error) -> Void]()
+
+        func get(from url: URL, completion: @escaping (Error) -> Void) {
             requestedURLs.append(url)
+            completions.append(completion)
         }
     }
 
