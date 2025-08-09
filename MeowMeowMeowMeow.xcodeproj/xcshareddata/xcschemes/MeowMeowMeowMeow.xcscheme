@@ -30,10 +30,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:MeowMeowMeowMeow.xctestplan">
-         </TestPlanReference>
-         <TestPlanReference
-            reference = "container:MeowMeowMeowMeowMacOS.xctestplan"
+            reference = "container:MeowMeowMeowMeow.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
