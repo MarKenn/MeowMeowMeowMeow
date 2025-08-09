@@ -41,18 +41,24 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         var capturedErrors = [RemoteCatFactLoader.Error]()
         sut.load { capturedErrors.append($0) }
 
-        client.completions[0](NSError())
+        client.complete(with: NSError())
 
         XCTAssertEqual(capturedErrors, [.connectivity])
     }
 
     private class HTTPClientSpy: HTTPClient {
-        var requestedURLs = [URL]()
-        var completions = [(Error) -> Void]()
+        var messages = [(url: URL, completion: (Error) -> Void)]()
+
+        var requestedURLs: [URL] {
+            messages.map { $0.url }
+        }
 
         func get(from url: URL, completion: @escaping (Error) -> Void) {
-            requestedURLs.append(url)
-            completions.append(completion)
+            messages.append((url, completion))
+        }
+
+        func complete(with error: Error, at index: Int = 0) {
+            messages[index].completion(error)
         }
     }
 
