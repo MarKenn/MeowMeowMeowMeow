@@ -49,12 +49,16 @@ final class RemoteCatFactLoaderTests: XCTestCase {
     func test_load_deliversErrorOnNon200HTTPResponse() {
         let (sut, client) = makeSUT()
 
-        var capturedErrors = [RemoteCatFactLoader.Error]()
-        sut.load { capturedErrors.append($0) }
+        let samples = [199, 201, 300, 400, 500]
 
-        client.complete(withStatus: 400)
+        samples.enumerated().forEach { index, code in
+            var capturedErrors = [RemoteCatFactLoader.Error]()
+            sut.load { capturedErrors.append($0) }
 
-        XCTAssertEqual(capturedErrors, [.invalidData])
+            client.complete(withStatus: code, at: index)
+
+            XCTAssertEqual(capturedErrors, [.invalidData])
+        }
     }
 
     private class HTTPClientSpy: HTTPClient {
