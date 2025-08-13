@@ -46,6 +46,17 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         XCTAssertEqual(capturedErrors, [.connectivity])
     }
 
+    func test_load_deliversErrorOnNon200HTTPResponse() {
+        let (sut, client) = makeSUT()
+
+        var capturedErrors = [RemoteCatFactLoader.Error]()
+        sut.load { capturedErrors.append($0) }
+
+        client.complete(withStatus: 400)
+
+        XCTAssertEqual(capturedErrors, [.invalidData])
+    }
+
     private class HTTPClientSpy: HTTPClient {
         var messages = [(url: URL, completion: (Result<HTTPURLResponse, Error>) -> Void)]()
 
@@ -59,6 +70,16 @@ final class RemoteCatFactLoaderTests: XCTestCase {
 
         func complete(with error: Error, at index: Int = 0) {
             messages[index].completion(.failure(error))
+        }
+
+        func complete(withStatus code: Int, at index: Int = 0) {
+            let httpResponse = HTTPURLResponse(
+                url: messages[index].url,
+                statusCode: code,
+                httpVersion: nil,
+                headerFields: nil
+            )!
+            messages[index].completion(.success(httpResponse))
         }
     }
 
