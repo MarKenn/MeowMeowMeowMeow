@@ -50,7 +50,8 @@ final class RemoteCatFactLoaderTests: XCTestCase {
 
         samples.enumerated().forEach { index, code in
             expect(sut, toCompleteWith: .failure(.invalidData)) {
-                client.complete(withStatus: code, at: index)
+                let json = makeItemsJSON([])
+                client.complete(withStatus: code, data: json, at: index)
             }
         }
     }
@@ -132,7 +133,7 @@ final class RemoteCatFactLoaderTests: XCTestCase {
             messages[index].completion(.failure(error))
         }
 
-        func complete(withStatus code: Int, data: Data = Data(), at index: Int = 0) {
+        func complete(withStatus code: Int, data: Data, at index: Int = 0) {
             let httpResponse = HTTPURLResponse(
                 url: messages[index].url,
                 statusCode: code,
