@@ -80,10 +80,9 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         let fact2 = "This is cat fact 2"
         
         let catFacts = [fact1, fact2]
-        let itemsJSON = ["data": catFacts]
 
         expect(sut, toCompleteWith: .success(catFacts)) {
-            let json = try! JSONSerialization.data(withJSONObject: itemsJSON)
+            let json = makeItemsJSON(catFacts)
             client.complete(withStatus: 200, data: json)
         }
     }
@@ -96,6 +95,11 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         let client = HTTPClientSpy()
         let remoteCatFactLoader = RemoteCatFactLoader(url: url, client: client)
         return (sut: remoteCatFactLoader, client: client)
+    }
+
+    private func makeItemsJSON(_ items: [String]) -> Data {
+        let itemsJSON = ["data": items]
+        return try! JSONSerialization.data(withJSONObject: itemsJSON)
     }
 
     private func expect(
