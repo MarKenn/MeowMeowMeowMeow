@@ -64,6 +64,18 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         }
     }
 
+    func test_load_deliversNoItemsOn200HTTPResponseWithEmptyJSONList() {
+        let (sut, client) = makeSUT()
+
+        var capturedResult = [RemoteCatFactLoader.Result]()
+        sut.load { capturedResult.append($0) }
+
+        let invalidJSON = Data("{\"data\" : []}".utf8)
+        client.complete(withStatus: 200, data: invalidJSON)
+
+        XCTAssertEqual(capturedResult, [.success([])])
+    }
+
     // MARK: - Helpers
 
     private func makeSUT(

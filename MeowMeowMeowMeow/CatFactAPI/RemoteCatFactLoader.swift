@@ -39,10 +39,18 @@ public final class RemoteCatFactLoader {
         client.get(from: url) { result in
             switch result {
             case .success(let data, let response):
-                completion(.failure(.invalidData))
+                if let items = try? JSONDecoder().decode(Root.self, from: data) {
+                    completion(.success(items.data))
+                } else {
+                    completion(.failure(.invalidData))
+                }
             case .failure:
                 completion(.failure(.connectivity))
             }
         }
     }
+}
+
+private struct Root: Decodable {
+    let data: [String]
 }
