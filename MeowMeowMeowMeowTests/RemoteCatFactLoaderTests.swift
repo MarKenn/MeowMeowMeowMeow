@@ -38,12 +38,9 @@ final class RemoteCatFactLoaderTests: XCTestCase {
     func test_load_deliversErrorOnClientError() {
         let (sut, client) = makeSUT()
 
-        var capturedErrors = [RemoteCatFactLoader.Error]()
-        sut.load { capturedErrors.append($0) }
-
-        client.complete(with: NSError())
-
-        XCTAssertEqual(capturedErrors, [.connectivity])
+        expect(sut, toCompleteWithError: .connectivity) {
+            client.complete(with: NSError())
+        }
     }
 
     func test_load_deliversErrorOnNon200HTTPResponse() {
@@ -52,25 +49,44 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         let samples = [199, 201, 300, 400, 500]
 
         samples.enumerated().forEach { index, code in
-            var capturedErrors = [RemoteCatFactLoader.Error]()
-            sut.load { capturedErrors.append($0) }
-
-            client.complete(withStatus: code, at: index)
-
-            XCTAssertEqual(capturedErrors, [.invalidData])
+            expect(sut, toCompleteWithError: .invalidData) {
+                client.complete(withStatus: code, at: index)
+            }
         }
     }
 
     func test_load_deliversErrorOn200HTTPResponseWithInvalidJSON() {
         let (sut, client) = makeSUT()
-        
+
+        expect(sut, toCompleteWithError: .invalidData) {
+            let invalidJSON = Data("Invalid JSON".utf8)
+            client.complete(withStatus: 200, data: invalidJSON)
+        }
+    }
+
+    // MARK: - Helpers
+
+    private func makeSUT(
+        url: URL = URL(string: "https://a-url.com")!
+    ) -> (sut: RemoteCatFactLoader, client: HTTPClientSpy) {
+        let client = HTTPClientSpy()
+        let remoteCatFactLoader = RemoteCatFactLoader(url: url, client: client)
+        return (sut: remoteCatFactLoader, client: client)
+    }
+
+    private func expect(
+        _ sut: RemoteCatFactLoader,
+        toCompleteWithError error: RemoteCatFactLoader.Error,
+        when action: () -> Void,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
         var capturedErrors = [RemoteCatFactLoader.Error]()
         sut.load { capturedErrors.append($0) }
 
-        let invalidJSON = Data("Invalid JSON".utf8)
-        client.complete(withStatus: 200, data: invalidJSON)
+        action()
 
-        XCTAssertEqual(capturedErrors, [.invalidData])
+        XCTAssertEqual(capturedErrors, [error], file: file, line: line)
     }
 
     private class HTTPClientSpy: HTTPClient {
@@ -97,13 +113,5 @@ final class RemoteCatFactLoaderTests: XCTestCase {
             )!
             messages[index].completion(.success(data, httpResponse))
         }
-    }
-
-    private func makeSUT(
-        url: URL = URL(string: "https://a-url.com")!
-    ) -> (sut: RemoteCatFactLoader, client: HTTPClientSpy) {
-        let client = HTTPClientSpy()
-        let remoteCatFactLoader = RemoteCatFactLoader(url: url, client: client)
-        return (sut: remoteCatFactLoader, client: client)
     }
 }
