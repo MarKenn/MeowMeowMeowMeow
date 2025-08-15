@@ -38,7 +38,7 @@ final class RemoteCatFactLoaderTests: XCTestCase {
     func test_load_deliversErrorOnClientError() {
         let (sut, client) = makeSUT()
 
-        expect(sut, toCompleteWithError: .connectivity) {
+        expect(sut, toCompleteWith: .failure(.connectivity)) {
             client.complete(with: NSError())
         }
     }
@@ -49,7 +49,7 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         let samples = [199, 201, 300, 400, 500]
 
         samples.enumerated().forEach { index, code in
-            expect(sut, toCompleteWithError: .invalidData) {
+            expect(sut, toCompleteWith: .failure(.invalidData)) {
                 client.complete(withStatus: code, at: index)
             }
         }
@@ -58,7 +58,7 @@ final class RemoteCatFactLoaderTests: XCTestCase {
     func test_load_deliversErrorOn200HTTPResponseWithInvalidJSON() {
         let (sut, client) = makeSUT()
 
-        expect(sut, toCompleteWithError: .invalidData) {
+        expect(sut, toCompleteWith: .failure(.invalidData)) {
             let invalidJSON = Data("Invalid JSON".utf8)
             client.complete(withStatus: 200, data: invalidJSON)
         }
@@ -67,13 +67,10 @@ final class RemoteCatFactLoaderTests: XCTestCase {
     func test_load_deliversNoItemsOn200HTTPResponseWithEmptyJSONList() {
         let (sut, client) = makeSUT()
 
-        var capturedResult = [RemoteCatFactLoader.Result]()
-        sut.load { capturedResult.append($0) }
-
-        let invalidJSON = Data("{\"data\" : []}".utf8)
-        client.complete(withStatus: 200, data: invalidJSON)
-
-        XCTAssertEqual(capturedResult, [.success([])])
+        expect(sut, toCompleteWith: .success([])) {
+            let emptyJSON = Data("{\"data\" : []}".utf8)
+            client.complete(withStatus: 200, data: emptyJSON)
+        }
     }
 
     // MARK: - Helpers
@@ -88,7 +85,7 @@ final class RemoteCatFactLoaderTests: XCTestCase {
 
     private func expect(
         _ sut: RemoteCatFactLoader,
-        toCompleteWithError error: RemoteCatFactLoader.Error,
+        toCompleteWith result: RemoteCatFactLoader.Result,
         when action: () -> Void,
         file: StaticString = #filePath,
         line: UInt = #line
@@ -98,7 +95,7 @@ final class RemoteCatFactLoaderTests: XCTestCase {
 
         action()
 
-        XCTAssertEqual(capturedResult, [.failure(error)], file: file, line: line)
+        XCTAssertEqual(capturedResult, [result], file: file, line: line)
     }
 
     private class HTTPClientSpy: HTTPClient {
