@@ -69,7 +69,7 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         let (sut, client) = makeSUT()
 
         expect(sut, toCompleteWith: .success([])) {
-            let emptyJSON = Data("{\"data\" : []}".utf8)
+            let emptyJSON = makeItemsJSON([])
             client.complete(withStatus: 200, data: emptyJSON)
         }
     }
