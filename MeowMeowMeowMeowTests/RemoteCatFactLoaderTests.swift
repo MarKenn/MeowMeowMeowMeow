@@ -73,6 +73,21 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         }
     }
 
+    func test_load_deliversItemsOn200HTTPResponseWithJSONItems() {
+        let (sut, client) = makeSUT()
+
+        let fact1 = "This is cat fact 1"
+        let fact2 = "This is cat fact 2"
+        
+        let catFacts = [fact1, fact2]
+        let itemsJSON = ["data": catFacts]
+
+        expect(sut, toCompleteWith: .success(catFacts)) {
+            let json = try! JSONSerialization.data(withJSONObject: itemsJSON)
+            client.complete(withStatus: 200, data: json)
+        }
+    }
+
     // MARK: - Helpers
 
     private func makeSUT(
