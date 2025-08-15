@@ -39,10 +39,10 @@ public final class RemoteCatFactLoader {
         client.get(from: url) { result in
             switch result {
             case .success(let data, let response):
-                if response.statusCode == 200,
-                   let items = try? JSONDecoder().decode(Root.self, from: data) {
-                    completion(.success(items.data))
-                } else {
+                do {
+                    let facts = try CatFactsMapper.map(data, response: response)
+                    return completion(.success(facts))
+                } catch {
                     completion(.failure(.invalidData))
                 }
             case .failure:
@@ -52,6 +52,17 @@ public final class RemoteCatFactLoader {
     }
 }
 
-private struct Root: Decodable {
-    let data: [String]
+private struct CatFactsMapper {
+    private struct Root: Decodable {
+        let data: [String]
+    }
+
+    static func map(_ data: Data, response: HTTPURLResponse) throws -> [String] {
+        guard response.statusCode == 200 else {
+            throw RemoteCatFactLoader.Error.invalidData
+        }
+
+        let root = try JSONDecoder().decode(Root.self, from: data)
+        return root.data
+    }
 }
