@@ -16,10 +16,7 @@ public final class RemoteCatFactLoader {
         case invalidData
     }
 
-    public enum Result: Equatable {
-        case success(String)
-        case failure(Error)
-    }
+    public typealias Result = Swift.Result<String, Error>
 
     public init(url: URL, client: HTTPClient) {
         self.url = url
