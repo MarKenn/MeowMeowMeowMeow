@@ -88,6 +88,20 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         }
     }
 
+    func test_Load_doesNotDeliverItemsAfterSUTInstanceHasBeenDeallocated() {
+        let client: HTTPClientSpy
+        var sut: RemoteCatFactLoader?
+        (sut, client) = makeSUT()
+
+        var capturedResult = [RemoteCatFactLoader.Result]()
+        sut?.load { capturedResult.append($0) }
+
+        sut = nil
+        client.complete(withStatus: 200, data: makeItemsJSON([]))
+
+        XCTAssert(capturedResult.isEmpty)
+    }
+
     // MARK: - Helpers
 
     private func makeSUT(
