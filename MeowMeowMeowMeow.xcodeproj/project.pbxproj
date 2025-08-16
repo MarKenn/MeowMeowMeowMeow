@@ -359,7 +359,7 @@
 		EF2FB0972D2E649E0015CCC1 /* MeowMeowMeowMeowTests */ = {
 			isa = PBXGroup;
 			children = (
-				EF8E2F672E44D0DE00ED7F0C /* RemoteCatFactLoaderTests.swift */,
+				EFAA8C5C2E50644700506872 /* CatFactAPI */,
 				EF2FB08F2D2E649E0015CCC1 /* Mocks */,
 				EF2FB0962D2E649E0015CCC1 /* Modules */,
 			);
@@ -402,6 +402,14 @@
 				EF93EC9A2D2C22BA00910834 /* MeowMeowMeowMeowTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		EFAA8C5C2E50644700506872 /* CatFactAPI */ = {
+			isa = PBXGroup;
+			children = (
+				EF8E2F672E44D0DE00ED7F0C /* RemoteCatFactLoaderTests.swift */,
+			);
+			path = CatFactAPI;
 			sourceTree = "<group>";
 		};
 		EFB779A72D2CB7DF003627B2 /* Frameworks */ = {
