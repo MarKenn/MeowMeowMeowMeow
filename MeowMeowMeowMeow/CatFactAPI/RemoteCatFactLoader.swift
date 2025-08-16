@@ -17,7 +17,7 @@ public final class RemoteCatFactLoader {
     }
 
     public enum Result: Equatable {
-        case success([String])
+        case success(String)
         case failure(Error)
     }
 

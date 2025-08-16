@@ -65,10 +65,10 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         }
     }
 
-    func test_load_deliversNoItemsOn200HTTPResponseWithEmptyJSONList() {
+    func test_load_deliversErrorOn200HTTPResponseWithEmptyJSONList() {
         let (sut, client) = makeSUT()
 
-        expect(sut, toCompleteWith: .success([])) {
+        expect(sut, toCompleteWith: .failure(.invalidData)) {
             let emptyJSON = makeItemsJSON([])
             client.complete(withStatus: 200, data: emptyJSON)
         }
@@ -82,7 +82,7 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         
         let catFacts = [fact1, fact2]
 
-        expect(sut, toCompleteWith: .success(catFacts)) {
+        expect(sut, toCompleteWith: .success(fact1)) {
             let json = makeItemsJSON(catFacts)
             client.complete(withStatus: 200, data: json)
         }

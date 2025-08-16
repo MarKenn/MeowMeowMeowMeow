@@ -16,10 +16,11 @@ struct CatFactsMapper {
 
     static func map(_ data: Data, response: HTTPURLResponse) -> RemoteCatFactLoader.Result {
         guard response.statusCode == OK_200,
-              let root = try? JSONDecoder().decode(Root.self, from: data) else {
+              let root = try? JSONDecoder().decode(Root.self, from: data),
+              let fact = root.data.first else {
             return .failure(.invalidData)
         }
 
-        return .success(root.data)
+        return .success(fact)
     }
 }
