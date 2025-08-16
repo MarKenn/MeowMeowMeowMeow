@@ -48,6 +48,7 @@
 		EF8E2F772E44EF2A00ED7F0C /* RemoteCatFactLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E2F672E44D0DE00ED7F0C /* RemoteCatFactLoaderTests.swift */; };
 		EF8E2F7D2E4597C700ED7F0C /* RemoteCatFactLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E2F7C2E4597C700ED7F0C /* RemoteCatFactLoader.swift */; };
 		EF93ECB92D2C238500910834 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EF93ECB82D2C238500910834 /* Alamofire */; };
+		EFAA8C592E50525E00506872 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA8C582E50525E00506872 /* HTTPClient.swift */; };
 		EFB779A92D2CB7E0003627B2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB779A82D2CB7E0003627B2 /* CoreData.framework */; };
 		EFB77A2D2D2D4D69003627B2 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = EFB77A2C2D2D4D69003627B2 /* Nuke */; };
 		EFB77A2F2D2D4D69003627B2 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = EFB77A2E2D2D4D69003627B2 /* NukeUI */; };
@@ -107,6 +108,7 @@
 		EF8E2F7C2E4597C700ED7F0C /* RemoteCatFactLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCatFactLoader.swift; sourceTree = "<group>"; };
 		EF93EC8A2D2C22B800910834 /* MeowMeowMeowMeow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeowMeowMeowMeow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF93EC9A2D2C22BA00910834 /* MeowMeowMeowMeowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeowMeowMeowMeowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFAA8C582E50525E00506872 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		EFB779A82D2CB7E0003627B2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -373,6 +375,7 @@
 		EF8E2F7B2E4597A600ED7F0C /* CatFactAPI */ = {
 			isa = PBXGroup;
 			children = (
+				EFAA8C582E50525E00506872 /* HTTPClient.swift */,
 				EF8E2F7C2E4597C700ED7F0C /* RemoteCatFactLoader.swift */,
 			);
 			path = CatFactAPI;
@@ -528,6 +531,7 @@
 				EF2FB0742D2E64970015CCC1 /* DomesticatedCatRepository.swift in Sources */,
 				EF2FB0752D2E64970015CCC1 /* DomesticatedCatView.swift in Sources */,
 				EF2FB0762D2E64970015CCC1 /* DomesticatedCatViewModel.swift in Sources */,
+				EFAA8C592E50525E00506872 /* HTTPClient.swift in Sources */,
 				EF2FB0772D2E64970015CCC1 /* WIldCatRepository.swift in Sources */,
 				EF2FB0782D2E64970015CCC1 /* WildCatView.swift in Sources */,
 				EF2FB0792D2E64970015CCC1 /* WildCatViewModel.swift in Sources */,
