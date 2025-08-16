@@ -14,12 +14,12 @@ struct CatFactsMapper {
 
     static var OK_200: Int { return 200 }
 
-    static func map(_ data: Data, response: HTTPURLResponse) throws -> [String] {
-        guard response.statusCode == OK_200 else {
-            throw RemoteCatFactLoader.Error.invalidData
+    static func map(_ data: Data, response: HTTPURLResponse) -> RemoteCatFactLoader.Result {
+        guard response.statusCode == OK_200,
+              let root = try? JSONDecoder().decode(Root.self, from: data) else {
+            return .failure(.invalidData)
         }
 
-        let root = try JSONDecoder().decode(Root.self, from: data)
-        return root.data
+        return .success(root.data)
     }
 }

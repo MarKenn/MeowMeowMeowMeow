@@ -30,17 +30,10 @@ public final class RemoteCatFactLoader {
         client.get(from: url) { result in
             switch result {
             case .success(let data, let response):
-                do {
-                    let facts = try CatFactsMapper.map(data, response: response)
-                    return completion(.success(facts))
-                } catch {
-                    completion(.failure(.invalidData))
-                }
+                completion(CatFactsMapper.map(data, response: response))
             case .failure:
                 completion(.failure(.connectivity))
             }
         }
     }
 }
-
-
