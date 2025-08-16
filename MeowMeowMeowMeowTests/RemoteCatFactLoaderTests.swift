@@ -91,11 +91,30 @@ final class RemoteCatFactLoaderTests: XCTestCase {
     // MARK: - Helpers
 
     private func makeSUT(
-        url: URL = URL(string: "https://a-url.com")!
+        url: URL = URL(string: "https://a-url.com")!,
+        file: StaticString = #file,
+        line: UInt = #line,
     ) -> (sut: RemoteCatFactLoader, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
         let remoteCatFactLoader = RemoteCatFactLoader(url: url, client: client)
+
+        trackFOrMemoryLeaks(remoteCatFactLoader, file: file, line: line)
+        trackFOrMemoryLeaks(client, file: file, line: line)
+
         return (sut: remoteCatFactLoader, client: client)
+    }
+
+    private func trackFOrMemoryLeaks(
+        _ instance: AnyObject,
+        file: StaticString = #filePath,
+        line: UInt = #line,
+    ) {
+        addTeardownBlock { [weak instance] in
+            XCTAssertNil(instance,
+                         "Instance should be deallocated. Potential memory leak.",
+                         file: file,
+                         line: line)
+        }
     }
 
     private func makeItemsJSON(_ items: [String]) -> Data {
@@ -108,7 +127,7 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         toCompleteWith result: RemoteCatFactLoader.Result,
         when action: () -> Void,
         file: StaticString = #filePath,
-        line: UInt = #line
+        line: UInt = #line,
     ) {
         var capturedResult = [RemoteCatFactLoader.Result]()
         sut.load { capturedResult.append($0) }
