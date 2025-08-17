@@ -151,7 +151,7 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         await asyncExpect(sut, toResumeWith: .success(fact1))
     }
 
-    func test_Load_doesNotDeliverItemsAfterSUTInstanceHasBeenDeallocated() {
+    func test_load_doesNotDeliverCatFactAfterSUTInstanceHasBeenDeallocated() {
         let client: HTTPClientSpy
         var sut: RemoteCatFactLoader?
         (sut, client) = makeSUT()
