@@ -198,7 +198,7 @@ final class RemoteCatFactLoaderTests: XCTestCase {
                 httpVersion: nil,
                 headerFields: nil
             )!
-            return HTTPClientSpy(result: .success(data, httpResponse))
+            return HTTPClientSpy(result: .success((data, httpResponse)))
         case .failure(let error):
             return HTTPClientSpy(result: .failure(error))
         }
@@ -302,7 +302,7 @@ final class RemoteCatFactLoaderTests: XCTestCase {
                 httpVersion: nil,
                 headerFields: nil
             )!
-            messages[index].completion(.success(data, httpResponse))
+            messages[index].completion(.success((data, httpResponse)))
         }
     }
 }
