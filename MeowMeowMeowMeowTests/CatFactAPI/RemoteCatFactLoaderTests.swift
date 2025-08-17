@@ -65,7 +65,7 @@ final class RemoteCatFactLoaderTests: XCTestCase {
     func test_getCatFact_deliversErrorOnClientError() async {
         let (sut, _) = makeSUT(clientResult: .failure(NSError()))
 
-        await expect(sut, toThrowError: .connectivity)
+        await asyncExpect(sut, toResumeWith: .failure(.connectivity))
     }
 
     func test_load_deliversErrorOnNon200HTTPResponse() {
@@ -88,7 +88,7 @@ final class RemoteCatFactLoaderTests: XCTestCase {
             let json = makeItemsJSON([])
             let (sut, _) = makeSUT(clientResult: .success(code: code, data: json))
 
-            await expect(sut, toThrowError: .invalidData)
+            await asyncExpect(sut, toResumeWith: .failure(.invalidData))
         }
     }
 
@@ -105,7 +105,7 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         let invalidJSON = Data("Invalid JSON".utf8)
         let (sut, _) = makeSUT(clientResult: .success(code: 200, data: invalidJSON))
 
-        await expect(sut, toThrowError: .invalidData)
+        await asyncExpect(sut, toResumeWith: .failure(.invalidData))
     }
 
     func test_load_deliversErrorOn200HTTPResponseWithEmptyJSONList() {
@@ -121,7 +121,7 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         let emptyJSON = makeItemsJSON([])
         let (sut, _) = makeSUT(clientResult: .success(code: 200, data: emptyJSON))
 
-        await expect(sut, toThrowError: .invalidData)
+        await asyncExpect(sut, toResumeWith: .failure(.invalidData))
     }
 
     func test_load_deliversItemsOn200HTTPResponseWithJSONItems() {
@@ -224,26 +224,37 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         XCTAssertEqual(capturedResult, [result], file: file, line: line)
     }
 
-    private func expect(
+    private func asyncExpect(
         _ sut: RemoteCatFactLoader,
-        toThrowError expectedError: RemoteCatFactLoader.Error,
+        toResumeWith expectedResult: RemoteCatFactLoader.Result,
         file: StaticString = #filePath,
         line: UInt = #line,
     )  async {
         do {
-            _ = try await sut.getCatFact()
-            XCTFail(
-                "Expecting to throw \(expectedError), got success instead.",
-                file: file,
-                line: line
-            )
-        } catch {
-            XCTAssertEqual(
-                error as! RemoteCatFactLoader.Error,
-                expectedError,
-                file: file,
-                line: line
-            )
+            let receivedValue = try await sut.getCatFact()
+
+            switch expectedResult {
+            case .success(let expectedValue):
+                XCTAssertEqual(receivedValue, expectedValue, file: file, line: line)
+            case .failure(let expectedError):
+                XCTFail(
+                    "Expecting error \(expectedError), got success instead.",
+                    file: file,
+                    line: line
+                )
+            }
+        } catch let receivedError {
+            switch expectedResult {
+            case .success:
+                XCTFail("Expecting success, got \(receivedError) instead.", file: file, line: line)
+            case .failure(let expectedError):
+                XCTAssertEqual(
+                    receivedError as? RemoteCatFactLoader.Error,
+                    expectedError,
+                    file: file,
+                    line: line
+                )
+            }
         }
     }
 
