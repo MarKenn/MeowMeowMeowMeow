@@ -35,4 +35,12 @@ public final class RemoteCatFactLoader {
             }
         }
     }
+
+    public func getCatFact() async throws -> String {
+        try await withCheckedThrowingContinuation { continuation in
+            client.get(from: url) { result in
+                continuation.resume(with: .failure(Error.connectivity))
+            }
+        }
+    }
 }
