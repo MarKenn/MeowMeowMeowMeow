@@ -101,6 +101,13 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         }
     }
 
+    func test_getCatFact_deliversErrorOn200HTTPResponseWithInvalidJSON() async {
+        let invalidJSON = Data("Invalid JSON".utf8)
+        let (sut, _) = makeSUT(clientResult: .success(code: 200, data: invalidJSON))
+
+        await expect(sut, toThrowError: .invalidData)
+    }
+
     func test_load_deliversErrorOn200HTTPResponseWithEmptyJSONList() {
         let (sut, client) = makeSUT()
 
@@ -219,7 +226,7 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         do {
             _ = try await sut.getCatFact()
             XCTFail(
-                "Expecting to throw \(expectedError)), got success instead.",
+                "Expecting to throw \(expectedError), got success instead.",
                 file: file,
                 line: line
             )
