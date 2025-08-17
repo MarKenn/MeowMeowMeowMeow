@@ -27,11 +27,9 @@ final class RemoteCatFactLoaderTests: XCTestCase {
 
     func test_getCatFact_requestDataFromURL() async {
         let url = URL(string: "https://a-given-url.com")!
-        let (sut, client) = makeSUT(url: url)
+        let (sut, client) = makeSUT(url: url, clientResult: .failure(NSError()))
 
-        async let _ = sut.getCatFact()
-
-        client.complete(with: NSError())
+        _ = try? await sut.getCatFact()
 
         XCTAssertEqual(client.requestedURLs, [url])
     }
@@ -42,6 +40,16 @@ final class RemoteCatFactLoaderTests: XCTestCase {
 
         sut.load() { _ in }
         sut.load() { _ in }
+
+        XCTAssertEqual(client.requestedURLs, [url, url])
+    }
+
+    func test_getCatFactTwice_requestDataFromURLTwice() async {
+        let url = URL(string: "https://a-given-url.com")!
+        let (sut, client) = makeSUT(url: url, clientResult: .failure(NSError()))
+
+        _ = try? await sut.getCatFact()
+        _ = try? await sut.getCatFact()
 
         XCTAssertEqual(client.requestedURLs, [url, url])
     }
