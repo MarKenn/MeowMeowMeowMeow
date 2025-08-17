@@ -117,10 +117,11 @@ final class RemoteCatFactLoaderTests: XCTestCase {
 
     private func makeSUT(
         url: URL = URL(string: "https://a-url.com")!,
+        clientResult: HTTPClientResult? = nil,
         file: StaticString = #file,
         line: UInt = #line,
     ) -> (sut: RemoteCatFactLoader, client: HTTPClientSpy) {
-        let client = HTTPClientSpy()
+        let client = HTTPClientSpy(result: clientResult)
         let remoteCatFactLoader = RemoteCatFactLoader(url: url, client: client)
 
         trackFOrMemoryLeaks(remoteCatFactLoader, file: file, line: line)
@@ -164,6 +165,11 @@ final class RemoteCatFactLoaderTests: XCTestCase {
 
     private class HTTPClientSpy: HTTPClient {
         var messages = [(url: URL, completion: (HTTPClientResult) -> Void)]()
+        var result: HTTPClientResult?
+
+        init(result: HTTPClientResult? = nil) {
+            self.result = result
+        }
 
         var requestedURLs: [URL] {
             messages.map { $0.url }
@@ -171,6 +177,10 @@ final class RemoteCatFactLoaderTests: XCTestCase {
 
         func get(from url: URL, completion: @escaping (HTTPClientResult) -> Void) {
             messages.append((url, completion))
+
+            if let result {
+                completion(result)
+            }
         }
 
         func complete(with error: Error, at index: Int = 0) {
