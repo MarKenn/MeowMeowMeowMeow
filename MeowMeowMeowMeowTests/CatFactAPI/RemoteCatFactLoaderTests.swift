@@ -62,6 +62,17 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         }
     }
 
+    func test_getCatFact_deliversErrorOnClientError() async {
+        let (sut, _) = makeSUT(clientResult: .failure(RemoteCatFactLoader.Error.connectivity))
+
+        do {
+            _ = try await sut.getCatFact()
+            XCTFail("Expecting to throw \(RemoteCatFactLoader.Error.connectivity)), got success instead.")
+        } catch {
+            XCTAssertEqual(error as! RemoteCatFactLoader.Error, .connectivity)
+        }
+    }
+
     func test_load_deliversErrorOnNon200HTTPResponse() {
         let (sut, client) = makeSUT()
 
