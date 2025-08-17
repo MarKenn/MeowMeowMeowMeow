@@ -85,15 +85,8 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         let samples = [199, 201, 300, 400, 500]
 
         for code in samples {
-            let url = URL(string: "https://a-url.com")!
             let json = makeItemsJSON([])
-            let httpResponse = HTTPURLResponse(
-                url: url,
-                statusCode: code,
-                httpVersion: nil,
-                headerFields: nil
-            )!
-            let (sut, client) = makeSUT(url: url, clientResult: .success(json, httpResponse))
+            let (sut, _) = makeSUT(clientResult: .success(code: code, data: json))
 
             await expect(sut, toThrowError: .invalidData)
         }
@@ -149,17 +142,39 @@ final class RemoteCatFactLoaderTests: XCTestCase {
 
     private func makeSUT(
         url: URL = URL(string: "https://a-url.com")!,
-        clientResult: HTTPClientResult? = nil,
+        clientResult: HTTPClientResultCase? = nil,
         file: StaticString = #file,
         line: UInt = #line,
     ) -> (sut: RemoteCatFactLoader, client: HTTPClientSpy) {
-        let client = HTTPClientSpy(result: clientResult)
+        let client = makeHTTPClientSpy(url: url, withResult: clientResult)
         let remoteCatFactLoader = RemoteCatFactLoader(url: url, client: client)
 
         trackFOrMemoryLeaks(remoteCatFactLoader, file: file, line: line)
         trackFOrMemoryLeaks(client, file: file, line: line)
 
         return (sut: remoteCatFactLoader, client: client)
+    }
+
+    private enum HTTPClientResultCase {
+        case success(code: Int, data: Data)
+        case failure(Error)
+    }
+
+    private func makeHTTPClientSpy(url: URL, withResult result: HTTPClientResultCase? = nil) -> HTTPClientSpy {
+        guard let result else { return HTTPClientSpy() }
+
+        switch result {
+        case .success(let code, let data):
+            let httpResponse = HTTPURLResponse(
+                url: url,
+                statusCode: code,
+                httpVersion: nil,
+                headerFields: nil
+            )!
+            return HTTPClientSpy(result: .success(data, httpResponse))
+        case .failure(let error):
+            return HTTPClientSpy(result: .failure(error))
+        }
     }
 
     private func trackFOrMemoryLeaks(
