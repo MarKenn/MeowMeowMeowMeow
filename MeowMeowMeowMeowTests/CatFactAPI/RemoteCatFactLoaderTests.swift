@@ -124,7 +124,7 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         await asyncExpect(sut, toResumeWith: .failure(.invalidData))
     }
 
-    func test_load_deliversItemsOn200HTTPResponseWithJSONItems() {
+    func test_load_deliversCatFactOn200HTTPResponseWithJSONItems() {
         let (sut, client) = makeSUT()
 
         let fact1 = "This is cat fact 1"
@@ -136,6 +136,19 @@ final class RemoteCatFactLoaderTests: XCTestCase {
             let json = makeItemsJSON(catFacts)
             client.complete(withStatus: 200, data: json)
         }
+    }
+
+    func test_getCatFact_deliversCatFactOn200HTTPResponseWithJSONItems() async {
+        let fact1 = "This is cat fact 1"
+        let fact2 = "This is cat fact 2"
+
+        let catFacts = [fact1, fact2]
+
+        let json = makeItemsJSON(catFacts)
+
+        let (sut, _) = makeSUT(clientResult: .success(code: 200, data: json))
+
+        await asyncExpect(sut, toResumeWith: .success(fact1))
     }
 
     func test_Load_doesNotDeliverItemsAfterSUTInstanceHasBeenDeallocated() {
