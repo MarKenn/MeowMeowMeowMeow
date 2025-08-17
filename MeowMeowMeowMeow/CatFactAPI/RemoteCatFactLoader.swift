@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class RemoteCatFactLoader {
+public final class RemoteCatFactLoader: CatFactLoader {
     private let url: URL
     private let client: HTTPClient
 
