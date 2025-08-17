@@ -41,7 +41,7 @@ public final class RemoteCatFactLoader {
             client.get(from: url) { result in
                 switch result {
                 case .success(let data, let response):
-                    continuation.resume(with: .failure(Error.invalidData))
+                    continuation.resume(with: CatFactsMapper.map(data, response: response))
                 case .failure:
                     continuation.resume(with: .failure(Error.connectivity))
                 }
