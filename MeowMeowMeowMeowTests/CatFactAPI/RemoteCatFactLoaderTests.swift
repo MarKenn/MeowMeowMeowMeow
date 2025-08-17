@@ -86,6 +86,29 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         }
     }
 
+    func test_getCatFact_deliversErrorOnNon200HTTPResponse() async {
+        let samples = [199, 201, 300, 400, 500]
+
+        for code in samples {
+            let url = URL(string: "https://a-url.com")!
+            let json = makeItemsJSON([])
+            let httpResponse = HTTPURLResponse(
+                url: url,
+                statusCode: code,
+                httpVersion: nil,
+                headerFields: nil
+            )!
+            let (sut, client) = makeSUT(url: url, clientResult: .success(json, httpResponse))
+
+            do {
+                _ = try await sut.getCatFact()
+                XCTFail("Expecting to throw \(RemoteCatFactLoader.Error.invalidData)), got success instead.")
+            } catch {
+                XCTAssertEqual(error as! RemoteCatFactLoader.Error, .invalidData)
+            }
+        }
+    }
+
     func test_load_deliversErrorOn200HTTPResponseWithInvalidJSON() {
         let (sut, client) = makeSUT()
 
