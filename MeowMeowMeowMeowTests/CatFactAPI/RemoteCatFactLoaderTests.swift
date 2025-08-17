@@ -65,12 +65,7 @@ final class RemoteCatFactLoaderTests: XCTestCase {
     func test_getCatFact_deliversErrorOnClientError() async {
         let (sut, _) = makeSUT(clientResult: failure(.connectivity))
 
-        do {
-            _ = try await sut.getCatFact()
-            XCTFail("Expecting to throw \(RemoteCatFactLoader.Error.connectivity)), got success instead.")
-        } catch {
-            XCTAssertEqual(error as! RemoteCatFactLoader.Error, .connectivity)
-        }
+        await expect(sut, toThrowError: .connectivity)
     }
 
     func test_load_deliversErrorOnNon200HTTPResponse() {
@@ -100,12 +95,7 @@ final class RemoteCatFactLoaderTests: XCTestCase {
             )!
             let (sut, client) = makeSUT(url: url, clientResult: .success(json, httpResponse))
 
-            do {
-                _ = try await sut.getCatFact()
-                XCTFail("Expecting to throw \(RemoteCatFactLoader.Error.invalidData)), got success instead.")
-            } catch {
-                XCTAssertEqual(error as! RemoteCatFactLoader.Error, .invalidData)
-            }
+            await expect(sut, toThrowError: .invalidData)
         }
     }
 
@@ -207,6 +197,29 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         action()
 
         XCTAssertEqual(capturedResult, [result], file: file, line: line)
+    }
+
+    private func expect(
+        _ sut: RemoteCatFactLoader,
+        toThrowError expectedError: RemoteCatFactLoader.Error,
+        file: StaticString = #filePath,
+        line: UInt = #line,
+    )  async {
+        do {
+            _ = try await sut.getCatFact()
+            XCTFail(
+                "Expecting to throw \(expectedError)), got success instead.",
+                file: file,
+                line: line
+            )
+        } catch {
+            XCTAssertEqual(
+                error as! RemoteCatFactLoader.Error,
+                expectedError,
+                file: file,
+                line: line
+            )
+        }
     }
 
     private class HTTPClientSpy: HTTPClient {
