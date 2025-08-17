@@ -117,6 +117,13 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         }
     }
 
+    func test_getCatFact_deliversErrorOn200HTTPResponseWithEmptyJSONList() async {
+        let emptyJSON = makeItemsJSON([])
+        let (sut, _) = makeSUT(clientResult: .success(code: 200, data: emptyJSON))
+
+        await expect(sut, toThrowError: .invalidData)
+    }
+
     func test_load_deliversItemsOn200HTTPResponseWithJSONItems() {
         let (sut, client) = makeSUT()
 
