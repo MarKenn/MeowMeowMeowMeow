@@ -63,7 +63,7 @@ final class RemoteCatFactLoaderTests: XCTestCase {
     }
 
     func test_getCatFact_deliversErrorOnClientError() async {
-        let (sut, _) = makeSUT(clientResult: failure(.connectivity))
+        let (sut, _) = makeSUT(clientResult: .failure(NSError()))
 
         await expect(sut, toThrowError: .connectivity)
     }
@@ -160,10 +160,6 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         trackFOrMemoryLeaks(client, file: file, line: line)
 
         return (sut: remoteCatFactLoader, client: client)
-    }
-
-    private func failure(_ error: RemoteCatFactLoader.Error) -> HTTPClientResult {
-        .failure(error)
     }
 
     private func trackFOrMemoryLeaks(
