@@ -27,7 +27,7 @@ class URLSessionHTTPClient {
 final class URLSessionHTTPClientTests: XCTestCase {
 
     func test_getFromURL_failsOnRequestError() {
-        URLProtocol.registerClass(URLProtocolStub.self)
+        URLProtocolStub.startInterceptingRequests()
         let url = URL(string: "https://a-url.com")!
         let expectedError = NSError(domain: "any error", code: 1)
         let sut = URLSessionHTTPClient()
@@ -48,22 +48,31 @@ final class URLSessionHTTPClientTests: XCTestCase {
         }
 
         wait(for: [exp], timeout: 1.0)
-        URLProtocolStub.unregisterClass(URLProtocolStub.self)
+        URLProtocolStub.startInterceptingRequests()
     }
 
     // MARK: - Helpers
 
     class URLProtocolStub: URLProtocol {
-        static var stub = [URL: Error]()
+        static var stubs = [URL: Error]()
 
         static func stub(url: URL, error: Error) {
-            stub[url] = error
+            stubs[url] = error
+        }
+
+        static func startInterceptingRequests() {
+            URLProtocol.registerClass(URLProtocolStub.self)
+        }
+
+        static func stopInterceptingRequests() {
+            URLProtocol.unregisterClass(URLProtocolStub.self)
+            stubs = [:]
         }
 
         override class func canInit(with request: URLRequest) -> Bool {
             guard let url = request.url else { return false }
 
-            return URLProtocolStub.stub[url] != nil
+            return URLProtocolStub.stubs[url] != nil
         }
         
         override class func canonicalRequest(for request: URLRequest) -> URLRequest {
@@ -71,7 +80,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
         }
 
         override func startLoading() {
-            guard let url = request.url, let error = URLProtocolStub.stub[url] else { return }
+            guard let url = request.url, let error = URLProtocolStub.stubs[url] else { return }
 
             client?.urlProtocol(self, didFailWithError: error)
 
