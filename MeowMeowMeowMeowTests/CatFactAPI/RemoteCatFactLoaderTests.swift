@@ -204,19 +204,6 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         }
     }
 
-    private func trackFOrMemoryLeaks(
-        _ instance: AnyObject,
-        file: StaticString = #filePath,
-        line: UInt = #line,
-    ) {
-        addTeardownBlock { [weak instance] in
-            XCTAssertNil(instance,
-                         "Instance should be deallocated. Potential memory leak.",
-                         file: file,
-                         line: line)
-        }
-    }
-
     private func makeItemsJSON(_ items: [String]) -> Data {
         let itemsJSON = ["data": items]
         return try! JSONSerialization.data(withJSONObject: itemsJSON)
