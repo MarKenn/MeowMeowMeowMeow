@@ -52,6 +52,7 @@
 		EFAA8C5B2E50528600506872 /* CatFactsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA8C5A2E50528600506872 /* CatFactsMapper.swift */; };
 		EFAA8C622E55723D00506872 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA8C612E55723D00506872 /* URLSessionHTTPClientTests.swift */; };
 		EFAA8C682E56B9DC00506872 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA8C672E56B9BF00506872 /* XCTestCase+MemoryLeakTracking.swift */; };
+		EFAA8C7A2E570F8800506872 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA8C792E570F8800506872 /* URLSessionHTTPClient.swift */; };
 		EFB779A92D2CB7E0003627B2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB779A82D2CB7E0003627B2 /* CoreData.framework */; };
 		EFB77A2D2D2D4D69003627B2 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = EFB77A2C2D2D4D69003627B2 /* Nuke */; };
 		EFB77A2F2D2D4D69003627B2 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = EFB77A2E2D2D4D69003627B2 /* NukeUI */; };
@@ -115,6 +116,7 @@
 		EFAA8C5A2E50528600506872 /* CatFactsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFactsMapper.swift; sourceTree = "<group>"; };
 		EFAA8C612E55723D00506872 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		EFAA8C672E56B9BF00506872 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		EFAA8C792E570F8800506872 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		EFB779A82D2CB7E0003627B2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -381,6 +383,7 @@
 		EF8E2F7B2E4597A600ED7F0C /* CatFactAPI */ = {
 			isa = PBXGroup;
 			children = (
+				EFAA8C792E570F8800506872 /* URLSessionHTTPClient.swift */,
 				EFAA8C5A2E50528600506872 /* CatFactsMapper.swift */,
 				EFAA8C582E50525E00506872 /* HTTPClient.swift */,
 				EF8E2F7C2E4597C700ED7F0C /* RemoteCatFactLoader.swift */,
@@ -567,6 +570,7 @@
 				EF2FB07E2D2E64970015CCC1 /* APIEndpoint.swift in Sources */,
 				EF2FB07F2D2E64970015CCC1 /* APIService.swift in Sources */,
 				EF2FB0802D2E64970015CCC1 /* CatImagePersisted+CoreDataClass.swift in Sources */,
+				EFAA8C7A2E570F8800506872 /* URLSessionHTTPClient.swift in Sources */,
 				EF8E2F7D2E4597C700ED7F0C /* RemoteCatFactLoader.swift in Sources */,
 				EFAA8C5B2E50528600506872 /* CatFactsMapper.swift in Sources */,
 				EF2FB0812D2E64970015CCC1 /* CatImagePersisted+CoreDataProperties.swift in Sources */,
