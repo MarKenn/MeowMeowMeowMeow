@@ -22,41 +22,12 @@
       "containerPath" : "container:MeowMeowMeowMeow.xcodeproj",
       "identifier" : "EF93EC892D2C22B800910834",
       "name" : "MeowMeowMeowMeow"
-    }
+    },
+    "testExecutionOrdering" : "random"
   },
   "testTargets" : [
     {
       "parallelizable" : false,
-      "skippedTests" : [
-        "DomesticatedCatRepositoryTests",
-        "DomesticatedCatRepositoryTests\/testFetchDomesticatedCats()",
-        "DomesticatedCatRepositoryTests\/testSetFreeBothNil()",
-        "DomesticatedCatRepositoryTests\/testSetFreeBothValued()",
-        "DomesticatedCatRepositoryTests\/testSetFreeProceedsToDelete()",
-        "DomesticatedCatRepositoryTests\/testSubscribers()",
-        "DomesticatedCatViewModelTests",
-        "DomesticatedCatViewModelTests\/testFetchDomesticatedCats()",
-        "DomesticatedCatViewModelTests\/testRandomizeDomesticatedCat()",
-        "DomesticatedCatViewModelTests\/testRandomizeDomesticatedCatWithValues()",
-        "DomesticatedCatViewModelTests\/testSetFree()",
-        "WildCatRepositoryTests",
-        "WildCatRepositoryTests\/testDomesticateBothNil()",
-        "WildCatRepositoryTests\/testDomesticateBothValued()",
-        "WildCatRepositoryTests\/testDownloadCatUIImage()",
-        "WildCatRepositoryTests\/testDownloadCatUIImageShouldFail()",
-        "WildCatRepositoryTests\/testGetCatImage()",
-        "WildCatRepositoryTests\/testGetCatImageShouldFail()",
-        "WildCatRepositoryTests\/testGetMeowFact()",
-        "WildCatRepositoryTests\/testGetMeowFactShouldFail()",
-        "WildCatViewModelTests",
-        "WildCatViewModelTests\/testDomesticate()",
-        "WildCatViewModelTests\/testDownloadCatUIImageCatImageURLIsNil()",
-        "WildCatViewModelTests\/testGetCatImage()",
-        "WildCatViewModelTests\/testGetCatImageShouldFail()",
-        "WildCatViewModelTests\/testGetMeowFact()",
-        "WildCatViewModelTests\/testGetMeowFactShouldFail()",
-        "WildCatViewModelTests\/testdownloadCatUIImage()"
-      ],
       "target" : {
         "containerPath" : "container:MeowMeowMeowMeow.xcodeproj",
         "identifier" : "EF93EC992D2C22BA00910834",
