@@ -1,5 +1,7 @@
 # MeowMeowMeowMeow
 
+[![CI](https://github.com/MarKenn/MeowMeowMeowMeow/actions/workflows/CI.yml/badge.svg)](https://github.com/MarKenn/MeowMeowMeowMeow/actions/workflows/CI.yml)
+
 ## What was I made for
 
 This is a simple iOS app to showcase some basic skills in native iOS development. 
