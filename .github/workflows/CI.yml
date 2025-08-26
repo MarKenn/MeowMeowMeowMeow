@@ -17,18 +17,11 @@ jobs:
     - name: Select Xcode
       run: sudo xcode-select -switch /Applications/Xcode_16.4.app
 
-    - name: Clean And Build
+    - name: Build And Test
       run: >
-        xcodebuild clean build
-        -project MeowMeowMeowMeow.xcodeproj
-        -scheme "MeowMeowMeowMeow"
-        CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
-
-    - name: Test
-      run: >
-        xcodebuild test
+        xcodebuild clean build test
         -project MeowMeowMeowMeow.xcodeproj
         -scheme "MeowMeowMeowMeow"
         CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
         -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5'
-        -parallel-testing-enabled YES
+        -parallel-testing-enabled YES  
