@@ -22,8 +22,7 @@ jobs:
         xcodebuild clean build
         -project MeowMeowMeowMeow.xcodeproj
         -scheme "MeowMeowMeowMeow"
-        -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5'
-        
+
     - name: Test
       run: >
         xcodebuild test
