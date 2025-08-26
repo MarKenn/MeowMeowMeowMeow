@@ -34,6 +34,19 @@
             default = "YES">
          </TestPlanReference>
       </TestPlans>
+      <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "EF9761332E5D7719003DDBC7"
+               BuildableName = "MeowFactAPIEndToEndTests.xctest"
+               BlueprintName = "MeowFactAPIEndToEndTests"
+               ReferencedContainer = "container:MeowMeowMeowMeow.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"

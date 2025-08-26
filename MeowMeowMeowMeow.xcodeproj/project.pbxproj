@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 63;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -66,6 +66,13 @@
 			remoteGlobalIDString = EF93EC892D2C22B800910834;
 			remoteInfo = MeowMeowMeowMeow;
 		};
+		EF9761382E5D7719003DDBC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF93EC822D2C22B800910834 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF93EC892D2C22B800910834;
+			remoteInfo = MeowMeowMeowMeow;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +119,8 @@
 		EF8E2F7C2E4597C700ED7F0C /* RemoteCatFactLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCatFactLoader.swift; sourceTree = "<group>"; };
 		EF93EC8A2D2C22B800910834 /* MeowMeowMeowMeow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeowMeowMeowMeow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF93EC9A2D2C22BA00910834 /* MeowMeowMeowMeowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeowMeowMeowMeowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF9761342E5D7719003DDBC7 /* MeowFactAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeowFactAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF97613D2E5D7B4F003DDBC7 /* MeowFactAPIEndToEndTest.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = MeowFactAPIEndToEndTest.xctestplan; sourceTree = "<group>"; };
 		EFAA8C582E50525E00506872 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		EFAA8C5A2E50528600506872 /* CatFactsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFactsMapper.swift; sourceTree = "<group>"; };
 		EFAA8C612E55723D00506872 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
@@ -119,6 +128,10 @@
 		EFAA8C792E570F8800506872 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		EFB779A82D2CB7E0003627B2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		EF9761352E5D7719003DDBC7 /* MeowFactAPIEndToEndTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = MeowFactAPIEndToEndTests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		EF93EC872D2C22B800910834 /* Frameworks */ = {
@@ -133,6 +146,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		EF93EC972D2C22BA00910834 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF9761312E5D7719003DDBC7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -394,9 +414,11 @@
 		EF93EC812D2C22B800910834 = {
 			isa = PBXGroup;
 			children = (
+				EF97613D2E5D7B4F003DDBC7 /* MeowFactAPIEndToEndTest.xctestplan */,
 				EF8E2F642E4496B700ED7F0C /* MeowMeowMeowMeow.xctestplan */,
 				EF2FB06C2D2E64970015CCC1 /* MeowMeowMeowMeow */,
 				EF2FB0972D2E649E0015CCC1 /* MeowMeowMeowMeowTests */,
+				EF9761352E5D7719003DDBC7 /* MeowFactAPIEndToEndTests */,
 				EFB779A72D2CB7DF003627B2 /* Frameworks */,
 				EF93EC8B2D2C22B800910834 /* Products */,
 			);
@@ -407,6 +429,7 @@
 			children = (
 				EF93EC8A2D2C22B800910834 /* MeowMeowMeowMeow.app */,
 				EF93EC9A2D2C22BA00910834 /* MeowMeowMeowMeowTests.xctest */,
+				EF9761342E5D7719003DDBC7 /* MeowFactAPIEndToEndTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -482,6 +505,29 @@
 			productReference = EF93EC9A2D2C22BA00910834 /* MeowMeowMeowMeowTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		EF9761332E5D7719003DDBC7 /* MeowFactAPIEndToEndTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF97613A2E5D7719003DDBC7 /* Build configuration list for PBXNativeTarget "MeowFactAPIEndToEndTests" */;
+			buildPhases = (
+				EF9761302E5D7719003DDBC7 /* Sources */,
+				EF9761312E5D7719003DDBC7 /* Frameworks */,
+				EF9761322E5D7719003DDBC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF9761392E5D7719003DDBC7 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				EF9761352E5D7719003DDBC7 /* MeowFactAPIEndToEndTests */,
+			);
+			name = MeowFactAPIEndToEndTests;
+			packageProductDependencies = (
+			);
+			productName = MeowFactAPIEndToEndTests;
+			productReference = EF9761342E5D7719003DDBC7 /* MeowFactAPIEndToEndTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -497,6 +543,10 @@
 					};
 					EF93EC992D2C22BA00910834 = {
 						CreatedOnToolsVersion = 16.2;
+						TestTargetID = EF93EC892D2C22B800910834;
+					};
+					EF9761332E5D7719003DDBC7 = {
+						CreatedOnToolsVersion = 16.4;
 						TestTargetID = EF93EC892D2C22B800910834;
 					};
 				};
@@ -521,6 +571,7 @@
 			targets = (
 				EF93EC892D2C22B800910834 /* MeowMeowMeowMeow */,
 				EF93EC992D2C22BA00910834 /* MeowMeowMeowMeowTests */,
+				EF9761332E5D7719003DDBC7 /* MeowFactAPIEndToEndTests */,
 			);
 		};
 /* End PBXProject section */
@@ -536,6 +587,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		EF93EC982D2C22BA00910834 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF9761322E5D7719003DDBC7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -602,6 +660,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EF9761302E5D7719003DDBC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -609,6 +674,11 @@
 			isa = PBXTargetDependency;
 			target = EF93EC892D2C22B800910834 /* MeowMeowMeowMeow */;
 			targetProxy = EF93EC9B2D2C22BA00910834 /* PBXContainerItemProxy */;
+		};
+		EF9761392E5D7719003DDBC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF93EC892D2C22B800910834 /* MeowMeowMeowMeow */;
+			targetProxy = EF9761382E5D7719003DDBC7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -756,6 +826,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mkmbayona.MeowMeowMeowMeow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -786,6 +861,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mkmbayona.MeowMeowMeowMeow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -803,6 +883,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mkmbayona.MeowMeowMeowMeowTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -821,10 +906,61 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mkmbayona.MeowMeowMeowMeowTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeowMeowMeowMeow.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MeowMeowMeowMeow";
+			};
+			name = Release;
+		};
+		EF97613B2E5D7719003DDBC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mkmbayona.MeowFactAPIEndToEndTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeowMeowMeowMeow.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MeowMeowMeowMeow";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Debug;
+		};
+		EF97613C2E5D7719003DDBC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mkmbayona.MeowFactAPIEndToEndTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeowMeowMeowMeow.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MeowMeowMeowMeow";
+				XROS_DEPLOYMENT_TARGET = 2.5;
 			};
 			name = Release;
 		};
@@ -854,6 +990,15 @@
 			buildConfigurations = (
 				EF93ECB22D2C22BA00910834 /* Debug */,
 				EF93ECB32D2C22BA00910834 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF97613A2E5D7719003DDBC7 /* Build configuration list for PBXNativeTarget "MeowFactAPIEndToEndTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF97613B2E5D7719003DDBC7 /* Debug */,
+				EF97613C2E5D7719003DDBC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
