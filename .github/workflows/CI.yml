@@ -31,3 +31,4 @@ jobs:
         -scheme "MeowMeowMeowMeow"
         CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
         -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5'
+        -parallel-testing-enabled YES
