@@ -29,8 +29,8 @@ final class MeowFactAPIEndToEndTests: XCTestCase {
         let client = URLSessionHTTPClient()
         let loader = RemoteCatFactLoader(url: url, client: client)
 
-        trackFOrMemoryLeaks(client, file: file, line: line)
-        trackFOrMemoryLeaks(loader, file: file, line: line)
+        trackForMemoryLeaks(client, file: file, line: line)
+        trackForMemoryLeaks(loader, file: file, line: line)
 
         let exp = expectation(description: "Wait for load completion")
 

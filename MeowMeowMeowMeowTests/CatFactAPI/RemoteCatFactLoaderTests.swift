@@ -176,8 +176,8 @@ final class RemoteCatFactLoaderTests: XCTestCase {
         let client = makeHTTPClientSpy(url: url, withResult: clientResult)
         let remoteCatFactLoader = RemoteCatFactLoader(url: url, client: client)
 
-        trackFOrMemoryLeaks(remoteCatFactLoader, file: file, line: line)
-        trackFOrMemoryLeaks(client, file: file, line: line)
+        trackForMemoryLeaks(remoteCatFactLoader, file: file, line: line)
+        trackForMemoryLeaks(client, file: file, line: line)
 
         return (sut: remoteCatFactLoader, client: client)
     }
