@@ -24,10 +24,13 @@ final class MeowFactAPIEndToEndTests: XCTestCase {
 
     // MARK: - Helpers
 
-    func getCatFact() -> RemoteCatFactLoader.Result? {
+    func getCatFact(file: StaticString = #filePath, line: UInt = #line) -> RemoteCatFactLoader.Result? {
         let url = URL(string: "https://meowfacts.herokuapp.com/")!
         let client = URLSessionHTTPClient()
         let loader = RemoteCatFactLoader(url: url, client: client)
+
+        trackFOrMemoryLeaks(client, file: file, line: line)
+        trackFOrMemoryLeaks(loader, file: file, line: line)
 
         let exp = expectation(description: "Wait for load completion")
 

@@ -48,6 +48,7 @@
 		EF8E2F772E44EF2A00ED7F0C /* RemoteCatFactLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E2F672E44D0DE00ED7F0C /* RemoteCatFactLoaderTests.swift */; };
 		EF8E2F7D2E4597C700ED7F0C /* RemoteCatFactLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E2F7C2E4597C700ED7F0C /* RemoteCatFactLoader.swift */; };
 		EF93ECB92D2C238500910834 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EF93ECB82D2C238500910834 /* Alamofire */; };
+		EF97613E2E5DA1C8003DDBC7 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA8C672E56B9BF00506872 /* XCTestCase+MemoryLeakTracking.swift */; };
 		EFAA8C592E50525E00506872 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA8C582E50525E00506872 /* HTTPClient.swift */; };
 		EFAA8C5B2E50528600506872 /* CatFactsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA8C5A2E50528600506872 /* CatFactsMapper.swift */; };
 		EFAA8C622E55723D00506872 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA8C612E55723D00506872 /* URLSessionHTTPClientTests.swift */; };
@@ -664,6 +665,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF97613E2E5DA1C8003DDBC7 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
