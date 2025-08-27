@@ -101,6 +101,7 @@
 		EF93EC8A2D2C22B800910834 /* MeowMeowMeowMeow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeowMeowMeowMeow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF93EC9A2D2C22BA00910834 /* MeowMeowMeowMeowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeowMeowMeowMeowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB779A82D2CB7E0003627B2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EFC5322A2E5DAC8E000C4497 /* MeowMeowMeowMeow.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = MeowMeowMeowMeow.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +356,7 @@
 		EF93EC812D2C22B800910834 = {
 			isa = PBXGroup;
 			children = (
+				EFC5322A2E5DAC8E000C4497 /* MeowMeowMeowMeow.xctestplan */,
 				EF2FB06C2D2E64970015CCC1 /* MeowMeowMeowMeow */,
 				EF2FB0972D2E649E0015CCC1 /* MeowMeowMeowMeowTests */,
 				EFB779A72D2CB7DF003627B2 /* Frameworks */,
