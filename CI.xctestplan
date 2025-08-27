@@ -1,0 +1,36 @@
+{
+  "configurations" : [
+    {
+      "id" : "3D933FDC-B08E-4410-80B1-BF958331D620",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:MeowMeowMeowMeow.xcodeproj",
+      "identifier" : "EF93EC892D2C22B800910834",
+      "name" : "MeowMeowMeowMeow"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:MeowMeowMeowMeow.xcodeproj",
+        "identifier" : "EF93EC992D2C22BA00910834",
+        "name" : "MeowMeowMeowMeowTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:MeowMeowMeowMeow.xcodeproj",
+        "identifier" : "EF9761332E5D7719003DDBC7",
+        "name" : "MeowFactAPIEndToEndTests"
+      }
+    }
+  ],
+  "version" : 1
+}

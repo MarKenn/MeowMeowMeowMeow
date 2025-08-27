@@ -115,7 +115,6 @@
 		EF2FB0932D2E649E0015CCC1 /* WildCatRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WildCatRepositoryTests.swift; sourceTree = "<group>"; };
 		EF2FB0942D2E649E0015CCC1 /* WildCatViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WildCatViewModelTests.swift; sourceTree = "<group>"; };
 		EF8E2F622E438F7400ED7F0C /* CatFactLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFactLoader.swift; sourceTree = "<group>"; };
-		EF8E2F642E4496B700ED7F0C /* MeowMeowMeowMeow.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = MeowMeowMeowMeow.xctestplan; sourceTree = "<group>"; };
 		EF8E2F672E44D0DE00ED7F0C /* RemoteCatFactLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCatFactLoaderTests.swift; sourceTree = "<group>"; };
 		EF8E2F7C2E4597C700ED7F0C /* RemoteCatFactLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCatFactLoader.swift; sourceTree = "<group>"; };
 		EF93EC8A2D2C22B800910834 /* MeowMeowMeowMeow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeowMeowMeowMeow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +128,7 @@
 		EFAA8C792E570F8800506872 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		EFB779A82D2CB7E0003627B2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		EFC5322A2E5DAC8E000C4497 /* MeowMeowMeowMeow.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = MeowMeowMeowMeow.xctestplan; sourceTree = "<group>"; };
+		EFC532332E5EFD3F000C4497 /* CI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -416,6 +416,7 @@
 		EF93EC812D2C22B800910834 = {
 			isa = PBXGroup;
 			children = (
+				EFC532332E5EFD3F000C4497 /* CI.xctestplan */,
 				EF97613D2E5D7B4F003DDBC7 /* MeowFactAPIEndToEndTest.xctestplan */,
 				EFC5322A2E5DAC8E000C4497 /* MeowMeowMeowMeow.xctestplan */,
 				EF2FB06C2D2E64970015CCC1 /* MeowMeowMeowMeow */,
