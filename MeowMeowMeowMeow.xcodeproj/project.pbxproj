@@ -128,6 +128,7 @@
 		EFAA8C672E56B9BF00506872 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		EFAA8C792E570F8800506872 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		EFB779A82D2CB7E0003627B2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EFC5322A2E5DAC8E000C4497 /* MeowMeowMeowMeow.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = MeowMeowMeowMeow.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -416,7 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				EF97613D2E5D7B4F003DDBC7 /* MeowFactAPIEndToEndTest.xctestplan */,
-				EF8E2F642E4496B700ED7F0C /* MeowMeowMeowMeow.xctestplan */,
+				EFC5322A2E5DAC8E000C4497 /* MeowMeowMeowMeow.xctestplan */,
 				EF2FB06C2D2E64970015CCC1 /* MeowMeowMeowMeow */,
 				EF2FB0972D2E649E0015CCC1 /* MeowMeowMeowMeowTests */,
 				EF9761352E5D7719003DDBC7 /* MeowFactAPIEndToEndTests */,
