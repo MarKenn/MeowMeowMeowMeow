@@ -83,7 +83,7 @@ final class WildCatRepositoryTests: XCTestCase {
         mockRemoteProvider.shouldFail = true
 
         do {
-            let result = try await repository.getCatFact()
+            _ = try await repository.getCatFact()
             XCTFail("Expected failure, but got success")
         } catch {
             XCTAssert(mockRemoteProvider.getRandomMeowFactHasBeenCalled)
