@@ -9,20 +9,12 @@
     }
   ],
   "defaultOptions" : {
-    "codeCoverage" : {
-      "targets" : [
-        {
-          "containerPath" : "container:MeowMeowMeowMeow.xcodeproj",
-          "identifier" : "EF93EC892D2C22B800910834",
-          "name" : "MeowMeowMeowMeow"
-        }
-      ]
-    },
+    "codeCoverage" : false,
     "testExecutionOrdering" : "random"
   },
   "testTargets" : [
     {
-      "parallelizable" : true,
+      "parallelizable" : false,
       "target" : {
         "containerPath" : "container:MeowMeowMeowMeow.xcodeproj",
         "identifier" : "EF9761332E5D7719003DDBC7",
