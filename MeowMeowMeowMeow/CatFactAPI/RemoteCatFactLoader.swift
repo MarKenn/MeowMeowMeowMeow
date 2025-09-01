@@ -24,12 +24,12 @@ public final class RemoteCatFactLoader: CatFactLoader {
     }
 
     public func load(completion: @escaping (Result) -> Void) {
-        client.get(from: url) { [weak self] result in
+        client.get(from: url) { [weak self] clientResult in
             guard self != nil else { return }
             
-            switch result {
-            case .success(let data, let response):
-                completion(CatFactsMapper.map(data, response: response))
+            switch clientResult {
+            case .success(let result):
+                completion(CatFactsMapper.map(result.data, response: result.response))
             case .failure:
                 completion(.failure(.connectivity))
             }
@@ -38,10 +38,12 @@ public final class RemoteCatFactLoader: CatFactLoader {
 
     public func getCatFact() async throws -> String {
         try await withCheckedThrowingContinuation { continuation in
-            client.get(from: url) { result in
-                switch result {
-                case .success(let data, let response):
-                    continuation.resume(with: CatFactsMapper.map(data, response: response))
+            client.get(from: url) { clientResult in
+                switch clientResult {
+                case .success(let result):
+                    continuation.resume(
+                        with: CatFactsMapper.map(result.data,response: result.response)
+                    )
                 case .failure:
                     continuation.resume(with: .failure(Error.connectivity))
                 }
