@@ -41,7 +41,7 @@ final class CacheCatFactUseCaseTests: XCTestCase {
   }
 
   func test_save_requestsCacheDeletion() {
-    let catFacts: [String] = ["Cat fact", "Cat fact 2"]
+    let catFacts: [String] = [anyFact(), anyFact()]
     let (sut, store) = makeSUT()
 
     sut.save(catFacts)
@@ -50,7 +50,7 @@ final class CacheCatFactUseCaseTests: XCTestCase {
   }
 
   func test_save_doesNotRequestsCacheInsertionOnDeletionError() {
-    let catFacts: [String] = ["Cat fact", "Cat fact 2"]
+    let catFacts: [String] = [anyFact(), anyFact()]
     let (sut, store) = makeSUT()
     let deletionError = anyNSError()
 
@@ -68,6 +68,10 @@ final class CacheCatFactUseCaseTests: XCTestCase {
     trackForMemoryLeaks(store, file: file, line: line)
     trackForMemoryLeaks(sut, file: file, line: line)
     return (sut, store)
+  }
+
+   private func anyFact() -> String {
+     "any fact \(Int.random(in: 1...5))"
   }
 
   private func anyNSError() -> NSError {
