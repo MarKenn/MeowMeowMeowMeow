@@ -13,10 +13,18 @@ class LocalCatFactLoader {
   init(store: CatFactStore) {
     self.store = store
   }
+
+  func save(_ catFacts: [String]) {
+    store.deleteCachedCatFacts()
+  }
 }
 
 class CatFactStore {
   var deleteCachedCatFactsCount = 0
+
+  func deleteCachedCatFacts() {
+    deleteCachedCatFactsCount += 1
+  }
 }
 
 final class CacheCatFactUseCaseTests: XCTestCase {
@@ -26,6 +34,16 @@ final class CacheCatFactUseCaseTests: XCTestCase {
     _ = LocalCatFactLoader(store: store)
 
     XCTAssertEqual(store.deleteCachedCatFactsCount, 0)
+  }
+
+  func test_save_requestsCacheDeletion() {
+    let catFacts: [String] = ["Cat fact", "Cat fact 2"]
+    let store = CatFactStore()
+    let sut = LocalCatFactLoader(store: store)
+
+    sut.save(catFacts)
+
+    XCTAssertEqual(store.deleteCachedCatFactsCount, 1)
   }
 
 }
