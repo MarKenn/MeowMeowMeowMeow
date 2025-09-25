@@ -14,21 +14,38 @@ class LocalCatFactLoader {
     self.store = store
   }
 
-  func save(_ catFacts: [String]) {
-    store.deleteCachedCatFacts()
+  func save(_ facts: [String]) {
+    store.deleteCachedFacts { [unowned self] error in
+      if error == nil {
+        store.insert(facts)
+      }
+    }
   }
 }
 
 class CatFactStore {
-  var deleteCachedCatFactsCount = 0
+  typealias DeleteCompletion = (Error?) -> Void
+
+  var deleteCachedFactsCount = 0
   var insertCallCount = 0
 
-  func deleteCachedCatFacts() {
-    deleteCachedCatFactsCount += 1
+  private var deletionCompletions: [DeleteCompletion] = []
+
+  func deleteCachedFacts(completion: @escaping DeleteCompletion) {
+    deleteCachedFactsCount += 1
+    deletionCompletions.append(completion)
   }
 
-  func completeDeletion(with error: NSError) {
+  func completeDeletion(with error: Error, at index: Int = 0) {
+    deletionCompletions[index](error)
+  }
 
+  func completeDeletionSuccessfully(at index: Int = 0) {
+    deletionCompletions[index](nil)
+  }
+
+  func insert(_ facts: [String]) {
+    insertCallCount += 1
   }
 }
 
@@ -37,27 +54,37 @@ final class CacheCatFactUseCaseTests: XCTestCase {
   func test_init_doesNotDeleteCacheUponCreation() {
     let (_, store) = makeSUT()
 
-    XCTAssertEqual(store.deleteCachedCatFactsCount, 0)
+    XCTAssertEqual(store.deleteCachedFactsCount, 0)
   }
 
   func test_save_requestsCacheDeletion() {
-    let catFacts: [String] = [anyFact(), anyFact()]
+    let facts: [String] = [anyFact(), anyFact()]
     let (sut, store) = makeSUT()
 
-    sut.save(catFacts)
+    sut.save(facts)
 
-    XCTAssertEqual(store.deleteCachedCatFactsCount, 1)
+    XCTAssertEqual(store.deleteCachedFactsCount, 1)
   }
 
   func test_save_doesNotRequestsCacheInsertionOnDeletionError() {
-    let catFacts: [String] = [anyFact(), anyFact()]
+    let facts: [String] = [anyFact(), anyFact()]
     let (sut, store) = makeSUT()
     let deletionError = anyNSError()
 
-    sut.save(catFacts)
+    sut.save(facts)
     store.completeDeletion(with: deletionError)
 
     XCTAssertEqual(store.insertCallCount, 0)
+  }
+
+  func test_save_requestsNewCacheInsertionOnSuccessfulDeletion() {
+    let facts: [String] = [anyFact(), anyFact()]
+    let (sut, store) = makeSUT()
+
+    sut.save(facts)
+    store.completeDeletionSuccessfully()
+
+    XCTAssertEqual(store.insertCallCount, 1)
   }
 
   // MARK: Helpers
