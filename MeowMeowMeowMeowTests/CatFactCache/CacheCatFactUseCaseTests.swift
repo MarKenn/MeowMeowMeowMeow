@@ -29,7 +29,6 @@ class CatFactStore {
   typealias DeleteCompletion = (Error?) -> Void
 
   var deleteCachedFactsCount = 0
-  var insertCallCount = 0
   var insertions = [(facts: [String], timestamp: Date)]()
 
   private var deletionCompletions = [DeleteCompletion]()
@@ -48,7 +47,6 @@ class CatFactStore {
   }
 
   func insert(_ facts: [String], timestamp: Date) {
-    insertCallCount += 1
     insertions.append((facts, timestamp))
   }
 }
@@ -78,17 +76,7 @@ final class CacheCatFactUseCaseTests: XCTestCase {
     sut.save(facts)
     store.completeDeletion(with: deletionError)
 
-    XCTAssertEqual(store.insertCallCount, 0)
-  }
-
-  func test_save_requestsNewCacheInsertionOnSuccessfulDeletion() {
-    let facts: [String] = [anyFact(), anyFact()]
-    let (sut, store) = makeSUT()
-
-    sut.save(facts)
-    store.completeDeletionSuccessfully()
-
-    XCTAssertEqual(store.insertCallCount, 1)
+    XCTAssertEqual(store.insertions.count, 0)
   }
 
   func test_save_requestsNewCacheInsertionWithTimestampOnSuccessfulDeletion() {
