@@ -8,7 +8,7 @@
 import XCTest
 import MeowMeowMeowMeow
 
-final class RemoteCatFactLoaderTests: XCTestCase {
+final class LoadCatFactFromRemoteUseCaseTests: XCTestCase {
 
     func test_init_doesNotRequestDataFromURL() {
         let (_, client) = makeSUT()

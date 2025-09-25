@@ -45,7 +45,7 @@
 		EF2FB09C2D2E649E0015CCC1 /* WildCatRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0932D2E649E0015CCC1 /* WildCatRepositoryTests.swift */; };
 		EF2FB09D2D2E649E0015CCC1 /* WildCatViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0942D2E649E0015CCC1 /* WildCatViewModelTests.swift */; };
 		EF8E2F632E438F8000ED7F0C /* CatFactLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E2F622E438F7400ED7F0C /* CatFactLoader.swift */; };
-		EF8E2F772E44EF2A00ED7F0C /* RemoteCatFactLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E2F672E44D0DE00ED7F0C /* RemoteCatFactLoaderTests.swift */; };
+		EF8E2F772E44EF2A00ED7F0C /* LoadCatFactFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E2F672E44D0DE00ED7F0C /* LoadCatFactFromRemoteUseCaseTests.swift */; };
 		EF8E2F7D2E4597C700ED7F0C /* RemoteCatFactLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E2F7C2E4597C700ED7F0C /* RemoteCatFactLoader.swift */; };
 		EF93ECB92D2C238500910834 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EF93ECB82D2C238500910834 /* Alamofire */; };
 		EF97613E2E5DA1C8003DDBC7 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA8C672E56B9BF00506872 /* XCTestCase+MemoryLeakTracking.swift */; };
@@ -115,7 +115,7 @@
 		EF2FB0932D2E649E0015CCC1 /* WildCatRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WildCatRepositoryTests.swift; sourceTree = "<group>"; };
 		EF2FB0942D2E649E0015CCC1 /* WildCatViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WildCatViewModelTests.swift; sourceTree = "<group>"; };
 		EF8E2F622E438F7400ED7F0C /* CatFactLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFactLoader.swift; sourceTree = "<group>"; };
-		EF8E2F672E44D0DE00ED7F0C /* RemoteCatFactLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCatFactLoaderTests.swift; sourceTree = "<group>"; };
+		EF8E2F672E44D0DE00ED7F0C /* LoadCatFactFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCatFactFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 		EF8E2F7C2E4597C700ED7F0C /* RemoteCatFactLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCatFactLoader.swift; sourceTree = "<group>"; };
 		EF93EC8A2D2C22B800910834 /* MeowMeowMeowMeow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeowMeowMeowMeow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF93EC9A2D2C22BA00910834 /* MeowMeowMeowMeowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeowMeowMeowMeowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -441,7 +441,7 @@
 			isa = PBXGroup;
 			children = (
 				EFAA8C662E56B9B100506872 /* Helpers */,
-				EF8E2F672E44D0DE00ED7F0C /* RemoteCatFactLoaderTests.swift */,
+				EF8E2F672E44D0DE00ED7F0C /* LoadCatFactFromRemoteUseCaseTests.swift */,
 				EFAA8C612E55723D00506872 /* URLSessionHTTPClientTests.swift */,
 			);
 			path = CatFactAPI;
@@ -659,7 +659,7 @@
 				EF2FB09B2D2E649E0015CCC1 /* DomesticatedCatViewModelTests.swift in Sources */,
 				EF2FB09C2D2E649E0015CCC1 /* WildCatRepositoryTests.swift in Sources */,
 				EF2FB09D2D2E649E0015CCC1 /* WildCatViewModelTests.swift in Sources */,
-				EF8E2F772E44EF2A00ED7F0C /* RemoteCatFactLoaderTests.swift in Sources */,
+				EF8E2F772E44EF2A00ED7F0C /* LoadCatFactFromRemoteUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
