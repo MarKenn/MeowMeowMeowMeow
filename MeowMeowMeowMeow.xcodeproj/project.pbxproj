@@ -1,0 +1,1068 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 70;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF2FB06E2D2E64970015CCC1 /* LocalCatImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB03B2D2E64970015CCC1 /* LocalCatImageProvider.swift */; };
+		EF2FB06F2D2E64970015CCC1 /* LocalDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB03C2D2E64970015CCC1 /* LocalDataProvider.swift */; };
+		EF2FB0702D2E64970015CCC1 /* LocalMeowFactProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB03D2D2E64970015CCC1 /* LocalMeowFactProvider.swift */; };
+		EF2FB0712D2E64970015CCC1 /* RemoteDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB03F2D2E64970015CCC1 /* RemoteDataProvider.swift */; };
+		EF2FB0722D2E64970015CCC1 /* RemoteMeowProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0402D2E64970015CCC1 /* RemoteMeowProvider.swift */; };
+		EF2FB0732D2E64970015CCC1 /* String+MeowFactPersisted.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0432D2E64970015CCC1 /* String+MeowFactPersisted.swift */; };
+		EF2FB0742D2E64970015CCC1 /* DomesticatedCatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0452D2E64970015CCC1 /* DomesticatedCatRepository.swift */; };
+		EF2FB0752D2E64970015CCC1 /* DomesticatedCatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0462D2E64970015CCC1 /* DomesticatedCatView.swift */; };
+		EF2FB0762D2E64970015CCC1 /* DomesticatedCatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0472D2E64970015CCC1 /* DomesticatedCatViewModel.swift */; };
+		EF2FB0772D2E64970015CCC1 /* WIldCatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0492D2E64970015CCC1 /* WIldCatRepository.swift */; };
+		EF2FB0782D2E64970015CCC1 /* WildCatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB04A2D2E64970015CCC1 /* WildCatView.swift */; };
+		EF2FB0792D2E64970015CCC1 /* WildCatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB04B2D2E64970015CCC1 /* WildCatViewModel.swift */; };
+		EF2FB07A2D2E64970015CCC1 /* MeowFactData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0502D2E64970015CCC1 /* MeowFactData.swift */; };
+		EF2FB07B2D2E64970015CCC1 /* MeowFactsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0522D2E64970015CCC1 /* MeowFactsEndpoint.swift */; };
+		EF2FB07C2D2E64970015CCC1 /* CatImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0542D2E64970015CCC1 /* CatImage.swift */; };
+		EF2FB07D2D2E64970015CCC1 /* TheCatAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0562D2E64970015CCC1 /* TheCatAPIEndpoint.swift */; };
+		EF2FB07E2D2E64970015CCC1 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0592D2E64970015CCC1 /* APIEndpoint.swift */; };
+		EF2FB07F2D2E64970015CCC1 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB05A2D2E64970015CCC1 /* APIService.swift */; };
+		EF2FB0802D2E64970015CCC1 /* CatImagePersisted+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB05C2D2E64970015CCC1 /* CatImagePersisted+CoreDataClass.swift */; };
+		EF2FB0812D2E64970015CCC1 /* CatImagePersisted+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB05D2D2E64970015CCC1 /* CatImagePersisted+CoreDataProperties.swift */; };
+		EF2FB0822D2E64970015CCC1 /* MeowFactPersisted+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB05E2D2E64970015CCC1 /* MeowFactPersisted+CoreDataClass.swift */; };
+		EF2FB0832D2E64970015CCC1 /* MeowFactPersisted+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB05F2D2E64970015CCC1 /* MeowFactPersisted+CoreDataProperties.swift */; };
+		EF2FB0842D2E64970015CCC1 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0612D2E64970015CCC1 /* CoreDataService.swift */; };
+		EF2FB0852D2E64970015CCC1 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0622D2E64970015CCC1 /* Model.xcdatamodeld */; };
+		EF2FB0862D2E64970015CCC1 /* Modelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0632D2E64970015CCC1 /* Modelable.swift */; };
+		EF2FB0872D2E64970015CCC1 /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0642D2E64970015CCC1 /* Persistable.swift */; };
+		EF2FB0882D2E64970015CCC1 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0672D2E64970015CCC1 /* OverlayView.swift */; };
+		EF2FB0892D2E64970015CCC1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB06A2D2E64970015CCC1 /* ContentView.swift */; };
+		EF2FB08A2D2E64970015CCC1 /* MeowMeowMeowMeowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB06B2D2E64970015CCC1 /* MeowMeowMeowMeowApp.swift */; };
+		EF2FB08B2D2E64970015CCC1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2FB04E2D2E64970015CCC1 /* Preview Assets.xcassets */; };
+		EF2FB08C2D2E64970015CCC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2FB0692D2E64970015CCC1 /* Assets.xcassets */; };
+		EF2FB0982D2E649E0015CCC1 /* MockFactProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB08D2D2E649E0015CCC1 /* MockFactProvider.swift */; };
+		EF2FB0992D2E649E0015CCC1 /* MockImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB08E2D2E649E0015CCC1 /* MockImageProvider.swift */; };
+		EF2FB09A2D2E649E0015CCC1 /* DomesticatedCatRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0902D2E649E0015CCC1 /* DomesticatedCatRepositoryTests.swift */; };
+		EF2FB09B2D2E649E0015CCC1 /* DomesticatedCatViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0912D2E649E0015CCC1 /* DomesticatedCatViewModelTests.swift */; };
+		EF2FB09C2D2E649E0015CCC1 /* WildCatRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0932D2E649E0015CCC1 /* WildCatRepositoryTests.swift */; };
+		EF2FB09D2D2E649E0015CCC1 /* WildCatViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2FB0942D2E649E0015CCC1 /* WildCatViewModelTests.swift */; };
+		EF8E2F632E438F8000ED7F0C /* CatFactLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E2F622E438F7400ED7F0C /* CatFactLoader.swift */; };
+		EF8E2F772E44EF2A00ED7F0C /* LoadCatFactFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E2F672E44D0DE00ED7F0C /* LoadCatFactFromRemoteUseCaseTests.swift */; };
+		EF8E2F7D2E4597C700ED7F0C /* RemoteCatFactLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8E2F7C2E4597C700ED7F0C /* RemoteCatFactLoader.swift */; };
+		EF93ECB92D2C238500910834 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EF93ECB82D2C238500910834 /* Alamofire */; };
+		EF97613E2E5DA1C8003DDBC7 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA8C672E56B9BF00506872 /* XCTestCase+MemoryLeakTracking.swift */; };
+		EFAA8C592E50525E00506872 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA8C582E50525E00506872 /* HTTPClient.swift */; };
+		EFAA8C5B2E50528600506872 /* CatFactsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA8C5A2E50528600506872 /* CatFactsMapper.swift */; };
+		EFAA8C622E55723D00506872 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA8C612E55723D00506872 /* URLSessionHTTPClientTests.swift */; };
+		EFAA8C682E56B9DC00506872 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA8C672E56B9BF00506872 /* XCTestCase+MemoryLeakTracking.swift */; };
+		EFAA8C7A2E570F8800506872 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA8C792E570F8800506872 /* URLSessionHTTPClient.swift */; };
+		EFB779A92D2CB7E0003627B2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB779A82D2CB7E0003627B2 /* CoreData.framework */; };
+		EFB77A2D2D2D4D69003627B2 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = EFB77A2C2D2D4D69003627B2 /* Nuke */; };
+		EFB77A2F2D2D4D69003627B2 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = EFB77A2E2D2D4D69003627B2 /* NukeUI */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF93EC9B2D2C22BA00910834 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF93EC822D2C22B800910834 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF93EC892D2C22B800910834;
+			remoteInfo = MeowMeowMeowMeow;
+		};
+		EF9761382E5D7719003DDBC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF93EC822D2C22B800910834 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF93EC892D2C22B800910834;
+			remoteInfo = MeowMeowMeowMeow;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EF2FB03B2D2E64970015CCC1 /* LocalCatImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCatImageProvider.swift; sourceTree = "<group>"; };
+		EF2FB03C2D2E64970015CCC1 /* LocalDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataProvider.swift; sourceTree = "<group>"; };
+		EF2FB03D2D2E64970015CCC1 /* LocalMeowFactProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMeowFactProvider.swift; sourceTree = "<group>"; };
+		EF2FB03F2D2E64970015CCC1 /* RemoteDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataProvider.swift; sourceTree = "<group>"; };
+		EF2FB0402D2E64970015CCC1 /* RemoteMeowProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteMeowProvider.swift; sourceTree = "<group>"; };
+		EF2FB0432D2E64970015CCC1 /* String+MeowFactPersisted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+MeowFactPersisted.swift"; sourceTree = "<group>"; };
+		EF2FB0452D2E64970015CCC1 /* DomesticatedCatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomesticatedCatRepository.swift; sourceTree = "<group>"; };
+		EF2FB0462D2E64970015CCC1 /* DomesticatedCatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomesticatedCatView.swift; sourceTree = "<group>"; };
+		EF2FB0472D2E64970015CCC1 /* DomesticatedCatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomesticatedCatViewModel.swift; sourceTree = "<group>"; };
+		EF2FB0492D2E64970015CCC1 /* WIldCatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIldCatRepository.swift; sourceTree = "<group>"; };
+		EF2FB04A2D2E64970015CCC1 /* WildCatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WildCatView.swift; sourceTree = "<group>"; };
+		EF2FB04B2D2E64970015CCC1 /* WildCatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WildCatViewModel.swift; sourceTree = "<group>"; };
+		EF2FB04E2D2E64970015CCC1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EF2FB0502D2E64970015CCC1 /* MeowFactData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeowFactData.swift; sourceTree = "<group>"; };
+		EF2FB0522D2E64970015CCC1 /* MeowFactsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeowFactsEndpoint.swift; sourceTree = "<group>"; };
+		EF2FB0542D2E64970015CCC1 /* CatImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatImage.swift; sourceTree = "<group>"; };
+		EF2FB0562D2E64970015CCC1 /* TheCatAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheCatAPIEndpoint.swift; sourceTree = "<group>"; };
+		EF2FB0592D2E64970015CCC1 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		EF2FB05A2D2E64970015CCC1 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		EF2FB05C2D2E64970015CCC1 /* CatImagePersisted+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatImagePersisted+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EF2FB05D2D2E64970015CCC1 /* CatImagePersisted+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatImagePersisted+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EF2FB05E2D2E64970015CCC1 /* MeowFactPersisted+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MeowFactPersisted+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EF2FB05F2D2E64970015CCC1 /* MeowFactPersisted+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MeowFactPersisted+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EF2FB0612D2E64970015CCC1 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		EF2FB0632D2E64970015CCC1 /* Modelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modelable.swift; sourceTree = "<group>"; };
+		EF2FB0642D2E64970015CCC1 /* Persistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
+		EF2FB0672D2E64970015CCC1 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		EF2FB0692D2E64970015CCC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF2FB06A2D2E64970015CCC1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EF2FB06B2D2E64970015CCC1 /* MeowMeowMeowMeowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeowMeowMeowMeowApp.swift; sourceTree = "<group>"; };
+		EF2FB06D2D2E64970015CCC1 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		EF2FB08D2D2E649E0015CCC1 /* MockFactProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFactProvider.swift; sourceTree = "<group>"; };
+		EF2FB08E2D2E649E0015CCC1 /* MockImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageProvider.swift; sourceTree = "<group>"; };
+		EF2FB0902D2E649E0015CCC1 /* DomesticatedCatRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomesticatedCatRepositoryTests.swift; sourceTree = "<group>"; };
+		EF2FB0912D2E649E0015CCC1 /* DomesticatedCatViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomesticatedCatViewModelTests.swift; sourceTree = "<group>"; };
+		EF2FB0932D2E649E0015CCC1 /* WildCatRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WildCatRepositoryTests.swift; sourceTree = "<group>"; };
+		EF2FB0942D2E649E0015CCC1 /* WildCatViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WildCatViewModelTests.swift; sourceTree = "<group>"; };
+		EF8E2F622E438F7400ED7F0C /* CatFactLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFactLoader.swift; sourceTree = "<group>"; };
+		EF8E2F672E44D0DE00ED7F0C /* LoadCatFactFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCatFactFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
+		EF8E2F7C2E4597C700ED7F0C /* RemoteCatFactLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCatFactLoader.swift; sourceTree = "<group>"; };
+		EF93EC8A2D2C22B800910834 /* MeowMeowMeowMeow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeowMeowMeowMeow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF93EC9A2D2C22BA00910834 /* MeowMeowMeowMeowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeowMeowMeowMeowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF9761342E5D7719003DDBC7 /* MeowFactAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeowFactAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF97613D2E5D7B4F003DDBC7 /* MeowFactAPIEndToEndTest.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = MeowFactAPIEndToEndTest.xctestplan; sourceTree = "<group>"; };
+		EFAA8C582E50525E00506872 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		EFAA8C5A2E50528600506872 /* CatFactsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFactsMapper.swift; sourceTree = "<group>"; };
+		EFAA8C612E55723D00506872 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
+		EFAA8C672E56B9BF00506872 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		EFAA8C792E570F8800506872 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		EFB779A82D2CB7E0003627B2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EFC5322A2E5DAC8E000C4497 /* MeowMeowMeowMeow.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = MeowMeowMeowMeow.xctestplan; sourceTree = "<group>"; };
+		EFC532332E5EFD3F000C4497 /* CI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI.xctestplan; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		EF97071A2E854E0D002CE459 /* CatFactCache */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CatFactCache; sourceTree = "<group>"; };
+		EF9761352E5D7719003DDBC7 /* MeowFactAPIEndToEndTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = MeowFactAPIEndToEndTests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF93EC872D2C22B800910834 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFB77A2D2D2D4D69003627B2 /* Nuke in Frameworks */,
+				EF93ECB92D2C238500910834 /* Alamofire in Frameworks */,
+				EFB779A92D2CB7E0003627B2 /* CoreData.framework in Frameworks */,
+				EFB77A2F2D2D4D69003627B2 /* NukeUI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF93EC972D2C22BA00910834 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF9761312E5D7719003DDBC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF2FB03E2D2E64970015CCC1 /* LocalDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB03B2D2E64970015CCC1 /* LocalCatImageProvider.swift */,
+				EF2FB03C2D2E64970015CCC1 /* LocalDataProvider.swift */,
+				EF2FB03D2D2E64970015CCC1 /* LocalMeowFactProvider.swift */,
+			);
+			path = LocalDataProvider;
+			sourceTree = "<group>";
+		};
+		EF2FB0412D2E64970015CCC1 /* RemoteDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB03F2D2E64970015CCC1 /* RemoteDataProvider.swift */,
+				EF2FB0402D2E64970015CCC1 /* RemoteMeowProvider.swift */,
+			);
+			path = RemoteDataProvider;
+			sourceTree = "<group>";
+		};
+		EF2FB0422D2E64970015CCC1 /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB03E2D2E64970015CCC1 /* LocalDataProvider */,
+				EF2FB0412D2E64970015CCC1 /* RemoteDataProvider */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		EF2FB0442D2E64970015CCC1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0432D2E64970015CCC1 /* String+MeowFactPersisted.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EF2FB0482D2E64970015CCC1 /* DomesticatedCat */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0452D2E64970015CCC1 /* DomesticatedCatRepository.swift */,
+				EF2FB0462D2E64970015CCC1 /* DomesticatedCatView.swift */,
+				EF2FB0472D2E64970015CCC1 /* DomesticatedCatViewModel.swift */,
+			);
+			path = DomesticatedCat;
+			sourceTree = "<group>";
+		};
+		EF2FB04C2D2E64970015CCC1 /* WildCat */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0492D2E64970015CCC1 /* WIldCatRepository.swift */,
+				EF2FB04A2D2E64970015CCC1 /* WildCatView.swift */,
+				EF2FB04B2D2E64970015CCC1 /* WildCatViewModel.swift */,
+			);
+			path = WildCat;
+			sourceTree = "<group>";
+		};
+		EF2FB04D2D2E64970015CCC1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0482D2E64970015CCC1 /* DomesticatedCat */,
+				EF2FB04C2D2E64970015CCC1 /* WildCat */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		EF2FB04F2D2E64970015CCC1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB04E2D2E64970015CCC1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EF2FB0512D2E64970015CCC1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0502D2E64970015CCC1 /* MeowFactData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EF2FB0532D2E64970015CCC1 /* MeowFacts */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0512D2E64970015CCC1 /* Models */,
+				EF2FB0522D2E64970015CCC1 /* MeowFactsEndpoint.swift */,
+			);
+			path = MeowFacts;
+			sourceTree = "<group>";
+		};
+		EF2FB0552D2E64970015CCC1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0542D2E64970015CCC1 /* CatImage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EF2FB0572D2E64970015CCC1 /* TheCatAPIEndpoint */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0552D2E64970015CCC1 /* Models */,
+				EF2FB0562D2E64970015CCC1 /* TheCatAPIEndpoint.swift */,
+			);
+			path = TheCatAPIEndpoint;
+			sourceTree = "<group>";
+		};
+		EF2FB0582D2E64970015CCC1 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0532D2E64970015CCC1 /* MeowFacts */,
+				EF2FB0572D2E64970015CCC1 /* TheCatAPIEndpoint */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		EF2FB05B2D2E64970015CCC1 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0582D2E64970015CCC1 /* Endpoints */,
+				EF2FB0592D2E64970015CCC1 /* APIEndpoint.swift */,
+				EF2FB05A2D2E64970015CCC1 /* APIService.swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		EF2FB0602D2E64970015CCC1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB05C2D2E64970015CCC1 /* CatImagePersisted+CoreDataClass.swift */,
+				EF2FB05D2D2E64970015CCC1 /* CatImagePersisted+CoreDataProperties.swift */,
+				EF2FB05E2D2E64970015CCC1 /* MeowFactPersisted+CoreDataClass.swift */,
+				EF2FB05F2D2E64970015CCC1 /* MeowFactPersisted+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EF2FB0652D2E64970015CCC1 /* CoreDataService */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0602D2E64970015CCC1 /* Models */,
+				EF2FB0612D2E64970015CCC1 /* CoreDataService.swift */,
+				EF2FB0622D2E64970015CCC1 /* Model.xcdatamodeld */,
+				EF2FB0632D2E64970015CCC1 /* Modelable.swift */,
+				EF2FB0642D2E64970015CCC1 /* Persistable.swift */,
+			);
+			path = CoreDataService;
+			sourceTree = "<group>";
+		};
+		EF2FB0662D2E64970015CCC1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB05B2D2E64970015CCC1 /* APIService */,
+				EF2FB0652D2E64970015CCC1 /* CoreDataService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EF2FB0682D2E64970015CCC1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0672D2E64970015CCC1 /* OverlayView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EF2FB06C2D2E64970015CCC1 /* MeowMeowMeowMeow */ = {
+			isa = PBXGroup;
+			children = (
+				EF8E2F7B2E4597A600ED7F0C /* CatFactAPI */,
+				EF8E2F612E438F2B00ED7F0C /* CatFactFeature */,
+				EF2FB0422D2E64970015CCC1 /* DataProvider */,
+				EF2FB0442D2E64970015CCC1 /* Extensions */,
+				EF2FB04D2D2E64970015CCC1 /* Modules */,
+				EF2FB04F2D2E64970015CCC1 /* Preview Content */,
+				EF2FB0662D2E64970015CCC1 /* Services */,
+				EF2FB0682D2E64970015CCC1 /* Views */,
+				EF2FB0692D2E64970015CCC1 /* Assets.xcassets */,
+				EF2FB06A2D2E64970015CCC1 /* ContentView.swift */,
+				EF2FB06B2D2E64970015CCC1 /* MeowMeowMeowMeowApp.swift */,
+			);
+			path = MeowMeowMeowMeow;
+			sourceTree = "<group>";
+		};
+		EF2FB08F2D2E649E0015CCC1 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB08D2D2E649E0015CCC1 /* MockFactProvider.swift */,
+				EF2FB08E2D2E649E0015CCC1 /* MockImageProvider.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		EF2FB0922D2E649E0015CCC1 /* DomesticatedCat */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0902D2E649E0015CCC1 /* DomesticatedCatRepositoryTests.swift */,
+				EF2FB0912D2E649E0015CCC1 /* DomesticatedCatViewModelTests.swift */,
+			);
+			path = DomesticatedCat;
+			sourceTree = "<group>";
+		};
+		EF2FB0952D2E649E0015CCC1 /* WildCat */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0932D2E649E0015CCC1 /* WildCatRepositoryTests.swift */,
+				EF2FB0942D2E649E0015CCC1 /* WildCatViewModelTests.swift */,
+			);
+			path = WildCat;
+			sourceTree = "<group>";
+		};
+		EF2FB0962D2E649E0015CCC1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				EF2FB0922D2E649E0015CCC1 /* DomesticatedCat */,
+				EF2FB0952D2E649E0015CCC1 /* WildCat */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		EF2FB0972D2E649E0015CCC1 /* MeowMeowMeowMeowTests */ = {
+			isa = PBXGroup;
+			children = (
+				EFAA8C662E56B9B100506872 /* Helpers */,
+				EF97071A2E854E0D002CE459 /* CatFactCache */,
+				EFAA8C5C2E50644700506872 /* CatFactAPI */,
+				EF2FB08F2D2E649E0015CCC1 /* Mocks */,
+				EF2FB0962D2E649E0015CCC1 /* Modules */,
+			);
+			path = MeowMeowMeowMeowTests;
+			sourceTree = "<group>";
+		};
+		EF8E2F612E438F2B00ED7F0C /* CatFactFeature */ = {
+			isa = PBXGroup;
+			children = (
+				EF8E2F622E438F7400ED7F0C /* CatFactLoader.swift */,
+			);
+			path = CatFactFeature;
+			sourceTree = "<group>";
+		};
+		EF8E2F7B2E4597A600ED7F0C /* CatFactAPI */ = {
+			isa = PBXGroup;
+			children = (
+				EFAA8C792E570F8800506872 /* URLSessionHTTPClient.swift */,
+				EFAA8C5A2E50528600506872 /* CatFactsMapper.swift */,
+				EFAA8C582E50525E00506872 /* HTTPClient.swift */,
+				EF8E2F7C2E4597C700ED7F0C /* RemoteCatFactLoader.swift */,
+			);
+			path = CatFactAPI;
+			sourceTree = "<group>";
+		};
+		EF93EC812D2C22B800910834 = {
+			isa = PBXGroup;
+			children = (
+				EFC532332E5EFD3F000C4497 /* CI.xctestplan */,
+				EF97613D2E5D7B4F003DDBC7 /* MeowFactAPIEndToEndTest.xctestplan */,
+				EFC5322A2E5DAC8E000C4497 /* MeowMeowMeowMeow.xctestplan */,
+				EF2FB06C2D2E64970015CCC1 /* MeowMeowMeowMeow */,
+				EF2FB0972D2E649E0015CCC1 /* MeowMeowMeowMeowTests */,
+				EF9761352E5D7719003DDBC7 /* MeowFactAPIEndToEndTests */,
+				EFB779A72D2CB7DF003627B2 /* Frameworks */,
+				EF93EC8B2D2C22B800910834 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF93EC8B2D2C22B800910834 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF93EC8A2D2C22B800910834 /* MeowMeowMeowMeow.app */,
+				EF93EC9A2D2C22BA00910834 /* MeowMeowMeowMeowTests.xctest */,
+				EF9761342E5D7719003DDBC7 /* MeowFactAPIEndToEndTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EFAA8C5C2E50644700506872 /* CatFactAPI */ = {
+			isa = PBXGroup;
+			children = (
+				EF8E2F672E44D0DE00ED7F0C /* LoadCatFactFromRemoteUseCaseTests.swift */,
+				EFAA8C612E55723D00506872 /* URLSessionHTTPClientTests.swift */,
+			);
+			path = CatFactAPI;
+			sourceTree = "<group>";
+		};
+		EFAA8C662E56B9B100506872 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EFAA8C672E56B9BF00506872 /* XCTestCase+MemoryLeakTracking.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		EFB779A72D2CB7DF003627B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFB779A82D2CB7E0003627B2 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF93EC892D2C22B800910834 /* MeowMeowMeowMeow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF93ECAE2D2C22BA00910834 /* Build configuration list for PBXNativeTarget "MeowMeowMeowMeow" */;
+			buildPhases = (
+				EF93EC862D2C22B800910834 /* Sources */,
+				EF93EC872D2C22B800910834 /* Frameworks */,
+				EF93EC882D2C22B800910834 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MeowMeowMeowMeow;
+			packageProductDependencies = (
+				EF93ECB82D2C238500910834 /* Alamofire */,
+				EFB77A2C2D2D4D69003627B2 /* Nuke */,
+				EFB77A2E2D2D4D69003627B2 /* NukeUI */,
+			);
+			productName = MeowMeowMeowMeow;
+			productReference = EF93EC8A2D2C22B800910834 /* MeowMeowMeowMeow.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EF93EC992D2C22BA00910834 /* MeowMeowMeowMeowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF93ECB12D2C22BA00910834 /* Build configuration list for PBXNativeTarget "MeowMeowMeowMeowTests" */;
+			buildPhases = (
+				EF93EC962D2C22BA00910834 /* Sources */,
+				EF93EC972D2C22BA00910834 /* Frameworks */,
+				EF93EC982D2C22BA00910834 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF93EC9C2D2C22BA00910834 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				EF97071A2E854E0D002CE459 /* CatFactCache */,
+			);
+			name = MeowMeowMeowMeowTests;
+			packageProductDependencies = (
+			);
+			productName = MeowMeowMeowMeowTests;
+			productReference = EF93EC9A2D2C22BA00910834 /* MeowMeowMeowMeowTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EF9761332E5D7719003DDBC7 /* MeowFactAPIEndToEndTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF97613A2E5D7719003DDBC7 /* Build configuration list for PBXNativeTarget "MeowFactAPIEndToEndTests" */;
+			buildPhases = (
+				EF9761302E5D7719003DDBC7 /* Sources */,
+				EF9761312E5D7719003DDBC7 /* Frameworks */,
+				EF9761322E5D7719003DDBC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF9761392E5D7719003DDBC7 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				EF9761352E5D7719003DDBC7 /* MeowFactAPIEndToEndTests */,
+			);
+			name = MeowFactAPIEndToEndTests;
+			packageProductDependencies = (
+			);
+			productName = MeowFactAPIEndToEndTests;
+			productReference = EF9761342E5D7719003DDBC7 /* MeowFactAPIEndToEndTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF93EC822D2C22B800910834 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					EF93EC892D2C22B800910834 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					EF93EC992D2C22BA00910834 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = EF93EC892D2C22B800910834;
+					};
+					EF9761332E5D7719003DDBC7 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = EF93EC892D2C22B800910834;
+					};
+				};
+			};
+			buildConfigurationList = EF93EC852D2C22B800910834 /* Build configuration list for PBXProject "MeowMeowMeowMeow" */;
+			compatibilityVersion = "Xcode 15.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF93EC812D2C22B800910834;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				EF93ECB72D2C238500910834 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				EFB77A2B2D2D4D69003627B2 /* XCRemoteSwiftPackageReference "Nuke" */,
+			);
+			productRefGroup = EF93EC8B2D2C22B800910834 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF93EC892D2C22B800910834 /* MeowMeowMeowMeow */,
+				EF93EC992D2C22BA00910834 /* MeowMeowMeowMeowTests */,
+				EF9761332E5D7719003DDBC7 /* MeowFactAPIEndToEndTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF93EC882D2C22B800910834 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF2FB08B2D2E64970015CCC1 /* Preview Assets.xcassets in Resources */,
+				EF2FB08C2D2E64970015CCC1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF93EC982D2C22BA00910834 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF9761322E5D7719003DDBC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF93EC862D2C22B800910834 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF2FB06E2D2E64970015CCC1 /* LocalCatImageProvider.swift in Sources */,
+				EF2FB06F2D2E64970015CCC1 /* LocalDataProvider.swift in Sources */,
+				EF2FB0702D2E64970015CCC1 /* LocalMeowFactProvider.swift in Sources */,
+				EF8E2F632E438F8000ED7F0C /* CatFactLoader.swift in Sources */,
+				EF2FB0712D2E64970015CCC1 /* RemoteDataProvider.swift in Sources */,
+				EF2FB0722D2E64970015CCC1 /* RemoteMeowProvider.swift in Sources */,
+				EF2FB0732D2E64970015CCC1 /* String+MeowFactPersisted.swift in Sources */,
+				EF2FB0742D2E64970015CCC1 /* DomesticatedCatRepository.swift in Sources */,
+				EF2FB0752D2E64970015CCC1 /* DomesticatedCatView.swift in Sources */,
+				EF2FB0762D2E64970015CCC1 /* DomesticatedCatViewModel.swift in Sources */,
+				EFAA8C592E50525E00506872 /* HTTPClient.swift in Sources */,
+				EF2FB0772D2E64970015CCC1 /* WIldCatRepository.swift in Sources */,
+				EF2FB0782D2E64970015CCC1 /* WildCatView.swift in Sources */,
+				EF2FB0792D2E64970015CCC1 /* WildCatViewModel.swift in Sources */,
+				EF2FB07A2D2E64970015CCC1 /* MeowFactData.swift in Sources */,
+				EF2FB07B2D2E64970015CCC1 /* MeowFactsEndpoint.swift in Sources */,
+				EF2FB07C2D2E64970015CCC1 /* CatImage.swift in Sources */,
+				EF2FB07D2D2E64970015CCC1 /* TheCatAPIEndpoint.swift in Sources */,
+				EF2FB07E2D2E64970015CCC1 /* APIEndpoint.swift in Sources */,
+				EF2FB07F2D2E64970015CCC1 /* APIService.swift in Sources */,
+				EF2FB0802D2E64970015CCC1 /* CatImagePersisted+CoreDataClass.swift in Sources */,
+				EFAA8C7A2E570F8800506872 /* URLSessionHTTPClient.swift in Sources */,
+				EF8E2F7D2E4597C700ED7F0C /* RemoteCatFactLoader.swift in Sources */,
+				EFAA8C5B2E50528600506872 /* CatFactsMapper.swift in Sources */,
+				EF2FB0812D2E64970015CCC1 /* CatImagePersisted+CoreDataProperties.swift in Sources */,
+				EF2FB0822D2E64970015CCC1 /* MeowFactPersisted+CoreDataClass.swift in Sources */,
+				EF2FB0832D2E64970015CCC1 /* MeowFactPersisted+CoreDataProperties.swift in Sources */,
+				EF2FB0842D2E64970015CCC1 /* CoreDataService.swift in Sources */,
+				EF2FB0852D2E64970015CCC1 /* Model.xcdatamodeld in Sources */,
+				EF2FB0862D2E64970015CCC1 /* Modelable.swift in Sources */,
+				EF2FB0872D2E64970015CCC1 /* Persistable.swift in Sources */,
+				EF2FB0882D2E64970015CCC1 /* OverlayView.swift in Sources */,
+				EF2FB0892D2E64970015CCC1 /* ContentView.swift in Sources */,
+				EF2FB08A2D2E64970015CCC1 /* MeowMeowMeowMeowApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF93EC962D2C22BA00910834 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF2FB0982D2E649E0015CCC1 /* MockFactProvider.swift in Sources */,
+				EF2FB0992D2E649E0015CCC1 /* MockImageProvider.swift in Sources */,
+				EFAA8C682E56B9DC00506872 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
+				EF2FB09A2D2E649E0015CCC1 /* DomesticatedCatRepositoryTests.swift in Sources */,
+				EFAA8C622E55723D00506872 /* URLSessionHTTPClientTests.swift in Sources */,
+				EF2FB09B2D2E649E0015CCC1 /* DomesticatedCatViewModelTests.swift in Sources */,
+				EF2FB09C2D2E649E0015CCC1 /* WildCatRepositoryTests.swift in Sources */,
+				EF2FB09D2D2E649E0015CCC1 /* WildCatViewModelTests.swift in Sources */,
+				EF8E2F772E44EF2A00ED7F0C /* LoadCatFactFromRemoteUseCaseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF9761302E5D7719003DDBC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF97613E2E5DA1C8003DDBC7 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF93EC9C2D2C22BA00910834 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF93EC892D2C22B800910834 /* MeowMeowMeowMeow */;
+			targetProxy = EF93EC9B2D2C22BA00910834 /* PBXContainerItemProxy */;
+		};
+		EF9761392E5D7719003DDBC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF93EC892D2C22B800910834 /* MeowMeowMeowMeow */;
+			targetProxy = EF9761382E5D7719003DDBC7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EF93ECAC2D2C22BA00910834 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EF93ECAD2D2C22BA00910834 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF93ECAF2D2C22BA00910834 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MeowMeowMeowMeow/Preview Content\"";
+				DEVELOPMENT_TEAM = 64WRQPRMA9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mkmbayona.MeowMeowMeowMeow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF93ECB02D2C22BA00910834 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MeowMeowMeowMeow/Preview Content\"";
+				DEVELOPMENT_TEAM = 64WRQPRMA9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mkmbayona.MeowMeowMeowMeow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EF93ECB22D2C22BA00910834 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mkmbayona.MeowMeowMeowMeowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeowMeowMeowMeow.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MeowMeowMeowMeow";
+			};
+			name = Debug;
+		};
+		EF93ECB32D2C22BA00910834 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mkmbayona.MeowMeowMeowMeowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeowMeowMeowMeow.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MeowMeowMeowMeow";
+			};
+			name = Release;
+		};
+		EF97613B2E5D7719003DDBC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mkmbayona.MeowFactAPIEndToEndTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeowMeowMeowMeow.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MeowMeowMeowMeow";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Debug;
+		};
+		EF97613C2E5D7719003DDBC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mkmbayona.MeowFactAPIEndToEndTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeowMeowMeowMeow.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MeowMeowMeowMeow";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF93EC852D2C22B800910834 /* Build configuration list for PBXProject "MeowMeowMeowMeow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF93ECAC2D2C22BA00910834 /* Debug */,
+				EF93ECAD2D2C22BA00910834 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF93ECAE2D2C22BA00910834 /* Build configuration list for PBXNativeTarget "MeowMeowMeowMeow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF93ECAF2D2C22BA00910834 /* Debug */,
+				EF93ECB02D2C22BA00910834 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF93ECB12D2C22BA00910834 /* Build configuration list for PBXNativeTarget "MeowMeowMeowMeowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF93ECB22D2C22BA00910834 /* Debug */,
+				EF93ECB32D2C22BA00910834 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF97613A2E5D7719003DDBC7 /* Build configuration list for PBXNativeTarget "MeowFactAPIEndToEndTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF97613B2E5D7719003DDBC7 /* Debug */,
+				EF97613C2E5D7719003DDBC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EF93ECB72D2C238500910834 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		EFB77A2B2D2D4D69003627B2 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EF93ECB82D2C238500910834 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF93ECB72D2C238500910834 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		EFB77A2C2D2D4D69003627B2 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFB77A2B2D2D4D69003627B2 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		EFB77A2E2D2D4D69003627B2 /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFB77A2B2D2D4D69003627B2 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		EF2FB0622D2E64970015CCC1 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EF2FB06D2D2E64970015CCC1 /* Model.xcdatamodel */,
+			);
+			currentVersion = EF2FB06D2D2E64970015CCC1 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EF93EC822D2C22B800910834 /* Project object */;
+}
