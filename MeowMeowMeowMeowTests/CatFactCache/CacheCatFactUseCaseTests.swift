@@ -30,20 +30,27 @@ class CatFactStore {
 final class CacheCatFactUseCaseTests: XCTestCase {
 
   func test_init_doesNotDeleteCacheUponCreation() {
-    let store = CatFactStore()
-    _ = LocalCatFactLoader(store: store)
+    let (_, store) = makeSUT()
 
     XCTAssertEqual(store.deleteCachedCatFactsCount, 0)
   }
 
   func test_save_requestsCacheDeletion() {
     let catFacts: [String] = ["Cat fact", "Cat fact 2"]
-    let store = CatFactStore()
-    let sut = LocalCatFactLoader(store: store)
+    let (sut, store) = makeSUT()
 
     sut.save(catFacts)
 
     XCTAssertEqual(store.deleteCachedCatFactsCount, 1)
+  }
+
+  // MARK: Helpers
+
+  func makeSUT() -> (LocalCatFactLoader, CatFactStore) {
+    let store = CatFactStore()
+    let sut = LocalCatFactLoader(store: store)
+
+    return (sut, store)
   }
 
 }
