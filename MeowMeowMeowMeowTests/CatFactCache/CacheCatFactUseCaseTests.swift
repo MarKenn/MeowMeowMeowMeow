@@ -28,13 +28,17 @@ class LocalCatFactLoader {
 class CatFactStore {
   typealias DeleteCompletion = (Error?) -> Void
 
-  var deleteCachedFactsCount = 0
-  var insertions = [(facts: [String], timestamp: Date)]()
+  enum ReceivedMessage: Equatable {
+    case deleteCachedFacts
+    case insert([String], Date)
+  }
+
+  private(set) var receivedMessages = [ReceivedMessage]()
 
   private var deletionCompletions = [DeleteCompletion]()
 
   func deleteCachedFacts(completion: @escaping DeleteCompletion) {
-    deleteCachedFactsCount += 1
+    receivedMessages.append(.deleteCachedFacts)
     deletionCompletions.append(completion)
   }
 
@@ -47,7 +51,7 @@ class CatFactStore {
   }
 
   func insert(_ facts: [String], timestamp: Date) {
-    insertions.append((facts, timestamp))
+    receivedMessages.append(.insert(facts, timestamp))
   }
 }
 
@@ -56,7 +60,7 @@ final class CacheCatFactUseCaseTests: XCTestCase {
   func test_init_doesNotDeleteCacheUponCreation() {
     let (_, store) = makeSUT()
 
-    XCTAssertEqual(store.deleteCachedFactsCount, 0)
+    XCTAssertEqual(store.receivedMessages, [])
   }
 
   func test_save_requestsCacheDeletion() {
@@ -65,7 +69,7 @@ final class CacheCatFactUseCaseTests: XCTestCase {
 
     sut.save(facts)
 
-    XCTAssertEqual(store.deleteCachedFactsCount, 1)
+    XCTAssertEqual(store.receivedMessages, [.deleteCachedFacts])
   }
 
   func test_save_doesNotRequestsCacheInsertionOnDeletionError() {
@@ -76,7 +80,7 @@ final class CacheCatFactUseCaseTests: XCTestCase {
     sut.save(facts)
     store.completeDeletion(with: deletionError)
 
-    XCTAssertEqual(store.insertions.count, 0)
+    XCTAssertEqual(store.receivedMessages, [.deleteCachedFacts])
   }
 
   func test_save_requestsNewCacheInsertionWithTimestampOnSuccessfulDeletion() {
@@ -87,9 +91,7 @@ final class CacheCatFactUseCaseTests: XCTestCase {
     sut.save(facts)
     store.completeDeletionSuccessfully()
 
-    XCTAssertEqual(store.insertions.count, 1)
-    XCTAssertEqual(store.insertions.first?.facts, facts)
-    XCTAssertEqual(store.insertions.first?.timestamp, currentDate)
+    XCTAssertEqual(store.receivedMessages, [.deleteCachedFacts, .insert(facts, currentDate)])
   }
 
   // MARK: Helpers
