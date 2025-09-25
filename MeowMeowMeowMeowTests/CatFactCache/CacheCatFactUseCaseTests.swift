@@ -16,10 +16,12 @@ class LocalCatFactLoader {
     self.currentDate = currentDate
   }
 
-  func save(_ facts: [String]) {
+  func save(_ facts: [String], completion: @escaping (Error?) -> Void) {
     store.deleteCachedFacts { [unowned self] error in
       if error == nil {
         store.insert(facts, timestamp: currentDate())
+      } else {
+        completion(error)
       }
     }
   }
@@ -67,7 +69,7 @@ final class CacheCatFactUseCaseTests: XCTestCase {
     let facts: [String] = [anyFact(), anyFact()]
     let (sut, store) = makeSUT()
 
-    sut.save(facts)
+    sut.save(facts) { _ in }
 
     XCTAssertEqual(store.receivedMessages, [.deleteCachedFacts])
   }
@@ -77,7 +79,7 @@ final class CacheCatFactUseCaseTests: XCTestCase {
     let (sut, store) = makeSUT()
     let deletionError = anyNSError()
 
-    sut.save(facts)
+    sut.save(facts) { _ in }
     store.completeDeletion(with: deletionError)
 
     XCTAssertEqual(store.receivedMessages, [.deleteCachedFacts])
@@ -88,10 +90,28 @@ final class CacheCatFactUseCaseTests: XCTestCase {
     let facts: [String] = [anyFact(), anyFact()]
     let (sut, store) = makeSUT(currentDate: { currentDate })
 
-    sut.save(facts)
+    sut.save(facts) { _ in }
     store.completeDeletionSuccessfully()
 
     XCTAssertEqual(store.receivedMessages, [.deleteCachedFacts, .insert(facts, currentDate)])
+  }
+
+  func test_save_failsOnDeletionError() {
+    let facts: [String] = [anyFact(), anyFact()]
+    let (sut, store) = makeSUT()
+    let deletionError = anyNSError()
+    let exp = expectation(description: "Wait for save completion")
+
+    var receivedError: Error?
+    sut.save(facts) { error in
+      receivedError = error
+      exp.fulfill()
+    }
+
+    store.completeDeletion(with: deletionError)
+    wait(for: [exp], timeout: 1.0)
+
+    XCTAssertEqual(receivedError as? NSError, deletionError)
   }
 
   // MARK: Helpers
