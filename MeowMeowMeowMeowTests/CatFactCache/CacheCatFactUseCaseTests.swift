@@ -21,9 +21,14 @@ class LocalCatFactLoader {
 
 class CatFactStore {
   var deleteCachedCatFactsCount = 0
+  var insertCallCount = 0
 
   func deleteCachedCatFacts() {
     deleteCachedCatFactsCount += 1
+  }
+
+  func completeDeletion(with error: NSError) {
+
   }
 }
 
@@ -44,14 +49,29 @@ final class CacheCatFactUseCaseTests: XCTestCase {
     XCTAssertEqual(store.deleteCachedCatFactsCount, 1)
   }
 
+  func test_save_doesNotRequestsCacheInsertionOnDeletionError() {
+    let catFacts: [String] = ["Cat fact", "Cat fact 2"]
+    let (sut, store) = makeSUT()
+    let deletionError = anyNSError()
+
+    sut.save(catFacts)
+    store.completeDeletion(with: deletionError)
+
+    XCTAssertEqual(store.insertCallCount, 0)
+  }
+
   // MARK: Helpers
 
-  func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (LocalCatFactLoader, CatFactStore) {
+  private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (LocalCatFactLoader, CatFactStore) {
     let store = CatFactStore()
     let sut = LocalCatFactLoader(store: store)
     trackForMemoryLeaks(store, file: file, line: line)
     trackForMemoryLeaks(sut, file: file, line: line)
     return (sut, store)
+  }
+
+  private func anyNSError() -> NSError {
+    NSError(domain: "any error", code: 0)
   }
 
 }
