@@ -19,7 +19,7 @@ class LocalCatFactLoader {
   func save(_ facts: [String], completion: @escaping (Error?) -> Void) {
     store.deleteCachedFacts { [unowned self] error in
       if error == nil {
-        store.insert(facts, timestamp: currentDate())
+        store.insert(facts, timestamp: currentDate(), completion: completion)
       } else {
         completion(error)
       }
@@ -29,6 +29,7 @@ class LocalCatFactLoader {
 
 class CatFactStore {
   typealias DeleteCompletion = (Error?) -> Void
+  typealias InsertCompletion = (Error?) -> Void
 
   enum ReceivedMessage: Equatable {
     case deleteCachedFacts
@@ -38,6 +39,7 @@ class CatFactStore {
   private(set) var receivedMessages = [ReceivedMessage]()
 
   private var deletionCompletions = [DeleteCompletion]()
+  private var insertionCompletions = [InsertCompletion]()
 
   func deleteCachedFacts(completion: @escaping DeleteCompletion) {
     receivedMessages.append(.deleteCachedFacts)
@@ -52,8 +54,13 @@ class CatFactStore {
     deletionCompletions[index](nil)
   }
 
-  func insert(_ facts: [String], timestamp: Date) {
+  func insert(_ facts: [String], timestamp: Date, completion: @escaping InsertCompletion) {
     receivedMessages.append(.insert(facts, timestamp))
+    insertionCompletions.append(completion)
+  }
+
+  func completeInsertion(with error: Error, at index: Int = 0) {
+    insertionCompletions[index](error)
   }
 }
 
@@ -112,6 +119,25 @@ final class CacheCatFactUseCaseTests: XCTestCase {
     wait(for: [exp], timeout: 1.0)
 
     XCTAssertEqual(receivedError as? NSError, deletionError)
+  }
+
+  func test_save_failsOnInsertionError() {
+    let facts: [String] = [anyFact(), anyFact()]
+    let (sut, store) = makeSUT()
+    let insertionError = anyNSError()
+    let exp = expectation(description: "Wait for save completion")
+
+    var receivedError: Error?
+    sut.save(facts) { error in
+      receivedError = error
+      exp.fulfill()
+    }
+
+    store.completeDeletionSuccessfully()
+    store.completeInsertion(with: insertionError)
+    wait(for: [exp], timeout: 1.0)
+
+    XCTAssertEqual(receivedError as? NSError, insertionError)
   }
 
   // MARK: Helpers
