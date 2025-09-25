@@ -27,45 +27,12 @@ class LocalCatFactLoader {
   }
 }
 
-class CatFactStore {
+protocol CatFactStore {
   typealias DeleteCompletion = (Error?) -> Void
   typealias InsertCompletion = (Error?) -> Void
 
-  enum ReceivedMessage: Equatable {
-    case deleteCachedFacts
-    case insert([String], Date)
-  }
-
-  private(set) var receivedMessages = [ReceivedMessage]()
-
-  private var deletionCompletions = [DeleteCompletion]()
-  private var insertionCompletions = [InsertCompletion]()
-
-  func deleteCachedFacts(completion: @escaping DeleteCompletion) {
-    receivedMessages.append(.deleteCachedFacts)
-    deletionCompletions.append(completion)
-  }
-
-  func completeDeletion(with error: Error, at index: Int = 0) {
-    deletionCompletions[index](error)
-  }
-
-  func completeDeletionSuccessfully(at index: Int = 0) {
-    deletionCompletions[index](nil)
-  }
-
-  func insert(_ facts: [String], timestamp: Date, completion: @escaping InsertCompletion) {
-    receivedMessages.append(.insert(facts, timestamp))
-    insertionCompletions.append(completion)
-  }
-
-  func completeInsertion(with error: Error, at index: Int = 0) {
-    insertionCompletions[index](error)
-  }
-
-  func completeInsertionSuccessfully(at index: Int = 0) {
-    insertionCompletions[index](nil)
-  }
+  func deleteCachedFacts(completion: @escaping DeleteCompletion)
+  func insert(_ facts: [String], timestamp: Date, completion: @escaping InsertCompletion)
 }
 
 final class CacheCatFactUseCaseTests: XCTestCase {
@@ -141,8 +108,8 @@ final class CacheCatFactUseCaseTests: XCTestCase {
     currentDate: @escaping () -> Date = Date.init,
     file: StaticString = #filePath,
     line: UInt = #line
-  ) -> (LocalCatFactLoader, CatFactStore) {
-    let store = CatFactStore()
+  ) -> (LocalCatFactLoader, CatFactStoreSpy) {
+    let store = CatFactStoreSpy()
     let sut = LocalCatFactLoader(store: store, currentDate: currentDate)
     trackForMemoryLeaks(store, file: file, line: line)
     trackForMemoryLeaks(sut, file: file, line: line)
@@ -170,8 +137,46 @@ final class CacheCatFactUseCaseTests: XCTestCase {
     XCTAssertEqual(receivedError as? NSError, expectedError, file: file, line: line)
   }
 
-   private func anyFact() -> String {
-     "any fact \(Int.random(in: 1...5))"
+  private class CatFactStoreSpy: CatFactStore {
+    enum ReceivedMessage: Equatable {
+      case deleteCachedFacts
+      case insert([String], Date)
+    }
+
+    private(set) var receivedMessages = [ReceivedMessage]()
+
+    private var deletionCompletions = [DeleteCompletion]()
+    private var insertionCompletions = [InsertCompletion]()
+
+    func deleteCachedFacts(completion: @escaping DeleteCompletion) {
+      receivedMessages.append(.deleteCachedFacts)
+      deletionCompletions.append(completion)
+    }
+
+    func completeDeletion(with error: Error, at index: Int = 0) {
+      deletionCompletions[index](error)
+    }
+
+    func completeDeletionSuccessfully(at index: Int = 0) {
+      deletionCompletions[index](nil)
+    }
+
+    func insert(_ facts: [String], timestamp: Date, completion: @escaping InsertCompletion) {
+      receivedMessages.append(.insert(facts, timestamp))
+      insertionCompletions.append(completion)
+    }
+
+    func completeInsertion(with error: Error, at index: Int = 0) {
+      insertionCompletions[index](error)
+    }
+
+    func completeInsertionSuccessfully(at index: Int = 0) {
+      insertionCompletions[index](nil)
+    }
+  }
+
+  private func anyFact() -> String {
+    "any fact \(Int.random(in: 1...5))"
   }
 
   private func anyNSError() -> NSError {
