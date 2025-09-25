@@ -46,10 +46,11 @@ final class CacheCatFactUseCaseTests: XCTestCase {
 
   // MARK: Helpers
 
-  func makeSUT() -> (LocalCatFactLoader, CatFactStore) {
+  func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (LocalCatFactLoader, CatFactStore) {
     let store = CatFactStore()
     let sut = LocalCatFactLoader(store: store)
-
+    trackForMemoryLeaks(store, file: file, line: line)
+    trackForMemoryLeaks(sut, file: file, line: line)
     return (sut, store)
   }
 
