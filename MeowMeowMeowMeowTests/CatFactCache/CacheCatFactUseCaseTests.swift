@@ -23,11 +23,15 @@ class LocalCatFactLoader {
             if let cacheDeletionError = error {
                 completion(cacheDeletionError)
             } else {
-                store.insert(facts, timestamp: currentDate()) { [weak self] error in
-                    guard self != nil else { return }
-                    completion(error)
-                }
+                cache(facts, with: completion)
             }
+        }
+    }
+
+    func cache(_ facts: [String], with completion: @escaping (Error?) -> Void) {
+        store.insert(facts, timestamp: currentDate()) { [weak self] error in
+            guard self != nil else { return }
+            completion(error)
         }
     }
 }
