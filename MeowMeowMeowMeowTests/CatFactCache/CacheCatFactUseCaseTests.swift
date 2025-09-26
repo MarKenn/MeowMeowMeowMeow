@@ -6,43 +6,7 @@
 //
 
 import XCTest
-
-class LocalCatFactLoader {
-    private let store: CatFactStore
-    private let currentDate: () -> Date
-
-    init(store: CatFactStore, currentDate: @escaping () -> Date) {
-        self.store = store
-        self.currentDate = currentDate
-    }
-
-    func save(_ facts: [String], completion: @escaping (Error?) -> Void) {
-        store.deleteCachedFacts { [weak self] error in
-            guard let self else { return }
-
-            if let cacheDeletionError = error {
-                completion(cacheDeletionError)
-            } else {
-                cache(facts, with: completion)
-            }
-        }
-    }
-
-    func cache(_ facts: [String], with completion: @escaping (Error?) -> Void) {
-        store.insert(facts, timestamp: currentDate()) { [weak self] error in
-            guard self != nil else { return }
-            completion(error)
-        }
-    }
-}
-
-protocol CatFactStore {
-    typealias DeleteCompletion = (Error?) -> Void
-    typealias InsertCompletion = (Error?) -> Void
-
-    func deleteCachedFacts(completion: @escaping DeleteCompletion)
-    func insert(_ facts: [String], timestamp: Date, completion: @escaping InsertCompletion)
-}
+import MeowMeowMeowMeow
 
 final class CacheCatFactUseCaseTests: XCTestCase {
 

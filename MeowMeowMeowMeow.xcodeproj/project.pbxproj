@@ -133,6 +133,7 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		EF97071A2E854E0D002CE459 /* CatFactCache */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CatFactCache; sourceTree = "<group>"; };
+		EF9707272E8618C9002CE459 /* CatFactCache */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CatFactCache; sourceTree = "<group>"; };
 		EF9761352E5D7719003DDBC7 /* MeowFactAPIEndToEndTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = MeowFactAPIEndToEndTests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -334,6 +335,7 @@
 		EF2FB06C2D2E64970015CCC1 /* MeowMeowMeowMeow */ = {
 			isa = PBXGroup;
 			children = (
+				EF9707272E8618C9002CE459 /* CatFactCache */,
 				EF8E2F7B2E4597A600ED7F0C /* CatFactAPI */,
 				EF8E2F612E438F2B00ED7F0C /* CatFactFeature */,
 				EF2FB0422D2E64970015CCC1 /* DataProvider */,
@@ -479,6 +481,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				EF9707272E8618C9002CE459 /* CatFactCache */,
 			);
 			name = MeowMeowMeowMeow;
 			packageProductDependencies = (
