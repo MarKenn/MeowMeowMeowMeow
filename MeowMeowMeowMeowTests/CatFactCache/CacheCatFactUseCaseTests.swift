@@ -17,7 +17,9 @@ class LocalCatFactLoader {
     }
 
     func save(_ facts: [String], completion: @escaping (Error?) -> Void) {
-        store.deleteCachedFacts { [unowned self] error in
+        store.deleteCachedFacts { [weak self] error in
+            guard let self else { return }
+            
             if error == nil {
                 store.insert(facts, timestamp: currentDate(), completion: completion)
             } else {
@@ -100,6 +102,19 @@ final class CacheCatFactUseCaseTests: XCTestCase {
             store.completeDeletionSuccessfully()
             store.completeInsertionSuccessfully()
         }
+    }
+
+    func test_save_doesNotDeliverDeletionErrorAfterInstanceHasBeenDeallocated() {
+        let store = CatFactStoreSpy()
+        var sut: LocalCatFactLoader? = LocalCatFactLoader(store: store, currentDate: Date.init)
+
+        var receivedResults = [Error?]()
+        sut?.save([anyFact()]) { receivedResults.append($0)}
+
+        sut = nil
+        store.completeDeletion(with: anyNSError())
+
+        XCTAssert(receivedResults.isEmpty)
     }
 
     // MARK: Helpers
