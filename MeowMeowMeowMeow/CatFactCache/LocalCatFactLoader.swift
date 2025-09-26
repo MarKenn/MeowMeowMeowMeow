@@ -11,12 +11,14 @@ public class LocalCatFactLoader {
     private let store: CatFactStore
     private let currentDate: () -> Date
 
+    public typealias SaveResult = Error?
+
     public init(store: CatFactStore, currentDate: @escaping () -> Date) {
         self.store = store
         self.currentDate = currentDate
     }
 
-    public func save(_ facts: [String], completion: @escaping (Error?) -> Void) {
+    public func save(_ facts: [String], completion: @escaping (SaveResult) -> Void) {
         store.deleteCachedFacts { [weak self] error in
             guard let self else { return }
 
@@ -28,7 +30,7 @@ public class LocalCatFactLoader {
         }
     }
 
-    private func cache(_ facts: [String], with completion: @escaping (Error?) -> Void) {
+    private func cache(_ facts: [String], with completion: @escaping (SaveResult) -> Void) {
         store.insert(facts, timestamp: currentDate()) { [weak self] error in
             guard self != nil else { return }
             completion(error)

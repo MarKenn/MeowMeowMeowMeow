@@ -79,7 +79,7 @@ final class CacheCatFactUseCaseTests: XCTestCase {
         let store = CatFactStoreSpy()
         var sut: LocalCatFactLoader? = LocalCatFactLoader(store: store, currentDate: Date.init)
 
-        var receivedResults = [Error?]()
+        var receivedResults = [LocalCatFactLoader.SaveResult]()
         sut?.save([anyFact()]) { receivedResults.append($0)}
 
         sut = nil
@@ -92,7 +92,7 @@ final class CacheCatFactUseCaseTests: XCTestCase {
         let store = CatFactStoreSpy()
         var sut: LocalCatFactLoader? = LocalCatFactLoader(store: store, currentDate: Date.init)
 
-        var receivedResults = [Error?]()
+        var receivedResults = [LocalCatFactLoader.SaveResult]()
         sut?.save([anyFact()]) { receivedResults.append($0)}
 
         store.completeDeletionSuccessfully()
