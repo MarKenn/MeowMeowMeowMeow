@@ -35,11 +35,3 @@ public class LocalCatFactLoader {
         }
     }
 }
-
-public protocol CatFactStore {
-    typealias DeleteCompletion = (Error?) -> Void
-    typealias InsertCompletion = (Error?) -> Void
-
-    func deleteCachedFacts(completion: @escaping DeleteCompletion)
-    func insert(_ facts: [String], timestamp: Date, completion: @escaping InsertCompletion)
-}
